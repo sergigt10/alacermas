@@ -88,14 +88,14 @@
                             </div>
                             <div class="col-md-3 grid-margin stretch-card">
                                 <div class="card border-radius-2 bg-dark">
-                                    <a href="{{ route('backend.centres.index') }}">
+                                    <a href="{{ route('backend.categories.index') }}">
                                         <div class="card-body">
                                             <div class="d-flex flex-md-column flex-xl-row flex-wrap  align-items-center justify-content-between">
                                                 <div class="icon-rounded-inverse-success icon-rounded-lg">
-                                                    <i class="mdi mdi-apps"></i>
+                                                    <i class="mdi mdi-source-pull"></i>
                                                 </div>
                                                 <div class="text-white">
-                                                    <p class="font-weight-medium mt-md-2 mt-xl-0 text-md-center text-xl-left" style="font-size: 1.5rem;">Productes</p>
+                                                    <p class="font-weight-medium mt-md-2 mt-xl-0 text-md-center text-xl-left" style="font-size: 1.5rem;">Categories productes</p>
                                                 </div>
                                             </div>
                                         </div>

@@ -87,7 +87,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail3">Localització del centre:</label>
-                                    <input name="titol_esp" type="text" class="form-control @error('localitzacio') is-invalid @enderror" id="exampleInputEmail3" placeholder="Localització del centre" value="{{ old('localitzacio') }}">
+                                    <input name="localitzacio" type="text" class="form-control @error('localitzacio') is-invalid @enderror" id="exampleInputEmail3" placeholder="Localització del centre" value="{{ old('localitzacio') }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail3">Descripció ESP *:</label>

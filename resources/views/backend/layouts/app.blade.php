@@ -194,29 +194,29 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#general-pages-5" <?php echo (strpos($_SERVER['REQUEST_URI'] ,"centres") !== false) ? 'aria-expanded="true"' : 'aria-expanded="false"'; ?> aria-controls="general-pages-5">
-                            <i class="mdi mdi-apps menu-icon"></i>
-                            <span class="menu-title">Productes</span>
+                        <a class="nav-link" data-toggle="collapse" href="#general-pages-5" <?php echo (strpos($_SERVER['REQUEST_URI'] ,"categories") !== false) ? 'aria-expanded="true"' : 'aria-expanded="false"'; ?> aria-controls="general-pages-5">
+                            <i class="mdi mdi-source-pull menu-icon"></i>
+                            <span class="menu-title">Categories productes</span>
                             <i class="menu-arrow"></i>
                         </a>
-                        <div <?php echo (strpos($_SERVER['REQUEST_URI'] ,"centres") !== false) ? 'class="collapse show"' : 'class="collapse"'; ?> id="general-pages-5">
+                        <div <?php echo (strpos($_SERVER['REQUEST_URI'] ,"categories") !== false) ? 'class="collapse show"' : 'class="collapse"'; ?> id="general-pages-5">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> 
-                                    <a class="nav-link {{ (request()->is('backend/centres/create')) ? 'active' : '' }}" href="{{ route('backend.centres.create') }}">
+                                    <a class="nav-link {{ (request()->is('backend/categories/create')) ? 'active' : '' }}" href="{{ route('backend.categories.create') }}">
                                         Inserir
                                     </a>
                                 </li>
                             </ul>
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> 
-                                    <a class="nav-link {{ ( (request()->is('backend/centres')) ||  (request()->is('backend/centres/*/edit'))) ? 'active' : '' }}" href="{{ route('backend.centres.index') }}">
+                                    <a class="nav-link {{ ( (request()->is('backend/categories')) ||  (request()->is('backend/categories/*/edit'))) ? 'active' : '' }}" href="{{ route('backend.categories.index') }}">
                                         Modificar
                                     </a>
                                 </li>
                             </ul>
                         </div>
                     </li>
-
+                    <!-- mdi-apps -->
                 </ul>
             </nav>
             <!-- NAVBAR FI -->
