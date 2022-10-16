@@ -63,7 +63,7 @@
                             </div>
                             <div class="form-group not-available">
                                 <label for="exampleInputEmail3">Categoria arrel:</label>
-                                <select id="id_categoria_mare" name="id_categoria_mare" class="form-control js-example-basic-single w-100">
+                                <select id="parent_id" name="parent_id" class="form-control js-example-basic-single w-100">
                                     <option 
                                         value="0"
                                     >

@@ -12,17 +12,42 @@ class CategoriaProducteController extends Controller
 {
 
     protected $appends = [
-        'getParentsTree'
+        'getParentsTree',
+        'tree'
     ];
 
-    // Montar arbre de categories
-    public static function getParentsTree($category, $title) {
-        if($category->id_categoria_mare == 0) {
+    // Montar arbre de categories amb select
+    public static function getParentsTree($category, $title) 
+    {
+        if($category->parent_id == NULL) {
             return $title;
         }
-        $parent = Categoria::find($category->id_categoria_mare);
-        $title = $parent->nom_cat . '>' . $title;
+        $parent = Categoria::find($category->parent_id);
+        $title = $parent->nom_cat . ' > ' . $title;
         return CategoriaProducteController::getParentsTree($parent, $title);
+    }
+
+    // Montar arbre de categories sense select
+    public static function tree() 
+    {
+        $allCategories = Categoria::get();
+
+        $rootCategories = $allCategories->whereNull('parent_id');
+
+        self::formatTree($rootCategories, $allCategories);
+
+        return $rootCategories;
+    }
+    
+    public static function formatTree($categories, $allCategories) 
+    {
+        foreach ($categories as $categoria) {
+            $categoria->children = $allCategories->where('parent_id', $categoria->id)->values();
+
+            if($categoria->children->isNotEmpty()) {
+                self::formatTree($categoria->children, $allCategories);
+            }
+        }
     }
 
     /**
@@ -46,9 +71,11 @@ class CategoriaProducteController extends Controller
     public function create()
     {
         $categories = Categoria::all();
+        $treeCategories = self::tree();
 
         return view('backend.categories.create')
-            ->with('categories', $categories);
+            ->with('categories', $categories)
+            ->with('treeCategories', $treeCategories);
     }
 
     /**
@@ -64,7 +91,7 @@ class CategoriaProducteController extends Controller
             'nom_cat' => 'required',
             'nom_eng' => 'required',
             'nom_fra' => 'required',
-            'id_categoria_mare' => 'required',
+            'parent_id' => 'nullable',
             'imatge1' => 'required|image|max:10240|mimes:jpeg,png,jpg,gif,svg',
             'actiu' => 'required'
         ]);/* Max foto 10 MB */
@@ -121,7 +148,7 @@ class CategoriaProducteController extends Controller
             'nom_cat' => 'required',
             'nom_eng' => 'required',
             'nom_fra' => 'required',
-            'id_categoria_mare' => 'required',
+            'parent_id' => 'nullable',
             'actiu' => 'required'
         ]);
         
@@ -134,7 +161,7 @@ class CategoriaProducteController extends Controller
         $categoria->nom_cat = $data['nom_cat'];
         $categoria->nom_eng = $data['nom_eng'];
         $categoria->nom_fra = $data['nom_fra'];
-        $categoria->id_categoria_mare = $data['id_categoria_mare'];
+        $categoria->parent_id = $data['parent_id'];
         $categoria->actiu = $data['actiu'];
 
         // Si el usuario sube una nueva imagen

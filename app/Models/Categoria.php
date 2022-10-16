@@ -15,8 +15,13 @@ class Categoria extends Model
         'nom_eng',
         'nom_fra',
         'slug',
-        'id_categoria_mare',
+        'parent_id',
         'imatge1',
         'actiu'
     ];
+
+    public function isChild():bool
+    {
+        return $this->parent_id !== null;
+    }
 }

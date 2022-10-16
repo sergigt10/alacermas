@@ -67,78 +67,26 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail3">Categoria arrel:</label>
-                                    <select id="id_categoria_mare" name="id_categoria_mare" class="form-control js-example-basic-single w-100">
-                                        <option 
-                                            value="0"
-                                            selected
-                                        >
-                                            Categoria principal
-                                        </option>
+                                    <select id="parent_id" name="parent_id" class="form-control js-example-basic-single w-100">
                                         @foreach ($categories as $categoria)
                                             <option 
                                                 value="{{ $categoria->id }}"
-                                                {{ old('id_categoria_mare') == $categoria->id ? 'selected' : '' }}
-                                            >
-                                                {{ $categoria->nom_cat }}
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                    <select id="id_categoria_mare" name="id_categoria_mare" class="form-control js-example-basic-single w-100">
-                                        @foreach ($categories as $categoria)
-                                            <option 
-                                                value="{{ $categoria->id }}"
-                                                {{ old('id_categoria_mare') == $categoria->id ? 'selected' : '' }}
+                                                {{ old('parent_id') == $categoria->id ? 'selected' : '' }}
                                             >
                                                 {{ \App\Http\Controllers\CategoriaProducteController::getParentsTree($categoria, $categoria->nom_cat) }}
                                             </option>
                                         @endforeach
+                                        <option 
+                                            value=" "
+                                        >
+                                            - Categoria principal -
+                                        </option>
                                     </select>
                                 </div>
-                                @php
-                                    function toSelect ($arr, $depth=0) { 
-                                        $html = '';
-                                        foreach ( $arr as $v ) {
-                                            $html.= '<option value="' . $v['id'] . '">';
-                                            $html.= str_repeat('--', $depth);
-                                            $html.= $v['nom_cat'] . '</option>' . PHP_EOL;
-                                            echo $html;
-
-                                            if ( array_key_exists($v['id_categoria_mare'], $v) ) {
-                                                $html.= toSelect($v['id_categoria_mare'], $depth+1);
-                                            }
-                                        }
-                                        return $html;
-                                    }
-
-                                    function toUL ($arr, $pass = 0) {
-
-                                        $html = '<ul>' . PHP_EOL;
-                                        
-                                        foreach ( $arr as $v ) {           
-
-                                            $html.= '<li>';
-                                            $html .= str_repeat("--", $pass); // use the $pass value to create the --
-                                            $html .= $v['nom_cat'] . '</li>' . PHP_EOL;
-                                            
-                                            if ( array_key_exists('id_categoria_mare', $v) ) {
-                                                $html.= toUL($v['id_categoria_mare'], $pass+1);
-                                                echo "hola";
-                                            } else {
-                                                echo $v['id_categoria_mare'];
-                                            }
-
-                                        }
-
-                                        $html.= '</ul>' . PHP_EOL;
-
-                                        return $html;
-                                    }
-
-                                    echo toUL($categories);
-
-                                    echo gettype((array) $categories);
-
-                                @endphp
+                                <!-- Arbre de categories -->
+                                <div class="form-group">
+                                    <x-categories :categories="$treeCategories" />
+                                </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail3">Actiu:</label>
                                     <select id="actiu" name="actiu" class="form-control js-example-basic-single w-100">
