@@ -61,22 +61,25 @@
                                 <label for="exampleInputEmail3">Nom FRA *:</label>
                                 <input name="nom_fra" type="text" class="form-control @error('nom_fra') is-invalid @enderror" id="exampleInputEmail3" placeholder="Nom FRA" value="{{ $categoria->nom_fra }}">
                             </div>
-                            <div class="form-group not-available">
+                            <div class="form-group">
                                 <label for="exampleInputEmail3">Categoria arrel:</label>
                                 <select id="parent_id" name="parent_id" class="form-control js-example-basic-single w-100">
-                                    <option 
-                                        value="0"
-                                    >
-                                        Categoria principal
-                                    </option>
-                                    @foreach ($categoriasAll as $categoriaAll)
-                                        <option 
-                                            value="{{ $categoria->id }}"
-                                            {{ $categoria->id == $categoriaAll->id ? 'selected' : '' }}
-                                        >
-                                            {{ $categoriaAll->nom_cat }}
-                                        </option>
+                                    @foreach ($categoriesAll as $categoriaAll)
+                                        @if (!str_contains(\App\Http\Controllers\CategoriaProducteController::getParentsTree($categoriaAll, $categoriaAll->nom_cat), $categoria->nom_cat))
+                                            <option 
+                                                value="{{ $categoriaAll->id }}"
+                                                {{ $categoriaAll->id == $categoria->parent_id ? 'selected' : '' }}
+                                            >
+                                                {{ \App\Http\Controllers\CategoriaProducteController::getParentsTree($categoriaAll, $categoriaAll->nom_cat) }}
+                                            </option>
+                                        @endif
                                     @endforeach
+                                    <option 
+                                        value=" "
+                                        {{ $categoria->parent_id === NULL ? 'selected' : '' }}
+                                    >
+                                        - Categoria principal -
+                                    </option>
                                 </select>
                             </div>
                             <div class="form-group">

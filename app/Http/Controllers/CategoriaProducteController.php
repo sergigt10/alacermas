@@ -103,6 +103,9 @@ class CategoriaProducteController extends Controller
 
         $categoria = new Categoria($data);
         $categoria->slug = Str::of($request['nom_esp'])->slug("-");
+        if($request['parent_id'] === ' ') {
+            $categoria->parent_id = NULL;
+        }
         $categoria->imatge1 = $ruta_imatge1;
         $categoria->save();
 
@@ -161,7 +164,11 @@ class CategoriaProducteController extends Controller
         $categoria->nom_cat = $data['nom_cat'];
         $categoria->nom_eng = $data['nom_eng'];
         $categoria->nom_fra = $data['nom_fra'];
-        $categoria->parent_id = $data['parent_id'];
+        if($request['parent_id'] === ' ') {
+            $categoria->parent_id = NULL;
+        } else {
+            $categoria->parent_id = $data['parent_id'];
+        }
         $categoria->actiu = $data['actiu'];
 
         // Si el usuario sube una nueva imagen
