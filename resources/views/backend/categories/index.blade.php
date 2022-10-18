@@ -26,6 +26,7 @@
                                     <thead>
                                         <tr>
                                             <th>Nom</th>
+                                            <th>Categoria arrel</th>
                                             <th>Actiu</th>
                                             <th data-orderable="false">Editar</th>
                                             <th data-orderable="false">Eliminar</th>
@@ -41,7 +42,20 @@
                                                 </td>
                                                 <td>
                                                     <a href="{{ route('backend.categories.edit', ['categoria' => $categoria->id]) }}" style="color: black;">
-                                                        {{ $categoria->actiu }}
+                                                        @if( $categoria->parent_id == NULL) 
+                                                            Categoria principal
+                                                        @else
+                                                            {{ \App\Http\Controllers\CategoriaProducteController::getParentsTree($categoria, $categoria->nom_cat) }}
+                                                        @endif
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="{{ route('backend.categories.edit', ['categoria' => $categoria->id]) }}" style="color: black;">
+                                                        @if ( $categoria->actiu == 1)
+                                                            Si
+                                                        @else
+                                                            No
+                                                        @endif
                                                     </a>
                                                 </td>
                                                 <td>

@@ -12312,12 +12312,12 @@ code {
 
 .accordion .card .card-header {
   background-color: transparent;
-  border: none;
+  border: 1px solid #dadada;
   padding: 2rem;
 }
 
 .accordion .card .card-header * {
-  font-weight: 400;
+  font-weight: 600;
   font-size: 1rem;
 }
 
@@ -12354,9 +12354,10 @@ code {
 
 .accordion .card .card-body {
   font-size: 14px;
-  padding: 0 2rem 2rem 2rem;
+  padding: 1rem 2rem 2rem 4rem !important;
   font-weight: 400;
   line-height: 1.5;
+  background: #eef1f3;
 }
 
 .accordion .card .card-body i {
@@ -12464,7 +12465,7 @@ code {
 }
 
 .accordion.accordion-solid-header .card .card-header a[aria-expanded="true"] {
-  background: #0D476D;
+  background: #25597b;
   color: #ffffff;
 }
 
@@ -18639,6 +18640,7 @@ body.avgrund-active {
 .dataTables_wrapper .dataTable thead th {
   border-bottom-width: 0;
   background-color: #eaeaea;
+  font-weight: bold;
 }
 
 .dataTables_wrapper .dataTable thead .sorting:before, .dataTables_wrapper .dataTable thead .sorting:after,
@@ -22784,4 +22786,12 @@ trix-toolbar .trix-button--icon {
 
 select.form-control:not([size]):not([multiple]), select.asColorPicker-input:not([size]):not([multiple]), .dataTables_wrapper select:not([size]):not([multiple]), .jsgrid .jsgrid-table .jsgrid-filter-row select:not([size]):not([multiple]), .select2-container--default select.select2-selection--single:not([size]):not([multiple]), .select2-container--default .select2-selection--single select.select2-search__field:not([size]):not([multiple]), select.typeahead:not([size]):not([multiple]), select.tt-query:not([size]):not([multiple]), select.tt-hint:not([size]):not([multiple]) {
   height: calc(2.65rem + 2px) !important;
+}
+
+#collapse-2 {
+  border: 1px solid #ccc;
+}
+
+.categoria-bold {
+  font-weight: bold;
 }

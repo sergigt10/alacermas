@@ -30,7 +30,7 @@ class CategoriaProducteController extends Controller
     // Montar arbre de categories sense select
     public static function tree() 
     {
-        $allCategories = Categoria::get();
+        $allCategories = Categoria::orderBy('nom_cat')->get();
 
         $rootCategories = $allCategories->whereNull('parent_id');
 
@@ -38,7 +38,6 @@ class CategoriaProducteController extends Controller
 
         return $rootCategories;
     }
-    
     public static function formatTree($categories, $allCategories) 
     {
         foreach ($categories as $categoria) {
@@ -57,7 +56,7 @@ class CategoriaProducteController extends Controller
      */
     public function index()
     {
-        $categories = Categoria::all();
+        $categories = Categoria::orderBy('nom_cat')->get();
 
         return view('backend.categories.index')
             ->with('categories', $categories);
@@ -70,12 +69,10 @@ class CategoriaProducteController extends Controller
      */
     public function create()
     {
-        $categories = Categoria::all();
-        $treeCategories = self::tree();
+        $categories = Categoria::orderBy('nom_cat')->get();
 
         return view('backend.categories.create')
-            ->with('categories', $categories)
-            ->with('treeCategories', $treeCategories);
+            ->with('categories', $categories);
     }
 
     /**
@@ -132,7 +129,7 @@ class CategoriaProducteController extends Controller
      */
     public function edit(Categoria $categoria)
     {
-        $categoriesAll = Categoria::all();
+        $categoriesAll = Categoria::orderBy('nom_cat')->get();
         return view('backend.categories.edit', compact('categoria'))->with('categoriesAll', $categoriesAll);
     }
 

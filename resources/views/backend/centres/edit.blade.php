@@ -59,6 +59,11 @@
                                     <strong>{{ $message }}</strong>
                                 </div>
                             @enderror
+                            @error('localitzacio')
+                                <div class='alert alert-danger' role='alert'>
+                                    <strong>{{ $message }}</strong>
+                                </div>
+                            @enderror
                             @error('imatge1')
                                 <div class='alert alert-danger' role='alert'>
                                     <strong>{{ $message }}</strong>

@@ -99,4 +99,11 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('backend/categories/{categoria}/edit', 'CategoriaProducteController@edit')->name('backend.categories.edit');
     Route::put('backend/categories/{categoria}', 'CategoriaProducteController@update')->name('backend.categories.update');
     Route::delete('backend/categories/{categoria}', 'CategoriaProducteController@destroy')->name('backend.categories.destroy');
+    /* Productes */
+    Route::get('backend/productes', 'ProducteController@index')->name('backend.productes.index');
+    Route::get('backend/productes/create', 'ProducteController@create')->name('backend.productes.create');
+    Route::post('backend/productes', 'ProducteController@store')->name('backend.productes.store');
+    Route::get('backend/productes/{producte}/edit', 'ProducteController@edit')->name('backend.productes.edit');
+    Route::put('backend/productes/{producte}', 'ProducteController@update')->name('backend.productes.update');
+    Route::delete('backend/productes/{producte}', 'ProducteController@destroy')->name('backend.productes.destroy');
 });

@@ -196,7 +196,7 @@
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="collapse" href="#general-pages-5" <?php echo (strpos($_SERVER['REQUEST_URI'] ,"categories") !== false) ? 'aria-expanded="true"' : 'aria-expanded="false"'; ?> aria-controls="general-pages-5">
                             <i class="mdi mdi-source-pull menu-icon"></i>
-                            <span class="menu-title">Categories productes</span>
+                            <span class="menu-title">Categories prod.</span>
                             <i class="menu-arrow"></i>
                         </a>
                         <div <?php echo (strpos($_SERVER['REQUEST_URI'] ,"categories") !== false) ? 'class="collapse show"' : 'class="collapse"'; ?> id="general-pages-5">
@@ -216,7 +216,29 @@
                             </ul>
                         </div>
                     </li>
-                    <!-- mdi-apps -->
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#general-pages-6" <?php echo (strpos($_SERVER['REQUEST_URI'] ,"productes") !== false) ? 'aria-expanded="true"' : 'aria-expanded="false"'; ?> aria-controls="general-pages-6">
+                            <i class="mdi mdi-apps menu-icon"></i>
+                            <span class="menu-title">Productes</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div <?php echo (strpos($_SERVER['REQUEST_URI'] ,"productes") !== false) ? 'class="collapse show"' : 'class="collapse"'; ?> id="general-pages-6">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> 
+                                    <a class="nav-link {{ (request()->is('backend/productes/create')) ? 'active' : '' }}" href="{{ route('backend.productes.create') }}">
+                                        Inserir
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> 
+                                    <a class="nav-link {{ ( (request()->is('backend/productes')) ||  (request()->is('backend/productes/*/edit'))) ? 'active' : '' }}" href="{{ route('backend.productes.index') }}">
+                                        Modificar
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
             </nav>
             <!-- NAVBAR FI -->

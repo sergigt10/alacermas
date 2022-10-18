@@ -38,11 +38,6 @@
                                         <strong>{{ $message }}</strong>
                                     </div>
                                 @enderror
-                                @error('localitzacio')
-                                    <div class='alert alert-danger' role='alert'>
-                                        <strong>{{ $message }}</strong>
-                                    </div>
-                                @enderror
                                 @error('imatge1')
                                     <div class='alert alert-danger' role='alert'>
                                         <strong>{{ $message }}</strong>
@@ -82,10 +77,6 @@
                                             - Categoria principal -
                                         </option>
                                     </select>
-                                </div>
-                                <!-- Arbre de categories -->
-                                <div class="form-group">
-                                    <x-categories :categories="$treeCategories" />
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail3">Actiu:</label>
