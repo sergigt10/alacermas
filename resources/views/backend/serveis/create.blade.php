@@ -193,7 +193,7 @@
                                     </trix-editor>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail3">Descripció CAT 1 *:</label>
+                                    <label for="exampleInputEmail3">Descripció 1 CAT *:</label>
                                     <input id="descripcio_cat_1" type="hidden" name="descripcio_cat_1" value="{{ old('descripcio_cat_1') }}">
                                     <trix-editor 
                                         class="form-control @error('descripcio_cat_1') is-invalid @enderror "
@@ -201,7 +201,7 @@
                                     </trix-editor>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail3">Descripció ENG 1 *:</label>
+                                    <label for="exampleInputEmail3">Descripció 1 ENG *:</label>
                                     <input id="descripcio_eng_1" type="hidden" name="descripcio_eng_1" value="{{ old('descripcio_eng_1') }}">
                                     <trix-editor 
                                         class="form-control @error('descripcio_eng_1') is-invalid @enderror "
@@ -209,7 +209,7 @@
                                     </trix-editor>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail3">Descripció FRA 1 *:</label>
+                                    <label for="exampleInputEmail3">Descripció 1 FRA *:</label>
                                     <input id="descripcio_fra_1" type="hidden" name="descripcio_fra_1" value="{{ old('descripcio_fra_1') }}">
                                     <trix-editor 
                                         class="form-control @error('descripcio_fra_1') is-invalid @enderror "
@@ -217,7 +217,7 @@
                                     </trix-editor>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail3">Descripció ESP 2 *:</label>
+                                    <label for="exampleInputEmail3">Descripció 2 ESP *:</label>
                                     <input id="descripcio_esp_2" type="hidden" name="descripcio_esp_2" value="{{ old('descripcio_esp_2') }}">
                                     <trix-editor 
                                         class="form-control @error('descripcio_esp_2') is-invalid @enderror "
@@ -225,7 +225,7 @@
                                     </trix-editor>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail3">Descripció CAT 2 *:</label>
+                                    <label for="exampleInputEmail3">Descripció 2 CAT *:</label>
                                     <input id="descripcio_cat_2" type="hidden" name="descripcio_cat_2" value="{{ old('descripcio_cat_2') }}">
                                     <trix-editor 
                                         class="form-control @error('descripcio_cat_2') is-invalid @enderror "
@@ -233,7 +233,7 @@
                                     </trix-editor>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail3">Descripció ENG 2 *:</label>
+                                    <label for="exampleInputEmail3">Descripció 2 ENG *:</label>
                                     <input id="descripcio_eng_2" type="hidden" name="descripcio_eng_2" value="{{ old('descripcio_eng_2') }}">
                                     <trix-editor 
                                         class="form-control @error('descripcio_eng_2') is-invalid @enderror "
@@ -241,7 +241,7 @@
                                     </trix-editor>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail3">Descripció FRA 2 *:</label>
+                                    <label for="exampleInputEmail3">Descripció 2 FRA *:</label>
                                     <input id="descripcio_fra_2" type="hidden" name="descripcio_fra_2" value="{{ old('descripcio_fra_2') }}">
                                     <trix-editor 
                                         class="form-control @error('descripcio_fra_2') is-invalid @enderror "
@@ -249,7 +249,7 @@
                                     </trix-editor>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail3">Descripció ESP 3 *:</label>
+                                    <label for="exampleInputEmail3">Descripció 3 ESP *:</label>
                                     <input id="descripcio_esp_3" type="hidden" name="descripcio_esp_3" value="{{ old('descripcio_esp_3') }}">
                                     <trix-editor 
                                         class="form-control @error('descripcio_esp_3') is-invalid @enderror "
@@ -257,7 +257,7 @@
                                     </trix-editor>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail3">Descripció CAT 3 *:</label>
+                                    <label for="exampleInputEmail3">Descripció 3 CAT *:</label>
                                     <input id="descripcio_cat_3" type="hidden" name="descripcio_cat_3" value="{{ old('descripcio_cat_3') }}">
                                     <trix-editor 
                                         class="form-control @error('descripcio_cat_3') is-invalid @enderror "
@@ -265,7 +265,7 @@
                                     </trix-editor>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail3">Descripció ENG 3 *:</label>
+                                    <label for="exampleInputEmail3">Descripció 3 ENG *:</label>
                                     <input id="descripcio_eng_3" type="hidden" name="descripcio_eng_3" value="{{ old('descripcio_eng_3') }}">
                                     <trix-editor 
                                         class="form-control @error('descripcio_eng_3') is-invalid @enderror "
@@ -273,7 +273,7 @@
                                     </trix-editor>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail3">Descripció FRA 3 *:</label>
+                                    <label for="exampleInputEmail3">Descripció 3 FRA *:</label>
                                     <input id="descripcio_fra_3" type="hidden" name="descripcio_fra_3" value="{{ old('descripcio_fra_3') }}">
                                     <trix-editor 
                                         class="form-control @error('descripcio_fra_3') is-invalid @enderror "
@@ -281,7 +281,7 @@
                                     </trix-editor>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail3">Descripció ESP 4 *:</label>
+                                    <label for="exampleInputEmail3">Descripció 4 ESP *:</label>
                                     <input id="descripcio_esp_4" type="hidden" name="descripcio_esp_4" value="{{ old('descripcio_esp_4') }}">
                                     <trix-editor 
                                         class="form-control @error('descripcio_esp_4') is-invalid @enderror "
@@ -289,7 +289,7 @@
                                     </trix-editor>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail3">Descripció CAT 4 *:</label>
+                                    <label for="exampleInputEmail3">Descripció 4 CAT *:</label>
                                     <input id="descripcio_cat_4" type="hidden" name="descripcio_cat_4" value="{{ old('descripcio_cat_4') }}">
                                     <trix-editor 
                                         class="form-control @error('descripcio_cat_4') is-invalid @enderror "
@@ -297,7 +297,7 @@
                                     </trix-editor>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail3">Descripció ENG 4 *:</label>
+                                    <label for="exampleInputEmail3">Descripció 4 ENG *:</label>
                                     <input id="descripcio_eng_4" type="hidden" name="descripcio_eng_4" value="{{ old('descripcio_eng_4') }}">
                                     <trix-editor 
                                         class="form-control @error('descripcio_eng_4') is-invalid @enderror "
@@ -305,7 +305,7 @@
                                     </trix-editor>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail3">Descripció FRA 4 *:</label>
+                                    <label for="exampleInputEmail3">Descripció 4 FRA *:</label>
                                     <input id="descripcio_fra_4" type="hidden" name="descripcio_fra_4" value="{{ old('descripcio_fra_4') }}">
                                     <trix-editor 
                                         class="form-control @error('descripcio_fra_4') is-invalid @enderror "
@@ -313,7 +313,7 @@
                                     </trix-editor>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail3">Descripció ESP 5 *:</label>
+                                    <label for="exampleInputEmail3">Descripció 5 ESP *:</label>
                                     <input id="descripcio_esp_5" type="hidden" name="descripcio_esp_5" value="{{ old('descripcio_esp_5') }}">
                                     <trix-editor 
                                         class="form-control @error('descripcio_esp_5') is-invalid @enderror "
@@ -321,7 +321,7 @@
                                     </trix-editor>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail3">Descripció CAT 5 *:</label>
+                                    <label for="exampleInputEmail3">Descripció 5 CAT *:</label>
                                     <input id="descripcio_cat_5" type="hidden" name="descripcio_cat_5" value="{{ old('descripcio_cat_5') }}">
                                     <trix-editor 
                                         class="form-control @error('descripcio_cat_5') is-invalid @enderror "
@@ -329,7 +329,7 @@
                                     </trix-editor>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail3">Descripció ENG 5 *:</label>
+                                    <label for="exampleInputEmail3">Descripció 5 ENG *:</label>
                                     <input id="descripcio_eng_5" type="hidden" name="descripcio_eng_5" value="{{ old('descripcio_eng_5') }}">
                                     <trix-editor 
                                         class="form-control @error('descripcio_eng_5') is-invalid @enderror "
@@ -337,7 +337,7 @@
                                     </trix-editor>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail3">Descripció FRA 5 *:</label>
+                                    <label for="exampleInputEmail3">Descripció 5 FRA *:</label>
                                     <input id="descripcio_fra_5" type="hidden" name="descripcio_fra_5" value="{{ old('descripcio_fra_5') }}">
                                     <trix-editor 
                                         class="form-control @error('descripcio_fra_5') is-invalid @enderror "

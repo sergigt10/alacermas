@@ -5,7 +5,8 @@
         name="categoria_id" 
         id="optionsRadios1" 
         value="{{ $categoria->id }}" 
-        {{  ( $producte->categoria_id == $categoria->id ) ? 'checked' : null }}
+        {{ ( $producte->categoria_id == $categoria->id ) ? 'checked' : null }}
+        required
     >
     <span class="{{ $categoria->isChild() ? null : 'categoria-bold' }}">
         {{ $categoria->nom_cat }} @if(!$categoria->children->isEmpty())<i class="mdi mdi-chevron-down menu-icon"></i>@endif

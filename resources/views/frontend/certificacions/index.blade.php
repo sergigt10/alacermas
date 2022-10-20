@@ -30,7 +30,7 @@
                 <div class="col-lg-6 px-3">
                     <div class="data">
                         <figure class="goal-img">
-                            <img src='{{ asset("/frontend/assets/images/certificaciones.jpg") }}' alt="Alacer Mas">
+                            <img src='{{ asset("/storage/$certificacions->imatge1") }}' alt="Alacer Mas">
                         </figure>
                     </div>
                 </div>

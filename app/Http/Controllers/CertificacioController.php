@@ -50,12 +50,12 @@ class CertificacioController extends Controller
             'descripcio_cat' => 'required',
             'descripcio_eng' => 'required',
             'descripcio_fra' => 'required',
-            'imatge1' => 'nullable|image|max:10240|mimes:jpeg,png,jpg,gif,svg'
+            'imatge1' => 'required|image|max:10240|mimes:jpeg,png,jpg,gif,svg'
         ]);/* Max foto 10 MB */
 
         if($request['imatge1']){
             $ruta_imatge1 = $request['imatge1']->store('backend/certificacions', 'public');
-            $imatge1 = Image::make( storage_path("app/public/{$ruta_imatge1}") )->fit(1020, 1024, function($constraint){$constraint->aspectRatio();});
+            $imatge1 = Image::make( storage_path("app/public/{$ruta_imatge1}") )->fit(635, 460, function($constraint){$constraint->aspectRatio();});
             $imatge1->save();
         }
 
@@ -129,10 +129,9 @@ class CertificacioController extends Controller
 
         // Si el usuario sube una nueva imagen
         if($request['imatge1']) {
-
             $ruta_imatge1 = $request['imatge1']->store('backend/certificacions', 'public');
 
-            $img = Image::make( storage_path("app/public/{$ruta_imatge1}") )->fit(1020, 1024, function($constraint){$constraint->aspectRatio();});
+            $img = Image::make( storage_path("app/public/{$ruta_imatge1}") )->fit(635, 460, function($constraint){$constraint->aspectRatio();});
             $img->save();
 
             // Eliminamos la imagen anterior

@@ -22,6 +22,9 @@ Route::get('/servicios', 'ServeisFrontendController@index')->name('frontend.serv
 /* Certificacions */
 Route::get('/certificacions', 'CertificacionsFrontendController@index')->name('frontend.certificacions.index');
 
+/* Servicios */
+Route::get('/productes', 'ProductesFrontendController@index')->name('frontend.productes.index');
+
 /* Centros */
 Route::get('/centros', 'CentresFrontendController@index')->name('frontend.centres.index');
 
@@ -106,4 +109,11 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('backend/productes/{producte}/edit', 'ProducteController@edit')->name('backend.productes.edit');
     Route::put('backend/productes/{producte}', 'ProducteController@update')->name('backend.productes.update');
     Route::delete('backend/productes/{producte}', 'ProducteController@destroy')->name('backend.productes.destroy');
+    /* Taules */
+    Route::get('backend/taules', 'TaulaController@index')->name('backend.taules.index');
+    Route::get('backend/taules/create', 'TaulaController@create')->name('backend.taules.create');
+    Route::post('backend/taules', 'TaulaController@store')->name('backend.taules.store');
+    Route::get('backend/taules/{taula}/edit', 'TaulaController@edit')->name('backend.taules.edit');
+    Route::put('backend/taules/{taula}', 'TaulaController@update')->name('backend.taules.update');
+    Route::delete('backend/taules/{taula}', 'TaulaController@destroy')->name('backend.taules.destroy');
 });

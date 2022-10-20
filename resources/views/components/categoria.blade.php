@@ -5,6 +5,7 @@
         name="categoria_id" 
         id="optionsRadios1" 
         value="{{ $categoria->id }}"
+        required
     >
     <span class="{{ $categoria->isChild() ? null : 'categoria-bold' }}">
         {{ $categoria->nom_cat }} @if(!$categoria->children->isEmpty())<i class="mdi mdi-chevron-down menu-icon"></i>@endif

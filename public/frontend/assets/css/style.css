@@ -3754,9 +3754,9 @@ span.odometer {
 .shop-style-one.addition {
     background: white;
 }
-.shop-style-one.addition .p-slider div:nth-child(even) .product img {
+/* .shop-style-one.addition .p-slider div:nth-child(even) .product img {
     height: 200px;
-}
+} */
 .shop-style-one.addition .list .p-slider > div {
     margin-bottom: 50px;
     width: 28%;

@@ -217,23 +217,37 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#general-pages-6" <?php echo (strpos($_SERVER['REQUEST_URI'] ,"productes") !== false) ? 'aria-expanded="true"' : 'aria-expanded="false"'; ?> aria-controls="general-pages-6">
+                        <a class="nav-link" data-toggle="collapse" href="#general-pages-6" <?php echo (strpos($_SERVER['REQUEST_URI'] ,"productes") !== false || strpos($_SERVER['REQUEST_URI'] ,"taules") !== false ) ? 'aria-expanded="true"' : 'aria-expanded="false"'; ?> aria-controls="general-pages-6">
                             <i class="mdi mdi-apps menu-icon"></i>
                             <span class="menu-title">Productes</span>
                             <i class="menu-arrow"></i>
                         </a>
-                        <div <?php echo (strpos($_SERVER['REQUEST_URI'] ,"productes") !== false) ? 'class="collapse show"' : 'class="collapse"'; ?> id="general-pages-6">
+                        <div <?php echo (strpos($_SERVER['REQUEST_URI'] ,"productes") !== false || strpos($_SERVER['REQUEST_URI'] ,"taules") !== false ) ? 'class="collapse show"' : 'class="collapse"'; ?> id="general-pages-6">
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> 
                                     <a class="nav-link {{ (request()->is('backend/productes/create')) ? 'active' : '' }}" href="{{ route('backend.productes.create') }}">
-                                        Inserir
+                                        Inserir producte
                                     </a>
                                 </li>
                             </ul>
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> 
                                     <a class="nav-link {{ ( (request()->is('backend/productes')) ||  (request()->is('backend/productes/*/edit'))) ? 'active' : '' }}" href="{{ route('backend.productes.index') }}">
-                                        Modificar
+                                        Modificar producte
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> 
+                                    <a class="nav-link {{ (request()->is('backend/taules/create')) ? 'active' : '' }}" href="{{ route('backend.taules.create') }}">
+                                        Inserir taula
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> 
+                                    <a class="nav-link {{ ( (request()->is('backend/taules')) ||  (request()->is('backend/taules/*/edit'))) ? 'active' : '' }}" href="{{ route('backend.taules.index') }}">
+                                        Modificar taula
                                     </a>
                                 </li>
                             </ul>
