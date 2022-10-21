@@ -26,6 +26,15 @@ class CategoriaProducteController extends Controller
         $title = $parent->nom_cat . ' > ' . $title;
         return CategoriaProducteController::getParentsTree($parent, $title);
     }
+    public static function getParentsTreeFrontend($category, $title) 
+    {
+        if($category->parent_id == NULL) {
+            return $title;
+        }
+        $parent = Categoria::find($category->parent_id);
+        $title = '<a href="'.$parent->slug.'">'. $parent->nom_cat .'</a>&nbsp; / &nbsp;' . $title;
+        return CategoriaProducteController::getParentsTreeFrontend($parent, $title);
+    }
 
     // Montar arbre de categories sense select
     public static function tree() 
@@ -95,7 +104,7 @@ class CategoriaProducteController extends Controller
 
         $ruta_imatge1 = $request['imatge1']->store('backend/categories', 'public');
 
-        $imatge1 = Image::make( storage_path("app/public/{$ruta_imatge1}") )->fit(972, 570, function($constraint){$constraint->aspectRatio();});
+        $imatge1 = Image::make( storage_path("app/public/{$ruta_imatge1}") )->fit(354, 290, function($constraint){$constraint->aspectRatio();});
         $imatge1->save();
 
         $categoria = new Categoria($data);
@@ -172,7 +181,7 @@ class CategoriaProducteController extends Controller
         if($request['imatge1']) {
             $ruta_imatge1 = $request['imatge1']->store('backend/categories', 'public');
 
-            $img = Image::make( storage_path("app/public/{$ruta_imatge1}") )->fit(972, 570, function($constraint){$constraint->aspectRatio();});
+            $img = Image::make( storage_path("app/public/{$ruta_imatge1}") )->fit(354, 290, function($constraint){$constraint->aspectRatio();});
             $img->save();
 
             // Eliminamos la imagen anterior

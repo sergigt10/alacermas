@@ -30,8 +30,8 @@ class Categoria extends Model
         return $query->where('parent_id', '=', NULL);
     }
 
-    public function scopeSubCategoria($query, $parent_id, $subcategoria_id)
+    public function scopeSubCategoria($query, $categoria_id)
     {
-        // return $query->where('parent_id', '=', NULL);
+        return $query->where('parent_id', '=', $categoria_id);
     }
 }

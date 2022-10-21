@@ -12,60 +12,58 @@
             </div>
         </div>
     </section>
-    <section class="gap shop-style-one addition">
-        <div class="container">
+    <section class="gap product-style-one addition">
+        {{-- <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="shop-filter">
+                    <div class="categoria-filter">
                         <p>145 Products</p>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
-                    <ul>
+                    <ul class="categorias">
                     @foreach ($categories as $categoria)
-                        <li>{{ $categoria->nom_cat }}</li>
+                        <li class="categoria">
+                            <a href="{{ route('frontend.productes.subcategories', ['categoria' => $categoria->slug]) }}">{{ $categoria->nom_esp }}</a>
+                        </li>
                     @endforeach
                     </ul>
                 </div>
                 <div class="col-lg-9">
                     <div class="container">
-                        <div class="row p-slider align-items-center justify-content-between grid">
-                            <div class="col-lg-4" >
-                                <div class="product">
-                                    <div class="main-data">
-                                        <div class="btn-hover">
-                                            <figure>
-                                                <img src="https://via.placeholder.com/355x290" alt="Product Image 1">
-                                            </figure>
-                                            <a href="cart.html" class="theme-btn">Add to Cart <i class="fa-solid fa-bag-shopping"></i></a>
-                                        </div>
-                                        <div class="data">
-                                            <div class="ratings">
-                                                <i class="fa-solid fa-star"></i>
-                                                <span>5.0</span>
+                        <div class="row p-slider align-items-center grid">
+                            @foreach ($categories as $categoria)
+                                <div class="col-lg-4">
+                                    <div class="product">
+                                        <div class="main-data">
+                                            <div class="btn-hover">
+                                                <a href="#hover">
+                                                    <figure>
+                                                        <img src='{{ asset("/storage/$categoria->imatge1") }}' alt="Alacer Mas, {{ $categoria->nom_esp }}">
+                                                    </figure>
+                                                </a>
                                             </div>
-                                            <h3><a href="product-detail.html">Fosroc Galvafroid – 400ml</a></h3>
-                                            <div class="price-range">
-                                                <span>$18.60</span> - <span>$58.50</span>
+                                            <div class="data">
+                                                <h3>
+                                                    <a href="{{ route('frontend.productes.subcategories', ['categoria' => $categoria->slug]) }}">{{ $categoria->nom_esp }}</a>
+                                                </h3>
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="javascript:void(0)" class="theme-btn">Add to Cart <i class="fa-solid fa-bag-shopping"></i></a>
                                 </div>
-                            </div>
-                            
+                            @endforeach
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         
-        <div class="container">
+        {{-- <div class="container">
             <div class="row">
                 <div class="builty-pagination">
                     <nav aria-label="Page navigation example">
@@ -81,6 +79,6 @@
                     </nav>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </section>
 @endsection

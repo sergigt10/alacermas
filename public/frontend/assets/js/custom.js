@@ -371,13 +371,13 @@ jQuery(document).ready(function ($) {
 
 
     // Products List Grid
-    if ($(".shop-filter")[0]){
-        $(".shop-filter a.list").click(function(){
+    if ($(".categoria-filter")[0]){
+        $(".categoria-filter a.list").click(function(){
           $(".p-slider").removeClass("grid");
           $(".p-slider").addClass("list");
         });
 
-        $(".shop-filter a.grid").click(function(){
+        $(".categoria-filter a.grid").click(function(){
           $(".p-slider").removeClass("list");
           $(".p-slider").addClass("grid");
         });

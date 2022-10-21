@@ -18,10 +18,21 @@ class ProductesFrontendController extends Controller
     public function index()
     {
         SEOTools::setTitle('Productes Alacermas');
-        $productes = Producte::orderBy('nom_esp')->get();
+
         $categories = Categoria::categoriesPrincipals()->orderBy('nom_esp')->get();
         
-        return view('frontend.productes.index', compact('productes', 'categories'));
+        return view('frontend.productes.index', compact('categories'));
+    }
+
+    public function subcategoria($slug)
+    {
+        SEOTools::setTitle('Productes Alacermas');
+
+        $productes = Producte::orderBy('nom_esp')->get();
+        $categoriaParent = Categoria::where('slug','=', $slug)->firstOrFail();
+        $subCategories = Categoria::subCategoria($categoriaParent->id)->orderBy('nom_esp')->get();
+        
+        return view('frontend.productes.subcategories', compact('categoriaParent','subCategories'));
     }
 
 

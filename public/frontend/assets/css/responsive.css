@@ -61,10 +61,10 @@
     .cta-section .cta-data figure:before {
         left: 50%;
     }
-    .shop-style-one .p-slider .owl-item.active.center .product {
+    .product-style-one .p-slider .owl-item.active.center .product {
         margin: 45px 0 !important;
     }
-    .shop-style-one .p-slider .owl-item.active.center .product figure img {
+    .product-style-one .p-slider .owl-item.active.center .product figure img {
         height: 200px;
     }
     .team-style-two .team-data .team-image {
@@ -131,10 +131,10 @@
     .renovation .reno-data:before {
         right: 0%;
     }
-    .shop-style-one.addition .list .p-slider > div {
+    .product-style-one.addition .list .p-slider > div {
         width: 30%;
     }
-    .shop-style-one .product {
+    .product-style-one .product {
         width: 85%;
     }
     .project-completed.our-projects-one .proj-data {
@@ -748,7 +748,7 @@
     .project-completed .proj-data h3 {
         font-size: 30px;
     }
-    .shop-style-one .product,
+    .product-style-one .product,
     .project-completed .proj-data {
         width: 95%;
     }
@@ -945,35 +945,35 @@
     .cart-total-box .total {
         padding: 15px;
     }
-    .shop-style-one.addition .grid .product,
+    .product-style-one.addition .grid .product,
     .cart-t-payment-m .cart-total-box {
         margin-bottom: 30px;
     }
-    .shop-style-one.addition .p-slider div:nth-child(even) .product img,
-    .shop-style-one.addition .p-slider div .product img {
+    .product-style-one.addition .p-slider div:nth-child(even) .product img,
+    .product-style-one.addition .p-slider div .product img {
         height: 290px;
     }
-    .shop-style-one .product .price-range span {
+    .product-style-one .product .price-range span {
         font-size: 18px;
     }
-    .shop-style-one.addition .row.list > div .product {
+    .product-style-one.addition .row.list > div .product {
         flex-wrap: wrap;
         padding: 20px;
     }
-    .shop-style-one.addition .row.list > div .product .main-data {
+    .product-style-one.addition .row.list > div .product .main-data {
         flex-wrap: wrap;
         width: 100%;
     }
-    .shop-style-one.addition .row.list > div .product .main-data figure {
+    .product-style-one.addition .row.list > div .product .main-data figure {
         border: 1px solid #c1c1c1;
     }
-    .shop-style-one.addition .row.list > div .product .data {
+    .product-style-one.addition .row.list > div .product .data {
         padding: 0;
         padding-top: 20px;
         width: 100%;
         border: 0;
     }
-    .shop-style-one.addition .row.list > div .product .theme-btn {
+    .product-style-one.addition .row.list > div .product .theme-btn {
         margin-top: 20px;
     }
     .team-detail .fav-project .row .col-lg-4:before {
@@ -1615,10 +1615,10 @@
         padding-bottom: 30px;
         margin-top: 60px;
     }
-    .shop-style-one .p-slider .owl-item .product figure img {
+    .product-style-one .p-slider .owl-item .product figure img {
         height: 200px;
     }
-    .shop-style-one .p-slider .owl-item.active.center .product {
+    .product-style-one .p-slider .owl-item.active.center .product {
         margin: 0 !important;
     }
     .est-form .space {
@@ -1934,12 +1934,12 @@
     .cart-t-payment-m {
         margin-top: 20px;
     }
-    .shop-style-one.addition .grid .product, 
+    .product-style-one.addition .grid .product, 
     .cart-t-payment-m .cart-total-box {
         margin-bottom: 25px;
     }
-    .shop-style-one.addition .p-slider div:nth-child(even) .product img,
-    .shop-style-one.addition .p-slider div .product img {
+    .product-style-one.addition .p-slider div:nth-child(even) .product img,
+    .product-style-one.addition .p-slider div .product img {
         height: 200px;
     }
     .next-prev-projects li a i {
@@ -2100,7 +2100,7 @@
     }
 }
 @media(max-width: 480px) {
-    .shop-style-one.addition .shop-filter {
+    .product-style-one.addition .categoria-filter {
         margin-bottom: 40px;
         padding: 20px;
     }
@@ -2230,7 +2230,7 @@
     .acc2 .accordion-body {
         padding: 15px 5px 5px 5px;
     }
-    .shop-style-one .p-slider .owl-dots button,
+    .product-style-one .p-slider .owl-dots button,
     .blog-style-two .blog-slider .owl-dots button {
         width: 50px;
     }
@@ -2417,7 +2417,7 @@
     .project-completed .proj-image figure:after {
         width: 130px;
     }
-    .shop-style-one .p-slider .owl-dots {
+    .product-style-one .p-slider .owl-dots {
         margin-top: 30px;
     }
     .cta-section .cta-data figure:before {

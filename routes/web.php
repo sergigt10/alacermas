@@ -22,8 +22,9 @@ Route::get('/servicios', 'ServeisFrontendController@index')->name('frontend.serv
 /* Certificacions */
 Route::get('/certificacions', 'CertificacionsFrontendController@index')->name('frontend.certificacions.index');
 
-/* Servicios */
-Route::get('/productes', 'ProductesFrontendController@index')->name('frontend.productes.index');
+/* Productos */
+Route::get('/productos', 'ProductesFrontendController@index')->name('frontend.productes.index');
+Route::get('/categorias/{categoria}', 'ProductesFrontendController@subcategoria')->name('frontend.productes.subcategories');
 
 /* Centros */
 Route::get('/centros', 'CentresFrontendController@index')->name('frontend.centres.index');

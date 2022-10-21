@@ -60,7 +60,7 @@ body.light-d .cta-data a.theme-btn:hover,
 body.light-d .heading h2,
 body.light-d .heading.heading-style-3 h2 span,
 body.light-d .blog-style-one .blog-post h2 a,
-body.light-d .shop-style-one .product .price-range span,
+body.light-d .product-style-one .product .price-range span,
 body.light-d .project-completed .proj-data .loc-date > div span:first-child,
 body.light-d .team-style-two .team-data h3 a,
 body.light-d .about-how-it-works .plans h3,
@@ -83,8 +83,8 @@ body.light-d ul.pd-price li.pd-sale-price span,
 body.light-d .pd-data .free-ship,
 body.light-d .pd-cat-tags > ul > li span,
 body.light-d .pd-details .nav-pills .nav-link,
-body.light-d .shop-style-one.addition .shop-filter .gird-list a i,
-body.light-d .shop-style-one.addition .row.list > div .product:hover a.theme-btn,
+body.light-d .product-style-one.addition .categoria-filter .gird-list a i,
+body.light-d .product-style-one.addition .row.list > div .product:hover a.theme-btn,
 body.light-d .detail-page p span,
 body.light-d .team-detail .fav-project .f-p-box h2 a
  {
@@ -107,7 +107,7 @@ body.light-d .heading-style-2 .data span,
 body.light-d .estimated-price .est-form label,
 body.light-d .contact-us .c-cards .card .details > span,
 body.light-d .certificates .data span,
-body.light-d .shop-style-one .product h3 a,
+body.light-d .product-style-one .product h3 a,
 body.light-d .project-completed .proj-data .loc-date > div span:last-child,
 body.light-d .blog-style-three .blog-posts h3 a,
 body.light-d .blog-style-three .blog-posts .date,
@@ -150,7 +150,7 @@ body.light-d .project-completed .proj-data h3
     color: #999;
 }
 body.light-d .project-style-one,
-body.light-d .shop-style-one,
+body.light-d .product-style-one,
 body.light-d .certificates .c-slider .c-main .c-first,
 body.light-d .service-style-one .service-data:before,
 body.light-d .contact-us .c-cards .card.active,
@@ -196,7 +196,7 @@ body.light-d .contact-us,
 body.light-d .client-review-style-one,
 body.light-d .client-style-one,
 body.light-d .blog-style-one,
-body.light-d .shop-style-one .product,
+body.light-d .product-style-one .product,
 body.light-d .project-completed,
 body.light-d .estimated-price .bg-wh,
 body.light-d .blog-style-two,
@@ -205,7 +205,7 @@ body.light-d .about-how-it-works .plans,
 body.light-d .checkout .billing input,
 body.light-d .checkout .billing .nice-select,
 body.light-d .pd-quality input,
-body.light-d .shop-style-one.addition .grid .product .btn-hover figure:before {
+body.light-d .product-style-one.addition .grid .product .btn-hover figure:before {
     background-color: black;
 }
 body.light-d .core-features .accordion-item,
@@ -218,7 +218,7 @@ body.light-d .core-features button.accordion-button:before{
 }
 
 body.light-d .client-review-slider .owl-dots button.active,
-body.light-d .shop-style-one .p-slider .owl-dots button.active,
+body.light-d .product-style-one .p-slider .owl-dots button.active,
 body.light-d .blog-style-two .blog-slider .owl-dots button.active,
 body.light-d .project-detail-slider .p-d-slider .owl-dots button.active,
 body.light-d .project-style-one .project-slider .owl-dots button.active{
@@ -304,7 +304,7 @@ body.light-d .builty-pagination ul.pagination li:first-child a,
 body.light-d .builty-pagination ul.pagination li:last-child a {
     border-color: white;
 }
-body.light-d .shop-style-one.addition .grid .product .btn-hover .theme-btn:hover {
+body.light-d .product-style-one.addition .grid .product .btn-hover .theme-btn:hover {
     color: #fff;
     background: transparent;
 }
