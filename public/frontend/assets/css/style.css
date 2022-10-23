@@ -3711,7 +3711,7 @@ span.odometer {
     font-weight: 400 !important;
 }
 .product-style-one .product h3 a:hover {
-    color: #ccc;
+    color: #b7b7b7;
 }
 .product-style-one .product {
     /* border: 1px solid #e6e6e6; */
@@ -6817,3 +6817,31 @@ ul.categorias li {
 li.categoria {
     padding: 10px
 }
+
+.categoria-filter a:hover{
+    color: #b7b7b7;
+}
+
+.categorias-parent {
+    font-size: 20px;
+}
+
+.categoria a {
+    color: #000;
+    font-weight: 400 !important;
+}
+
+.categoria a:hover {
+    color: #b7b7b7;
+}
+
+.categoria-filter {
+    font-size: 17px;
+}
+
+.categoria-filter a{
+    color: #000;
+    font-weight: 400 !important;
+}
+
+

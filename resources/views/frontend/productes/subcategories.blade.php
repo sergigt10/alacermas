@@ -30,9 +30,8 @@
             <div class="row">
                 <div class="col-lg-3">
                     <ul class="categorias">
-                        <a href="{{ $categoriaParent->slug }}">
-                            <b>{{ $categoriaParent->nom_esp }}</b>
-                        </a>
+                        <span class="categorias-parent"><b>{{ $categoriaParent->nom_esp }}</b></span>
+                        {{-- <i class="fa-sharp fa-solid fa-angle-down"></i> --}}
                         @foreach ($subCategories as $categoria)
                             <li class="categoria">
                                 <a href="{{ route('frontend.productes.subcategories', ['categoria' => $categoria->slug]) }}">{{ $categoria->nom_esp }}</a>

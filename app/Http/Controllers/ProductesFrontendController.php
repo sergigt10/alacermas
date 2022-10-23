@@ -35,5 +35,4 @@ class ProductesFrontendController extends Controller
         return view('frontend.productes.subcategories', compact('categoriaParent','subCategories'));
     }
 
-
 }
