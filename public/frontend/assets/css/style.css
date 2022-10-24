@@ -6844,4 +6844,8 @@ li.categoria {
     font-weight: 400 !important;
 }
 
+.text-justify {
+    text-align: justify;
+}
+
 

@@ -96,7 +96,6 @@ button.scrollTopStick.active,
 .comment .c-data .c-r-btn,
 .team-detail .image figure:before,
 .desktop-nav .nav-bar .extras .slideDown,
-.pd-details .nav-pills .nav-link.active,
 .rev-tab .total-reviews,
 .cart .update-cart form button,
 .cart-t-payment-m .payment-method button,
@@ -113,6 +112,11 @@ button.scrollTopStick.active,
 .first .tab-data .map-pin,
 .first .tab-data .map-pin .location {
     background-color: #ccc;
+}
+
+.pd-details .nav-pills .nav-link.active {
+    background-color: #0D476D !important;
+    color: #FFF !important;
 }
 
 .heading.heading-style-3 h2 span:before {

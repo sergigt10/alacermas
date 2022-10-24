@@ -3,7 +3,7 @@
 @section('content')
 
     <section class="banner-style-one">
-        <div class="parallax" style="background-image: url({{ asset('frontend/assets/images/servicios-alacermas.png') }});"></div>
+        <div class="parallax" style="background-image: url({{ asset('frontend/assets/images/certificaciones-alacermas.jpg') }});"></div>
         <div class="container">
             <div class="row">
                 <div class="banner-details">

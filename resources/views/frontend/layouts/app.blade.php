@@ -70,7 +70,8 @@
                                             <li>
                                                 <a href="{{ route('frontend.inici.index') }}">INICIO</a>
                                             </li>
-                                            <li class="menu-item-has-children"><a href="JavaScript:void(0)">EMPRESA</a>
+                                            <li class="menu-item-has-children">
+                                                <a href="JavaScript:void(0)">EMPRESA</a>
                                                 <ul class="sub-menu">
                                                     <li><a href="{{ route('frontend.quisom.index') }}">QUIÉNES SOMOS</a></li>
                                                     <li><a href="{{ route('frontend.serveis.index') }}">SERVICIOS</a></li>
@@ -80,12 +81,12 @@
                                                 </ul>
                                             </li>
                                             <li class="menu-item-has-children">
-                                                <a href="{{ route('frontend.productes.index') }}">PRODUCTOS</a>
+                                                <a href="JavaScript:void(0)">PRODUCTOS</a>
                                                 <ul class="sub-menu">
-                                                    <li><a href="{{ route('frontend.productes.index') }}">ACERO INOXIDABLE</a></li>
-                                                    <li><a href="{{ route('frontend.productes.index') }}">NORMALIZADOS INOXIDABLE</a></li>
-                                                    <li><a href="{{ route('frontend.productes.index') }}">SUBMINISTROS INDUSTRIALES</a></li>
-                                                    <li><a href="{{ route('frontend.productes.index') }}">ALUMINIO</a></li>
+                                                    <li><a href="{{ route('frontend.productes.index', ['categoria' => 'acero-inoxidable']) }}">ACERO INOXIDABLE</a></li>
+                                                    <li><a href="{{ route('frontend.productes.index', ['categoria' => 'normalizados-inoxidable']) }}">NORMALIZADOS INOXIDABLE</a></li>
+                                                    <li><a href="{{ route('frontend.productes.index', ['categoria' => 'suministros-industriales']) }}">SUMINISTROS INDUSTRIALES</a></li>
+                                                    <li><a href="{{ route('frontend.productes.index', ['categoria' => 'aluminio']) }}">ALUMINIO</a></li>
                                                 </ul>
                                             </li>
                                             <li>

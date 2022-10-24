@@ -3,11 +3,11 @@
     $(function() {
       $('#order-listing').DataTable({
         "aLengthMenu": [
-          [5, 10, 15, -1],
-          [5, 10, 15, "Tots"]
+          [5, 10, 15, 20, 25, -1],
+          [5, 10, 15, 20, 25, "Tots"]
         ],
         "order": [[ 0, "asc" ]],
-        "iDisplayLength": 10,
+        "iDisplayLength": 20,
         "language": {
           "processing": "Processant...",
           "lengthMenu": "Mostrant _MENU_ registres",

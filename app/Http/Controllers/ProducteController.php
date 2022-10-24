@@ -58,17 +58,35 @@ class ProducteController extends Controller
             'descripcio_fra' => 'required',
             'categoria_id' => 'required',
             'actiu' => 'required',
-            'imatge1' => 'required|image|max:10240|mimes:jpeg,png,jpg,gif,svg'
+            'imatge1' => 'required|image|max:10240|mimes:jpeg,png,jpg,gif,svg',
+            'imatge2' => 'nullable|image|max:10240|mimes:jpeg,png,jpg,gif,svg',
+            'pdf' => 'nullable|max:10240|mimes:pdf',
         ]);/* Max foto 10 MB */
 
         $ruta_imatge1 = $request['imatge1']->store('backend/productes', 'public');
-
-        $imatge1 = Image::make( storage_path("app/public/{$ruta_imatge1}") )->fit(972, 570, function($constraint){$constraint->aspectRatio();});
+        $imatge1 = Image::make( storage_path("app/public/{$ruta_imatge1}") )->fit(354, 290, function($constraint){$constraint->aspectRatio();});
         $imatge1->save();
+
+        if($request['imatge2']) {
+            $ruta_imatge2 = $request['imatge2']->store('backend/productes', 'public');
+            $imatge2 = Image::make( storage_path("app/public/{$ruta_imatge2}") )->fit(354, 290, function($constraint){$constraint->aspectRatio();});
+            $imatge2->save();
+        }
+        
+        if($request['pdf']) {
+            $ruta_pdf = $request['pdf']->store('backend/productes/pdf', 'public');
+            $imatge2->save();
+        }
 
         $producte = new Producte($data);
         $producte->slug = Str::of($request['nom_esp'])->slug("-");
         $producte->imatge1 = $ruta_imatge1;
+        if($request['imatge2']) {
+            $producte->imatge2 = $ruta_imatge2;
+        }
+        if($request['pdf']) {
+            $producte->pdf = $ruta_pdf;
+        }
         $producte->save();
 
         // Redireccionar
@@ -145,7 +163,7 @@ class ProducteController extends Controller
         if($request['imatge1']) {
             $ruta_imatge1 = $request['imatge1']->store('backend/productes', 'public');
 
-            $img = Image::make( storage_path("app/public/{$ruta_imatge1}") )->fit(972, 570, function($constraint){$constraint->aspectRatio();});
+            $img = Image::make( storage_path("app/public/{$ruta_imatge1}") )->fit(354, 290, function($constraint){$constraint->aspectRatio();});
             $img->save();
 
             // Eliminamos la imagen anterior
@@ -153,6 +171,31 @@ class ProducteController extends Controller
                 File::delete(storage_path("app/public/$producte->imatge1"));
                 // Asignar al objeto
                 $producte->imatge1 = $ruta_imatge1;
+            }  
+        }
+
+        if($request['imatge2']) {
+            $ruta_imatge2 = $request['imatge2']->store('backend/productes', 'public');
+
+            $img = Image::make( storage_path("app/public/{$ruta_imatge2}") )->fit(354, 290, function($constraint){$constraint->aspectRatio();});
+            $img->save();
+
+            // Eliminamos la imagen anterior
+            if (File::exists(storage_path("app/public/$producte->imatge2"))) {
+                File::delete(storage_path("app/public/$producte->imatge2"));
+                // Asignar al objeto
+                $producte->imatge2 = $ruta_imatge2;
+            }  
+        }
+
+        if($request['pdf']) {
+            $ruta_pdf = $request['pdf']->store('backend/productes/pdf', 'public');
+
+            // Eliminamos la imagen anterior
+            if (File::exists(storage_path("app/public/$producte->pdf"))) {
+                File::delete(storage_path("app/public/$producte->pdf"));
+                // Asignar al objeto
+                $producte->pdf = $ruta_pdf;
             }  
         }
 

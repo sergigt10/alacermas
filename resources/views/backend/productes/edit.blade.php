@@ -154,12 +154,12 @@
                                             <div class="form-row">
                                                 <div class="form-group col-md-9">
                                                     <div class="form-group">
-                                                        <label>Imatge producte</label>
+                                                        <label>Imatge 1 producte</label>
                                                         <input name="imatge1" type="file" class="file-upload-default">
                                                         <div class="input-group col-xs-12">
-                                                            <input name="imatge1" type="text" class="form-control @error('imatge1') is-invalid @enderror file-upload-info" readonly="readonly" placeholder="Imatge producte" value="{{ old('imatge1') }}">
+                                                            <input name="imatge1" type="text" class="form-control @error('imatge1') is-invalid @enderror file-upload-info" readonly="readonly" placeholder="Imatge 1 producte" value="{{ old('imatge1') }}">
                                                             <span class="input-group-append">
-                                                                <button class="file-upload-browse btn btn-primary" type="button">Cercar producte</button>
+                                                                <button class="file-upload-browse btn btn-primary" type="button">Cercar imatge 1</button>
                                                             </span>
                                                         </div>
                                                     </div>
@@ -167,6 +167,64 @@
                                                 <div class="form-group col-md-3">
                                                     <div class="form-check form-check-danger" style="float:right;">
                                                         <img src='{{ asset("/storage/$producte->imatge1") }}' alt="Alacermas" with=200 height=92>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row grid-margin">
+                                <div class="col-lg-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 style="color:red">Pujar imatges en format: jpg, png o gif</h4>
+                                            <br>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-9">
+                                                    <div class="form-group">
+                                                        <label>Imatge 2 producte (opcional)</label>
+                                                        <input name="imatge2" type="file" class="file-upload-default">
+                                                        <div class="input-group col-xs-12">
+                                                            <input name="imatge2" type="text" class="form-control @error('imatge2') is-invalid @enderror file-upload-info" readonly="readonly" placeholder="Imatge producte" value="{{ old('imatge2') }}">
+                                                            <span class="input-group-append">
+                                                                <button class="file-upload-browse btn btn-primary" type="button">Cercar imatge 2</button>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-md-3">
+                                                    <div class="form-check form-check-danger" style="float:right;">
+                                                        <img src='{{ asset("/storage/$producte->imatge2") }}' alt="Alacermas" with=200 height=92>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row grid-margin">
+                                <div class="col-lg-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 style="color:red">Pujar PDF en format: pdf</h4>
+                                            <br>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-12">
+                                                    <div class="form-group">
+                                                        <label>PDF producte (opcional)</label>
+                                                        @if($producte->pdf)
+                                                            <div class="form-check form-check-danger" style="float:right;">
+                                                                <i class="mdi mdi-file-pdf menu-icon"></i> {{ $producte->pdf }}
+                                                            </div>
+                                                        @endif
+                                                        <input name="pdf" type="file" class="file-upload-default">
+                                                        <div class="input-group col-xs-12">
+                                                            <input name="pdf" type="text" class="form-control @error('pdf') is-invalid @enderror file-upload-info" readonly="readonly" placeholder="PDF producte" value="{{ old('pdf') }}">
+                                                            <span class="input-group-append">
+                                                                <button class="file-upload-browse btn btn-primary" type="button">Cercar PDF</button>
+                                                            </span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>

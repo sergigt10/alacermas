@@ -21,7 +21,9 @@ class Producte extends Model
         'slug',
         'categoria_id',
         'actiu',
-        'imatge1'
+        'imatge1',
+        'imatge2',
+        'pdf'
     ];
 
     public function categoria()

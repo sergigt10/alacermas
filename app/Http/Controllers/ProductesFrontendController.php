@@ -15,24 +15,26 @@ class ProductesFrontendController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index($slug)
     {
-        SEOTools::setTitle('Productes Alacermas');
+        $categoriaParent = Categoria::where('slug','=', $slug)->firstOrFail();
 
-        $categories = Categoria::categoriesPrincipals()->orderBy('nom_esp')->get();
-        
-        return view('frontend.productes.index', compact('categories'));
+        SEOTools::setTitle('Productes Alacermas, '. $categoriaParent->nom_esp);
+
+        $subCategories = Categoria::subCategoria($categoriaParent->id)->orderBy('nom_esp')->get();
+        $productes = Producte::where('categoria_id','=', $categoriaParent->id)->orderBy('nom_esp')->paginate(16, ['*'], 'pagina');
+
+        return view('frontend.productes.index', compact('categoriaParent','subCategories', 'productes'));
     }
 
-    public function subcategoria($slug)
+    public function show($slug)
     {
-        SEOTools::setTitle('Productes Alacermas');
+        $producte = Producte::where('slug','=', $slug)->firstOrFail();
 
-        $productes = Producte::orderBy('nom_esp')->get();
-        $categoriaParent = Categoria::where('slug','=', $slug)->firstOrFail();
-        $subCategories = Categoria::subCategoria($categoriaParent->id)->orderBy('nom_esp')->get();
-        
-        return view('frontend.productes.subcategories', compact('categoriaParent','subCategories'));
+        SEOTools::setTitle($producte->nom_esp.', Alacer Mas');
+        // SEOTools::setDescription(Str::limit(strip_tags($producte->descripcio_esp)), 155, ' (...)');
+
+        return view('frontend.productes.show', compact('producte'));
     }
 
 }
