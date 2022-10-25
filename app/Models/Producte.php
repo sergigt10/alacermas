@@ -31,4 +31,10 @@ class Producte extends Model
         return $this->belongsTo(Categoria::class, 'categoria_id');
     }
 
+    // Relació 1:n producte i taula (S'utilitza en el destroy)
+    public function taules()
+    { 
+        return $this->hasMany(Taula::class, 'producte_id')->latest('id'); 
+    } 
+
 }

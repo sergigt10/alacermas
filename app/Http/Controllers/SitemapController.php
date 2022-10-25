@@ -19,9 +19,9 @@ class SitemapController extends Controller
         $startOfMonth = Carbon::now()->startOfMonth()->format('c');
         $statics = [
             '',
-            'quienes-somos-satelitek',
-            'artistas',
-            'discos',
+            'quienes-somos',
+            'servicios',
+            'historia',
             'libros',
             'videos',
             'contacto-satelitek'

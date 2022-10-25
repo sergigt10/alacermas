@@ -49,7 +49,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="who-we-are">
+                    <div class="who-we-are paragraph">
                         <div class="row">
                             <div class="col-lg-6">
                                 <div>
@@ -82,7 +82,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="who-we-are">
+                    <div class="who-we-are paragraph">
                         <div class="row">
                             <div class="col-lg-6 px-4">
                                 <video width="100%" poster='{{ asset("/frontend/assets/images/video.jpg") }}' controls preload="none">

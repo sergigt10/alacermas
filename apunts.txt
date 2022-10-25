@@ -322,5 +322,9 @@ https://www.youtube.com/watch?v=LZwEv0DISU8
 ** HTTPS **
 https://www.legendblogs.com/how-to-force-redirect-http-to-https-in-laravel-7x-and-6x-and-more
 
+** PDF **
+https://dev.to/codeanddeploy/laravel-8-pdf-tutorial-generate-html-to-pdf-file-using-dompdf-1blm
+
+
 
 

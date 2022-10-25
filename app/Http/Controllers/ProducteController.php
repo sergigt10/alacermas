@@ -218,6 +218,16 @@ class ProducteController extends Controller
             File::delete(storage_path("app/public/$producte->imatge1"));
         }
 
+        if($producte->taules) {
+            /* Eliminar taules excel associades al producte */
+            $producte->taules->each(function ($taula) {
+                if (File::exists(storage_path("app/public/$taula->excel"))) {
+                    File::delete(storage_path("app/public/$taula->excel"));
+                }
+                $taula->delete();
+            });
+        }
+
         $producte->delete();
         
         return redirect()->action('ProducteController@index');

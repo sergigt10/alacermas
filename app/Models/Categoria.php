@@ -25,11 +25,6 @@ class Categoria extends Model
         return $this->parent_id !== null;
     }
 
-    public function scopeCategoriesPrincipals($query)
-    {
-        return $query->where('parent_id', '=', NULL);
-    }
-
     public function scopeSubCategoria($query, $categoria_id)
     {
         return $query->where('parent_id', '=', $categoria_id);

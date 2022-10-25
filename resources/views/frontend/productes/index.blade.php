@@ -24,6 +24,20 @@
                 </div>
             </div>
         @endif
+        <section class="gap buscador">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="update-buscador d-flex-all justify-content-between">
+                            <form>
+                                <input type="text" name="text" placeholder="Buscador">
+                                <button type="submit"><i class="fas fa-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">

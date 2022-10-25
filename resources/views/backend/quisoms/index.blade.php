@@ -27,7 +27,7 @@
                                         <tr>
                                             <th>Nom</th>
                                             <th data-orderable="false">Editar</th>
-                                            <th data-orderable="false">Eliminar</th>
+                                            {{-- <th data-orderable="false">Eliminar</th> --}}
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -43,11 +43,11 @@
                                                         <i class="mdi mdi-pencil menu-icon"></i>
                                                     </a>
                                                 </td>
-                                                <td>
+                                                {{-- <td>
                                                     <a href="" style="color: black;" data-toggle="modal" data-target="#exampleModalCenter{{$quisom->id}}">
                                                         <i class="mdi mdi-close-circle menu-icon"></i>
                                                     </a>
-                                                </td>
+                                                </td> --}}
                                             </tr>
                                             <div class="modal fade" id="exampleModalCenter{{$quisom->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                                 <div class="modal-dialog modal-dialog-centered" role="document">

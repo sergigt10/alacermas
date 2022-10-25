@@ -117,6 +117,7 @@ button.scrollTopStick.active,
 .pd-details .nav-pills .nav-link.active {
     background-color: #0D476D !important;
     color: #FFF !important;
+    cursor: default;
 }
 
 .heading.heading-style-3 h2 span:before {

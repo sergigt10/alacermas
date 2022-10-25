@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     @foreach ($statics as $static)
         <url>
-            <loc>https://www.satelitek.com/{{ $static }}</loc>
+            <loc>https://www.alacermas.com/{{ $static }}</loc>
             <lastmod>{{ $startOfMonth }}</lastmod>
             <changefreq>{{ ( $static !== 'contacto-satelitek' && $static !== 'quienes-somos-satelitek' ) ? 'monthly' : 'yearly' }}</changefreq>
             <priority>0.9</priority>

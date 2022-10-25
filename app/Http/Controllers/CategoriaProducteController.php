@@ -32,7 +32,7 @@ class CategoriaProducteController extends Controller
             return $title;
         }
         $parent = Categoria::find($category->parent_id);
-        $title = '<a href="'.$parent->slug.'">'. $parent->nom_cat .'</a>&nbsp; / &nbsp;' . $title;
+        $title = '<a href="'. route("frontend.productes.index", ["categoria" => $parent->slug]) .'">'. $parent->nom_cat .'</a>&nbsp; / &nbsp;' . $title;
         return CategoriaProducteController::getParentsTreeFrontend($parent, $title);
     }
 
