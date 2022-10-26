@@ -24,8 +24,9 @@
                 <div class="col-lg-12">
                     <div class="gap buscador">
                         <div class="update-buscador d-flex-all justify-content-between">
-                            <form>
-                                <input type="text" name="text" placeholder="Buscador">
+                            <form id="filtre" action="{{ route('frontend.productes.search') }}" method="POST">
+                                @csrf
+                                <input type="text" name="buscador" placeholder="Buscador">
                                 <button type="submit"><i class="fas fa-search"></i></button>
                             </form>
                         </div>
@@ -53,19 +54,16 @@
                                         {!! $producte->descripcio_esp !!}
                                     </div>
                                     <div class="pd-cat-tags">
-                                        @if ($producte->pdf)
-                                            <ul>
-                                                <li>
+                                        <ul>
+                                            <li>
+                                                @if ($producte->pdf)
                                                     <span class="theme-bg-clr font-bold">
                                                         <i class="fa-regular fa-file"></i> <a href="{{ asset("/storage/$producte->pdf") }}" target="_blank" style="color:#0d476d">Catálogo</a>
                                                     </span>
-                                                </li>
-                                            </ul>
-                                        @endif
-                                        <ul>
-                                            <li>
+                                                    &nbsp;-&nbsp;&nbsp;&nbsp;
+                                                @endif
                                                 <span class="theme-bg-clr font-bold">
-                                                    <i class="fa-regular fa-file-pdf"></i> <a href="{{ asset("/storage/$producte->pdf") }}" target="_blank" style="color:#0d476d">Descargar PDF</a>
+                                                    <i class="fa-regular fa-file-pdf"></i> <a href="{{ route('pdf', ['producte' => $producte->slug]) }}" target="_blank" style="color:#0d476d">Generar PDF</a>
                                                 </span>
                                             </li>
                                         </ul>

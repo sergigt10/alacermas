@@ -25,6 +25,8 @@ Route::get('/certificacions', 'CertificacionsFrontendController@index')->name('f
 /* Productos */
 Route::get('/categoria/{categoria}', 'ProductesFrontendController@index')->name('frontend.productes.index');
 Route::get('/producto/{producte}', 'ProductesFrontendController@show')->name('frontend.productes.show');
+Route::get('/pdf/{producte}', 'ProductesFrontendController@pdfProduct')->name('pdf');
+Route::match(['get', 'post'],'/buscador-productos', 'ProductesFrontendController@search')->name('frontend.productes.search');
 
 /* Centros */
 Route::get('/centros', 'CentresFrontendController@index')->name('frontend.centres.index');

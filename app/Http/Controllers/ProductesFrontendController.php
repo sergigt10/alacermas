@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use PDF;
+
 use App\Models\Producte;
 use App\Models\Categoria;
 
@@ -40,6 +42,27 @@ class ProductesFrontendController extends Controller
         return view('frontend.productes.show', compact('producte', 'subCategories'));
     }
 
+    public function search(Request $request)
+    {
+        SEOTools::setTitle('Buscador Alacer Mas');
+
+        $buscador = $request->input('buscador');
+
+        if($buscador === null) {
+            
+        } else {
+            $productes = Producte::orWhere('nom_esp','LIKE','%'.$buscador.'%')
+                    ->orWhere('nom_cat','LIKE','%'.$buscador.'%')
+                    ->orWhere('nom_fra','LIKE','%'.$buscador.'%')
+                    ->orWhere('nom_eng','LIKE','%'.$buscador.'%')
+                    ->paginate(9, ['*'], 'pagina');
+        }
+
+        die($productes);
+        
+        return view('frontend.productes.search', compact('productes'));
+    }
+
     public function excelProduct($excel, $posicioTitol){
         // (A) PHPSPREADSHEET TO LOAD EXCEL FILE
         $spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load($excel);
@@ -65,6 +88,21 @@ class ProductesFrontendController extends Controller
             }
             $count++;
         }
+    }
+
+    public function pdfProduct($slug){
+
+        $producte = Producte::where('slug','=', $slug)->firstOrFail();
+
+        $pdf = PDF::loadView('frontend.productes.pdf', [
+            'titol' => $producte->nom_esp,
+            'descripcio' => $producte->descripcio_esp,
+            'imatge1' => $producte->imatge1,
+            'imatge2' => $producte->imatge2,
+            'taules' => $producte->taules,
+        ]);
+
+        return $pdf->download($producte->slug.'.pdf');
     }
 
 }
