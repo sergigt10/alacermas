@@ -1,13 +1,25 @@
 @extends('frontend.layouts.app')
 
 @section('content')
+<section class="banner-style-one">
+    <div class="parallax" style="background-image: url({{ asset('frontend/assets/images/servicios-alacermas.jpg') }});"></div>
     <div class="container">
-        <div class="ps-page__content">
-            <div class="ps-web--404">
-                <div class="ps-form__header"><i class="icon-confused"></i></div>
-                <h3>@lang("Error 404. Pàgina no disponible.")</h3>
-                <p>@lang("Torna a la") <a href="{{ route('frontend.inici.index') }}">@lang("pàgina d'inici")</a></p>
+        <div class="row">
+            <div class="banner-details">
+                <h2>Error 404</h2>
             </div>
         </div>
     </div>
+</section>
+
+<section class="gap product-detail light-bg-transparent">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                Página no disponible. <a href="{{ route('frontend.inici.index') }}">Volver a la página de inicio</a>
+            </div>
+        </div>
+    </div>
+</section>
+
 @endsection

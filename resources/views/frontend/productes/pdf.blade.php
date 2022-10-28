@@ -1,6 +1,7 @@
 <html>
     <head>
         <title>{{ $titol }}</title>
+        <link rel="icon" type="image/x-icon" href="{{ public_path("frontend/assets/images/favicon.png") }}">
     </head>
     <style>
         body{
@@ -55,7 +56,7 @@
         }
     </style>
     <body>
-        <img src="{{ public_path("backend/images/logo.png") }}" alt="{{ $titol }}">
+        <img src="{{ public_path("frontend/assets/images/logo-pdf.jpg") }}" alt="{{ $titol }}" width="300px">
         <br>
         <p class="titol-pdf">
             {{ $titol }}

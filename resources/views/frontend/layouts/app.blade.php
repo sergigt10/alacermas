@@ -135,10 +135,10 @@
                         <li class="menu-item-has-children">
                             <a href="javascript:void(0)">PRODUCTOS</a>
                             <ul class="sub-menu">
-                            <li><a href="#">ACERO INOXIDABLE</a></li>
-                            <li><a href="#">NORMALIZADOS INOXIDABLE</a></li>
-                            <li><a href="#">SUBMINISTROS INDUSTRIALES</a></li>
-                            <li><a href="#">ALUMINIO</a></li>
+                                <li><a href="{{ route('frontend.productes.index', ['categoria' => 'acero-inoxidable']) }}">ACERO INOXIDABLE</a></li>
+                                <li><a href="{{ route('frontend.productes.index', ['categoria' => 'normalizados-inoxidable']) }}">NORMALIZADOS INOXIDABLE</a></li>
+                                <li><a href="{{ route('frontend.productes.index', ['categoria' => 'suministros-industriales']) }}">SUMINISTROS INDUSTRIALES</a></li>
+                                <li><a href="{{ route('frontend.productes.index', ['categoria' => 'aluminio']) }}">ALUMINIO</a></li>
                             </ul>
                         </li>
                         <li>

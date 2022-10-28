@@ -48,17 +48,15 @@ class ProductesFrontendController extends Controller
 
         $buscador = $request->input('buscador');
 
-        if($buscador === null) {
-            
+        if($buscador === null || $buscador === '') {
+            abort(404);
         } else {
-            $productes = Producte::orWhere('nom_esp','LIKE','%'.$buscador.'%')
+            $productes = Producte::where('nom_esp','LIKE','%'.$buscador.'%')
                     ->orWhere('nom_cat','LIKE','%'.$buscador.'%')
                     ->orWhere('nom_fra','LIKE','%'.$buscador.'%')
                     ->orWhere('nom_eng','LIKE','%'.$buscador.'%')
                     ->paginate(9, ['*'], 'pagina');
         }
-
-        die($productes);
         
         return view('frontend.productes.search', compact('productes'));
     }

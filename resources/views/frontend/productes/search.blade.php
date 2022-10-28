@@ -3,7 +3,7 @@
 @section('content')
 
     <section class="banner-style-one">
-        <div class="parallax" style="background-image: url({{ asset('frontend/assets/images/producto-alacermas.jpg') }});"></div>
+        <div class="parallax" style="background-image: url({{ asset('frontend/assets/images/servicios-alacermas.jpg') }});"></div>
         <div class="container">
             <div class="row">
                 <div class="banner-details">
@@ -18,7 +18,7 @@
                 <div class="col-lg-12">
                     <div class="container">
                         <div class="row p-slider align-items-center grid">
-                            <div class="col-lg-12">
+                            <div class="col-lg-12 mt-5">
                                 <a href="{{ url()->previous() }}"><i class="fas fa-chevron-left"></i> Volver atràs</a>
                             </div>
                             @if (!$productes->isEmpty()) 

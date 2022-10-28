@@ -3,7 +3,7 @@
 @section('content')
 
     <section class="banner-style-one">
-        <div class="parallax" style="background-image: url({{ asset('frontend/assets/images/producto-alacermas.jpg') }});"></div>
+        <div class="parallax" style="background-image: url({{ asset('frontend/assets/images/servicios-alacermas.jpg') }});"></div>
         <div class="container">
             <div class="row">
                 <div class="banner-details">
@@ -28,12 +28,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3">
-                        <div class="update-buscador d-flex-all justify-content-between">
-                            <form>
-                                <input type="text" name="text" placeholder="Buscador">
-                                <button type="submit"><i class="fas fa-search"></i></button>
-                            </form>
-                        </div>
+                        <x-searchHTML />
                     </div>
                 </div>
             </div>
@@ -41,15 +36,42 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
-                    <ul class="categorias">
-                        <span class="categorias-parent"><b>{{ $categoriaParent->nom_esp }}</b></span>
-                        {{-- <i class="fa-sharp fa-solid fa-angle-down"></i> --}}
-                        @foreach ($subCategories as $categoria)
-                            <li class="categoria">
-                                <a href="{{ route('frontend.productes.index', ['categoria' => $categoria->slug]) }}">{{ $categoria->nom_esp }}</a>
-                            </li>
-                        @endforeach
-                    </ul>
+                    @if((new \Jenssegers\Agent\Agent())->isDesktop())
+                        <ul class="categorias">
+                            <span class="categorias-parent"><b>{{ $categoriaParent->nom_esp }}</b></span>
+                            {{-- <i class="fa-sharp fa-solid fa-angle-down"></i> --}}
+                            @foreach ($subCategories as $categoria)
+                                <li class="categoria">
+                                    <a href="{{ route('frontend.productes.index', ['categoria' => $categoria->slug]) }}">{{ $categoria->nom_esp }}</a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    @endif
+
+                    @if((new \Jenssegers\Agent\Agent())->isMobile())
+                        <div class="acc2">
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="heading-One">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-One" aria-expanded="false" aria-controls="collapse-One">
+                                            {{ $categoriaParent->nom_esp }}
+                                        </button>
+                                    </h2>
+                                    <div id="collapse-One" class="accordion-collapse collapse" aria-labelledby="heading-One" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <ul>
+                                                @foreach ($subCategories as $categoria)
+                                                    <li class="categoria">
+                                                        <a href="{{ route('frontend.productes.index', ['categoria' => $categoria->slug]) }}">{{ $categoria->nom_esp }}</a>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
                 </div>
                 <div class="col-lg-9">
                     <div class="container">

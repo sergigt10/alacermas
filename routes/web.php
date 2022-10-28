@@ -11,31 +11,33 @@ Route::get('lang/{locale}', [App\Http\Controllers\LocalizationController::class,
 Route::get('/', 'HomeFrontendController@index')->name('frontend.inici.index');
 
 /* Historia */
-Route::get('/historia', 'HistoriaFrontendController@index')->name('frontend.historia.index');
+Route::get('/historia-alacer-mas', 'HistoriaFrontendController@index')->name('frontend.historia.index');
 
 /* Quiénes somos */
-Route::get('/quienes-somos', 'QuiSomFrontendController@index')->name('frontend.quisom.index');
+Route::get('/quienes-somos-alacer-mas', 'QuiSomFrontendController@index')->name('frontend.quisom.index');
 
 /* Servicios */
-Route::get('/servicios', 'ServeisFrontendController@index')->name('frontend.serveis.index');
+Route::get('/servicios-acero-inoxidable', 'ServeisFrontendController@index')->name('frontend.serveis.index');
 
 /* Certificacions */
-Route::get('/certificacions', 'CertificacionsFrontendController@index')->name('frontend.certificacions.index');
+Route::get('/certificacions-alacer-mas', 'CertificacionsFrontendController@index')->name('frontend.certificacions.index');
 
 /* Productos */
 Route::get('/categoria/{categoria}', 'ProductesFrontendController@index')->name('frontend.productes.index');
 Route::get('/producto/{producte}', 'ProductesFrontendController@show')->name('frontend.productes.show');
 Route::get('/pdf/{producte}', 'ProductesFrontendController@pdfProduct')->name('pdf');
-Route::match(['get', 'post'],'/buscador-productos', 'ProductesFrontendController@search')->name('frontend.productes.search');
+Route::match(['get', 'post'], '/buscador-productos', 'ProductesFrontendController@search')->name('frontend.productes.search');
 
 /* Centros */
-Route::get('/centros', 'CentresFrontendController@index')->name('frontend.centres.index');
+Route::get('/centros-alacer-mas', 'CentresFrontendController@index')->name('frontend.centres.index');
 
 /* Contacto */
-Route::get('/contacto', 'HomeFrontendController@contacte')->name('frontend.contacte.index');
+Route::get('/contacto-alacer-mas', 'ContacteFrontendController@index')->name('frontend.contacte.index');
+Route::post('/contacto-alacer-mas/enviar', 'ContacteFrontendController@sendContacte')->name('frontend.sendContacte');
 
 /* treballaAmbNosaltres */
-Route::get('/trabaja-con-nosotros', 'HomeFrontendController@treballaAmbNosaltres')->name('frontend.treballaAmbNosaltres.index');
+Route::get('/trabaja-con-nosotros-alacer-mas', 'TrabajaFrontendController@index')->name('frontend.treballaAmbNosaltres.index');
+Route::post('/trabaja-con-nosotros-alacer-mas/enviar', 'TrabajaFrontendController@sendTrabaja')->name('frontend.sendTrabaja');
 
 /* Aviso legal */
 Route::get('/aviso-legal', 'HomeFrontendController@avisLegal')->name('frontend.avisLegal.index');

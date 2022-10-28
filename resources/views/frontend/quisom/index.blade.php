@@ -60,10 +60,6 @@
                                 <figure>
                                     <img src='{{ asset("/storage/$quisom->imatge_obje1") }}' alt="Alacer Mas" class="img-fluid">
                                 </figure>
-                                <br>
-                                <figure>
-                                    <img src='{{ asset("/storage/$quisom->imatge_obje2") }}' alt="Alacer Mas" class="img-fluid">
-                                </figure>
                             </div>
                         </div>
                     </div>

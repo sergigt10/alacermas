@@ -24,7 +24,6 @@ class Quisom extends Model
         'descripcio_fra_video',
         'imatge_pres1',
         'imatge_pres2',
-        'imatge_obje1',
-        'imatge_obje2'
+        'imatge_obje1'
     ];
 }

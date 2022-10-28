@@ -94,11 +94,6 @@
                                     <strong>{{ $message }}</strong>
                                 </div>
                             @enderror
-                            @error('imatge_obje2')
-                                <div class='alert alert-danger' role='alert'>
-                                    <strong>{{ $message }}</strong>
-                                </div>
-                            @enderror
 
                             <div class="form-group">
                                 <label for="exampleInputEmail3">Descripció ESP presentació *:</label>
@@ -276,35 +271,6 @@
                                                 <div class="form-group col-md-3">
                                                     <div class="form-check form-check-danger" style="float:right;">
                                                         <img src='{{ asset("/storage/$quisom->imatge_obje1") }}' alt="Alacermas" with=200 height=92>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row grid-margin">
-                                <div class="col-lg-12">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h4 style="color:red">Pujar imatges en format: jpg, png o gif</h4>
-                                            <br>
-                                            <div class="form-row">
-                                                <div class="form-group col-md-9">
-                                                    <div class="form-group">
-                                                        <label>Imatge missió i objectius 2</label>
-                                                        <input name="imatge_obje2" type="file" class="file-upload-default">
-                                                        <div class="input-group col-xs-12">
-                                                            <input name="imatge_obje2" type="text" class="form-control @error('imatge_obje2') is-invalid @enderror file-upload-info" readonly="readonly" placeholder="Imatge" value="{{ old('imatge_obje2') }}">
-                                                            <span class="input-group-append">
-                                                                <button class="file-upload-browse btn btn-primary" type="button">Cercar imatge missió i objectius 2</button>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group col-md-3">
-                                                    <div class="form-check form-check-danger" style="float:right;">
-                                                        <img src='{{ asset("/storage/$quisom->imatge_obje2") }}' alt="Alacermas" with=200 height=92>
                                                     </div>
                                                 </div>
                                             </div>

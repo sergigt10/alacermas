@@ -37,49 +37,57 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-12" >
-                    <div class="history-data">
-                        <figure>
-                            <img class="w-100" src="{{ asset('frontend/assets/images/acero-inox.jpg') }}" alt="Alacermas acero inoxidable">
-                        </figure>
-                        <div class="details">
-                            <h3>Acero inoxidable</h3>
-                            <p>Contamos con varias líneas de pulido y satinado de tubos y  perfiles, para decoración y para la industria alimentaria y farmacéutica.</p>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <a href="{{ route('frontend.productes.index', ['categoria' => 'acero-inoxidable']) }}">
+                        <div class="history-data">
+                            <figure>
+                                <img class="w-100" src="{{ asset('frontend/assets/images/acero-inox.jpg') }}" alt="Alacermas acero inoxidable">
+                            </figure>
+                            <div class="details">
+                                <h3>Acero inoxidable</h3>
+                                <p>Contamos con varias líneas de pulido y satinado de tubos y  perfiles, para decoración y para la industria alimentaria y farmacéutica.</p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-12" >
-                    <div class="history-data">
-                        <figure>
-                            <img class="w-100" src="{{ asset('frontend/assets/images/normalizados-inoxidable.jpg') }}" alt="Alacermas acero inoxidable">
-                        </figure>
-                        <div class="details">
-                            <h3>Normalizados inoxidable</h3>
-                            <p>Los cilindros inoxidables que fabricamos están dentro de la norma ISO. Son intercambiables con las marcas existentes en el mercados.</p>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <a href="{{ route('frontend.productes.index', ['categoria' => 'normalizados-inoxidable']) }}">
+                        <div class="history-data">
+                            <figure>
+                                <img class="w-100" src="{{ asset('frontend/assets/images/normalizados-inoxidable.jpg') }}" alt="Alacermas acero inoxidable">
+                            </figure>
+                            <div class="details">
+                                <h3>Normalizados inoxidable</h3>
+                                <p>Los cilindros inoxidables que fabricamos están dentro de la norma ISO. Son intercambiables con las marcas existentes en el mercados.</p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-12" >
-                    <div class="history-data">
-                        <figure>
-                            <img class="w-100" src="{{ asset('frontend/assets/images/suministros-industriales.jpg') }}" alt="Alacermas acero inoxidable">
-                        </figure>
-                        <div class="details">
-                            <h3>Suministros Industriales</h3>
-                            <p>Somos una empresa de suministros industriales con experiencia, tornillería industrial, abrasivos y maquinaria, herramientas y ferretería industrial.</p>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <a href="{{ route('frontend.productes.index', ['categoria' => 'suministros-industriales']) }}">
+                        <div class="history-data">
+                            <figure>
+                                <img class="w-100" src="{{ asset('frontend/assets/images/suministros-industriales.jpg') }}" alt="Alacermas acero inoxidable">
+                            </figure>
+                            <div class="details">
+                                <h3>Suministros Industriales</h3>
+                                <p>Somos una empresa de suministros industriales con experiencia, tornillería industrial, abrasivos y maquinaria, herramientas y ferretería industrial.</p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-12" >
-                    <div class="history-data">
-                        <figure>
-                            <img class="w-100" src="{{ asset('frontend/assets/images/alumi.jpg') }}" alt="Alacermas acero inoxidable">
-                        </figure>
-                        <div class="details">
-                            <h3>Aluminio</h3>
-                            <p>Empresa dedicada a la venta y distribución de chapas y perfiles de aluminio a medida y en aleaciones especiales.</p>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <a href="{{ route('frontend.productes.index', ['categoria' => 'aluminio']) }}">
+                        <div class="history-data">
+                            <figure>
+                                <img class="w-100" src="{{ asset('frontend/assets/images/alumi.jpg') }}" alt="Alacermas acero inoxidable">
+                            </figure>
+                            <div class="details">
+                                <h3>Aluminio</h3>
+                                <p>Empresa dedicada a la venta y distribución de chapas y perfiles de aluminio a medida y en aleaciones especiales.</p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -110,13 +118,17 @@
                             <li>
                         @endif
                                 <h3><a href="{{ route('frontend.centres.index') }}">{{ $centre->titol_esp }}</a></h3>
-                                <span class="location">
-                                    <span>Localización:</span>
-                                    <span>{{ $centre->localitzacio }}</span>
-                                </span>
-                                <figure>
-                                    <img src='{{ asset("/storage/$centre->imatge1") }}' alt="Alacer Mas {{ $centre->localitzacio }}">
-                                </figure>
+                                <a href="{{ route('frontend.centres.index') }}">
+                                    <span class="location">
+                                        <span>Localización:</span>
+                                        <span>{{ $centre->localitzacio }}</span>
+                                    </span>
+                                </a>
+                                <a href="{{ route('frontend.centres.index') }}">
+                                    <figure>
+                                        <img src='{{ asset("/storage/$centre->imatge1") }}' alt="Alacer Mas {{ $centre->localitzacio }}">
+                                    </figure>
+                                </a>
                             </li>
                     @endforeach
                 </ul>

@@ -325,6 +325,10 @@ https://www.legendblogs.com/how-to-force-redirect-http-to-https-in-laravel-7x-an
 ** PDF **
 https://dev.to/codeanddeploy/laravel-8-pdf-tutorial-generate-html-to-pdf-file-using-dompdf-1blm
 
+** Mobile detect **
+https://codingdriver.com/laravel-detect-mobile-device-or-desktop.html
+https://github.com/jenssegers/agent
+
 
 
 

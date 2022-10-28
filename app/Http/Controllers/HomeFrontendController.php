@@ -22,20 +22,6 @@ class HomeFrontendController extends Controller
         return view('frontend.inici.index', compact('centres'));
     }
 
-    public function contacte()
-    {
-        SEOTools::setTitle('Contacto Alacermas');
-        
-        return view('frontend.contacte.index');
-    }
-
-    public function treballaAmbNosaltres()
-    {
-        SEOTools::setTitle('Trabaja con nosotros Alacermas');
-        
-        return view('frontend.treballaAmbNosaltres.index');
-    }
-
     public function avisLegal()
     {
         SEOTools::setTitle('Aviso legal Alacermas');

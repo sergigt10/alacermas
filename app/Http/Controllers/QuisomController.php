@@ -56,29 +56,24 @@ class QuisomController extends Controller
             'descripcio_fra_video' => 'required',
             'imatge_pres1' => 'required|image|max:10240|mimes:jpeg,png,jpg,gif,svg',
             'imatge_pres2' => 'required|image|max:10240|mimes:jpeg,png,jpg,gif,svg',
-            'imatge_obje1' => 'required|image|max:10240|mimes:jpeg,png,jpg,gif,svg',
-            'imatge_obje2' => 'required|image|max:10240|mimes:jpeg,png,jpg,gif,svg',
+            'imatge_obje1' => 'required|image|max:10240|mimes:jpeg,png,jpg,gif,svg'
         ]);/* Max foto 10 MB */
 
         $ruta_imatge_pres1 = $request['imatge_pres1']->store('backend/quisoms', 'public');
         $ruta_imatge_pres2 = $request['imatge_pres2']->store('backend/quisoms', 'public');
         $ruta_imatge_obje1 = $request['imatge_obje1']->store('backend/quisoms', 'public');
-        $ruta_imatge_obje2 = $request['imatge_obje2']->store('backend/quisoms', 'public');
 
         $imatge_pres1 = Image::make( storage_path("app/public/{$ruta_imatge_pres1}") )->fit(413, 560, function($constraint){$constraint->aspectRatio();});
         $imatge_pres1->save();
         $imatge_pres2 = Image::make( storage_path("app/public/{$ruta_imatge_pres2}") )->fit(280, 340, function($constraint){$constraint->aspectRatio();});
         $imatge_pres2->save();
-        $imatge_obje1 = Image::make( storage_path("app/public/{$ruta_imatge_obje1}") )->fit(465, 261, function($constraint){$constraint->aspectRatio();});
+        $imatge_obje1 = Image::make( storage_path("app/public/{$ruta_imatge_obje1}") )->fit(894, 638, function($constraint){$constraint->aspectRatio();});
         $imatge_obje1->save();
-        $imatge_obje2 = Image::make( storage_path("app/public/{$ruta_imatge_obje2}") )->fit(465, 261, function($constraint){$constraint->aspectRatio();});
-        $imatge_obje2->save();
 
         $quisom = new Quisom($data);
         $quisom->imatge_pres1 = $ruta_imatge_pres1;
         $quisom->imatge_pres2 = $ruta_imatge_pres2;
         $quisom->imatge_obje1 = $ruta_imatge_obje1;
-        $quisom->imatge_obje2 = $ruta_imatge_obje2;
         $quisom->save();
 
         // Redireccionar
@@ -181,7 +176,7 @@ class QuisomController extends Controller
 
             $ruta_imatge_obje1 = $request['imatge_obje1']->store('backend/quisoms', 'public');
 
-            $img = Image::make( storage_path("app/public/{$ruta_imatge_obje1}") )->fit(280, 340, function($constraint){$constraint->aspectRatio();});
+            $img = Image::make( storage_path("app/public/{$ruta_imatge_obje1}") )->fit(894, 638, function($constraint){$constraint->aspectRatio();});
             $img->save();
 
             // Eliminamos la imagen anterior
@@ -189,21 +184,6 @@ class QuisomController extends Controller
                 File::delete(storage_path("app/public/$quisom->imatge_obje1"));
                 // Asignar al objeto
                 $quisom->imatge_obje1 = $ruta_imatge_obje1;
-            }  
-        }
-
-        if($request['imatge_obje2']) {
-
-            $ruta_imatge_obje2 = $request['imatge_obje2']->store('backend/quisoms', 'public');
-
-            $img = Image::make( storage_path("app/public/{$ruta_imatge_obje2}") )->fit(465, 261, function($constraint){$constraint->aspectRatio();});
-            $img->save();
-
-            // Eliminamos la imagen anterior
-            if (File::exists(storage_path("app/public/$quisom->imatge_obje2"))) {
-                File::delete(storage_path("app/public/$quisom->imatge_obje2"));
-                // Asignar al objeto
-                $quisom->imatge_obje2 = $ruta_imatge_obje2;
             }  
         }
 
@@ -230,9 +210,6 @@ class QuisomController extends Controller
         }
         if (File::exists(storage_path("app/public/$quisom->imatge_obje1"))) {
             File::delete(storage_path("app/public/$quisom->imatge_obje1"));
-        }
-        if (File::exists(storage_path("app/public/$quisom->imatge_obje2"))) {
-            File::delete(storage_path("app/public/$quisom->imatge_obje2"));
         }
 
         $quisom->delete();

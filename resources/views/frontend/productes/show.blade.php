@@ -23,62 +23,81 @@
                 </div>
                 <div class="col-lg-12">
                     <div class="gap buscador">
-                        <div class="update-buscador d-flex-all justify-content-between">
-                            <form id="filtre" action="{{ route('frontend.productes.search') }}" method="POST">
-                                @csrf
-                                <input type="text" name="buscador" placeholder="Buscador">
-                                <button type="submit"><i class="fas fa-search"></i></button>
-                            </form>
-                        </div>
+                        <x-searchHTML />
                     </div>
                 </div>
                 <div class="col-lg-3">
-                    <ul class="categorias">
-                        <span class="categorias-parent"><b>{{ $producte->categoria->nom_esp }}</b></span>
-                        {{-- <i class="fa-sharp fa-solid fa-angle-down"></i> --}}
-                        @foreach ($subCategories as $categoria)
-                            <li class="categoria">
-                                <a href="{{ route('frontend.productes.index', ['categoria' => $categoria->slug]) }}">{{ $categoria->nom_esp }}</a>
-                            </li>
-                        @endforeach
-                    </ul>
-                </div>
-                <div class="col-lg-9">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-8">
-                                <div class="pd-data">
-                                    <h2>{{ $producte->nom_esp }}</h2>
-                                    <br>
-                                    <div class="text-justify">
-                                        {!! $producte->descripcio_esp !!}
-                                    </div>
-                                    <div class="pd-cat-tags">
-                                        <ul>
-                                            <li>
-                                                @if ($producte->pdf)
-                                                    <span class="theme-bg-clr font-bold">
-                                                        <i class="fa-regular fa-file"></i> <a href="{{ asset("/storage/$producte->pdf") }}" target="_blank" style="color:#0d476d">Catálogo</a>
-                                                    </span>
-                                                    &nbsp;-&nbsp;&nbsp;&nbsp;
-                                                @endif
-                                                <span class="theme-bg-clr font-bold">
-                                                    <i class="fa-regular fa-file-pdf"></i> <a href="{{ route('pdf', ['producte' => $producte->slug]) }}" target="_blank" style="color:#0d476d">Generar PDF</a>
-                                                </span>
-                                            </li>
-                                        </ul>
+                    @if((new \Jenssegers\Agent\Agent())->isDesktop())
+                        <ul class="categorias">
+                            <span class="categorias-parent"><b>{{ $producte->categoria->nom_esp }}</b></span>
+                            {{-- <i class="fa-sharp fa-solid fa-angle-down"></i> --}}
+                            @foreach ($subCategories as $categoria)
+                                <li class="categoria">
+                                    <a href="{{ route('frontend.productes.index', ['categoria' => $categoria->slug]) }}">{{ $categoria->nom_esp }}</a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    @endif
+
+                    @if((new \Jenssegers\Agent\Agent())->isMobile())
+                        <div class="acc2">
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="heading-One">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-One" aria-expanded="false" aria-controls="collapse-One">
+                                            {{ $producte->categoria->nom_esp }}
+                                        </button>
+                                    </h2>
+                                    <div id="collapse-One" class="accordion-collapse collapse" aria-labelledby="heading-One" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <ul>
+                                                @foreach ($subCategories as $categoria)
+                                                    <li class="categoria">
+                                                        <a href="{{ route('frontend.productes.index', ['categoria' => $categoria->slug]) }}">{{ $categoria->nom_esp }}</a>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4">
-                                <br><br><br>
-                                <img src="{{ asset("/storage/$producte->imatge1") }}" alt="Alacer Mas, {{ $producte->nom_esp }}" class="img-fluid">
-                                @if ($producte->imatge2)
-                                    <div class="imatge-2 mt-4">
-                                        <img src="{{ asset("/storage/$producte->imatge2") }}" alt="Alacer Mas, {{ $producte->nom_esp }}" class="img-fluid">
-                                    </div>
-                                @endif
+                        </div>
+                    @endif
+                </div>
+                <div class="col-lg-9">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="pd-data">
+                                <h2>{{ $producte->nom_esp }}</h2>
+                                <br>
+                                <div class="text-justify">
+                                    {!! $producte->descripcio_esp !!}
+                                </div>
+                                <div class="pd-cat-tags">
+                                    <ul>
+                                        <li>
+                                            @if ($producte->pdf)
+                                                <span class="theme-bg-clr font-bold">
+                                                    <i class="fa-regular fa-file"></i> <a href="{{ asset("/storage/$producte->pdf") }}" target="_blank" style="color:#0d476d">Catálogo</a>
+                                                </span>
+                                                &nbsp;-&nbsp;&nbsp;&nbsp;
+                                            @endif
+                                            <span class="theme-bg-clr font-bold">
+                                                <i class="fa-regular fa-file-pdf"></i> <a href="{{ route('pdf', ['producte' => $producte->slug]) }}" target="_blank" style="color:#0d476d">Generar PDF</a>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
+                        </div>
+                        <div class="col-lg-4 text-center">
+                            <br><br><br>
+                            <img src="{{ asset("/storage/$producte->imatge1") }}" alt="Alacer Mas, {{ $producte->nom_esp }}" class="img-fluid">
+                            @if ($producte->imatge2)
+                                <div class="imatge-2 mt-4">
+                                    <img src="{{ asset("/storage/$producte->imatge2") }}" alt="Alacer Mas, {{ $producte->nom_esp }}" class="img-fluid">
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -99,11 +118,13 @@
                                 <div class="tab-content" id="v-pills-tabContent">
                                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                                         <div class="des-tab">
-                                            <table class="table table-bordered table-hover">
-                                                @foreach ($producte->taules as $producteTaula)
-                                                    {{ \App\Http\Controllers\ProductesFrontendController::excelProduct(__DIR__ .'/../../app/public/'.$producteTaula->excel, $producteTaula->files_th_excel) }}
-                                                @endforeach
-                                            </table>
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered table-hover">
+                                                    @foreach ($producte->taules as $producteTaula)
+                                                        {{ \App\Http\Controllers\ProductesFrontendController::excelProduct(__DIR__ .'/../../app/public/'.$producteTaula->excel, $producteTaula->files_th_excel) }}
+                                                    @endforeach
+                                                </table>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

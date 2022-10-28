@@ -542,6 +542,9 @@ textarea {
     display: flex;
     align-items: center;
 }
+.acc2 {
+    margin-bottom: 25px;
+}
 .acc2 .accordion-item button {
     font-size: 18px;
     font-weight: bold;
@@ -571,7 +574,7 @@ textarea {
     position: absolute;
     bottom: 0;
     right: 0px;
-    border-top: 76px solid #ffee02;
+    border-top: 76px solid #b6c7d3;
     border-left: 0px solid #eee;
     border-right: 30px solid transparent;
     border-bottom: 0px solid #eee;
@@ -3804,9 +3807,9 @@ span.odometer {
 .product-style-one.addition .categoria-filter {
     /* border: 1px solid #c1c1c1; */
     /* margin-bottom: 60px; */
-    display: flex;
+    /* display: flex; */
     /* justify-content: space-between; */
-    align-items: center;
+    /* align-items: center; */
     /* padding: 20px; */
 }
 .product-style-one.addition .categoria-filter > p {
@@ -6823,7 +6826,7 @@ ul.categorias li {
 }
 
 li.categoria {
-    padding: 10px
+    padding: 10px;
 }
 
 .categoria-filter a:hover{
