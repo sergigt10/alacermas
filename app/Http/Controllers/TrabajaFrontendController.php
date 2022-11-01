@@ -26,7 +26,7 @@ class TrabajaFrontendController extends Controller
         $captcha = $request->g-recaptcha-response;
         if($captcha != ''){
             // your secret key
-            $secret = "6LcxjHQUAAAAAI8g-KkauLbNkxYmWm8gxrKMuljk";
+            $secret = "";
             $ip = $_SERVER['REMOTE_ADDR'];
             $var = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$captcha");
             $array = json_decode($var, true);
