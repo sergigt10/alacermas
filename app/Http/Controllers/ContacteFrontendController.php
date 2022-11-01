@@ -26,7 +26,7 @@ class ContacteFrontendController extends Controller
         $captcha = $request->g-recaptcha-response;
         if($captcha != ''){
             // your secret key
-            $secret = "";
+            $secret = env('GOOGLE_SECRET_RECHAPTA');
             $ip = $_SERVER['REMOTE_ADDR'];
             $var = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$captcha");
             $array = json_decode($var, true);
