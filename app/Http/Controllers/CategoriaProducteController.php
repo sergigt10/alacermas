@@ -13,6 +13,8 @@ class CategoriaProducteController extends Controller
 
     protected $appends = [
         'getParentsTree',
+        'getParentsTreeFrontend',
+        'formatTree',
         'tree'
     ];
 

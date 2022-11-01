@@ -13,11 +13,11 @@ use Artesaos\SEOTools\Facades\SEOTools;
 
 class ProductesFrontendController extends Controller
 {
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
+    protected $appends = [
+        'excelProduct',
+        'pdfProduct'
+    ];
+
     public function index($slug)
     {
         $categoriaParent = Categoria::where('slug','=', $slug)->firstOrFail();
@@ -61,7 +61,7 @@ class ProductesFrontendController extends Controller
         return view('frontend.productes.search', compact('productes'));
     }
 
-    public function excelProduct($excel, $posicioTitol){
+    public static function excelProduct($excel, $posicioTitol){
         // (A) PHPSPREADSHEET TO LOAD EXCEL FILE
         $spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load($excel);
         $worksheet = $spreadsheet->getActiveSheet();
@@ -88,7 +88,7 @@ class ProductesFrontendController extends Controller
         }
     }
 
-    public function pdfProduct($slug){
+    public static function pdfProduct($slug){
 
         $producte = Producte::where('slug','=', $slug)->firstOrFail();
 

@@ -293,7 +293,7 @@ https://stackoverflow.com/questions/63021856/cannot-find-module-webpack-lib-rule
 
 ** Tratamiento de fechas **
 ---------------------------
-https://programmerclick.com/article/30571152395/
+# https://programmerclick.com/article/30571152395/
 
 ** Subir a un servidor **
 -------------------------
@@ -304,9 +304,9 @@ https://programmerclick.com/article/30571152395/
 # https://www.youtube.com/watch?v=6g8G3YQtQt4
 # https://stackoverflow.com/questions/45825889/how-to-create-laravel-storage-symbolic-link-for-production-or-sub-domain-system
 
-https://laracasts.com/discuss/channels/laravel/the-get-method-is-not-supported-for-this-route-supported-methods-head-1
-https://stackoverflow.com/questions/65069616/getting-error-the-get-method-is-not-supported-for-this-route-supported-methods
-https://www.youtube.com/watch?v=LZwEv0DISU8
+# https://laracasts.com/discuss/channels/laravel/the-get-method-is-not-supported-for-this-route-supported-methods-head-1
+# https://stackoverflow.com/questions/65069616/getting-error-the-get-method-is-not-supported-for-this-route-supported-methods
+# https://www.youtube.com/watch?v=LZwEv0DISU8
 
 
 ** php artisan route:cache y cuándo hacemos un cambio y para que se entere el servidor, subimos la carpeta bootstrap.
@@ -318,17 +318,28 @@ https://www.youtube.com/watch?v=LZwEv0DISU8
 ** Aplicar idiomas y traducciones **
 # https://www.ibidemgroup.com/edu/traducciones-laravel-8/
 # https://lokalise.com/blog/laravel-localization-step-by-step/
+** New **
+# https://github.com/mcamara/laravel-localization#redirect-middleware
+# https://stackoverflow.com/questions/63355411/laravel-localization-using-mcamara-package-giving-404-error-on-root-url-but-not
 
 ** HTTPS **
-https://www.legendblogs.com/how-to-force-redirect-http-to-https-in-laravel-7x-and-6x-and-more
+# https://www.legendblogs.com/how-to-force-redirect-http-to-https-in-laravel-7x-and-6x-and-more
 
 ** PDF **
-https://dev.to/codeanddeploy/laravel-8-pdf-tutorial-generate-html-to-pdf-file-using-dompdf-1blm
+# https://dev.to/codeanddeploy/laravel-8-pdf-tutorial-generate-html-to-pdf-file-using-dompdf-1blm
 
 ** Mobile detect **
-https://codingdriver.com/laravel-detect-mobile-device-or-desktop.html
-https://github.com/jenssegers/agent
+# https://codingdriver.com/laravel-detect-mobile-device-or-desktop.html
+# https://github.com/jenssegers/agent
 
+** Arbol de categorías **
+# https://www.youtube.com/watch?v=fjLaxaB8ZZQ
+# https://www.youtube.com/watch?v=hFxR6D2kH44
+# https://www.youtube.com/watch?v=tewLdPba_5g
+# https://www.youtube.com/watch?v=-dj1xKG377c
+
+** Excel **
+# https://code-boxx.com/display-excel-html-php/
 
 
 
