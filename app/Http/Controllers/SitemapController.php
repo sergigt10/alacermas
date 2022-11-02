@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Artista;
-use App\Models\Disc;
-use App\Models\Llibre;
+use App\Models\Categoria;
+use App\Models\Producte;
 use Illuminate\Support\Carbon;
 
 class SitemapController extends Controller
@@ -19,12 +18,13 @@ class SitemapController extends Controller
         $startOfMonth = Carbon::now()->startOfMonth()->format('c');
         $statics = [
             '',
-            'quienes-somos',
-            'servicios',
-            'historia',
-            'libros',
-            'videos',
-            'contacto-satelitek'
+            'quienes-somos-alacer-mas',
+            'servicios-acero-inoxidable',
+            'historia-alacer-mas',
+            'certificacions-alacer-mas',
+            'trabaja-con-nosotros-alacer-mas',
+            'centros-alacer-mas',
+            'contacto-alacer-mas'
         ];
         return response()->view('frontend.sitemap.statics', [
             'statics' => $statics,
@@ -32,35 +32,24 @@ class SitemapController extends Controller
         ])->header('Content-Type', 'text/xml');
     }
 
-    public function artistes()
+    public function categorias()
     {
         $startOfMonth = Carbon::now()->startOfMonth()->format('c');
-        
-        $artistes = Artista::all();
-        return response()->view('frontend.sitemap.artistes', [
-            'artistes' => $artistes,
+
+        $categorias = Categoria::all();
+        return response()->view('frontend.sitemap.categorias', [
+            'categorias' => $categorias,
             'startOfMonth' => $startOfMonth
         ])->header('Content-Type', 'text/xml');
     }
 
-    public function discos()
+    public function productos()
     {
         $startOfMonth = Carbon::now()->startOfMonth()->format('c');
 
-        $discos = Disc::all();
-        return response()->view('frontend.sitemap.discos', [
-            'discos' => $discos,
-            'startOfMonth' => $startOfMonth
-        ])->header('Content-Type', 'text/xml');
-    }
-
-    public function llibres()
-    {
-        $startOfMonth = Carbon::now()->startOfMonth()->format('c');
-
-        $llibres = Llibre::all();
-        return response()->view('frontend.sitemap.llibres', [
-            'llibres' => $llibres,
+        $productos = Producte::all();
+        return response()->view('frontend.sitemap.productos', [
+            'productos' => $productos,
             'startOfMonth' => $startOfMonth
         ])->header('Content-Type', 'text/xml');
     }

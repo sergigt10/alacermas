@@ -341,5 +341,10 @@ https://stackoverflow.com/questions/63021856/cannot-find-module-webpack-lib-rule
 ** Excel **
 # https://code-boxx.com/display-excel-html-php/
 
+** Sitemap **
+# https://skryvets.com/blog/2018/05/01/everything-you-need-to-know-about-multilingual-and-multinational-sitemaps/
+# https://developers.google.com/search/docs/specialty/international/localized-versions
+
+
 
 

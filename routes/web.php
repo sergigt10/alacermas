@@ -51,9 +51,9 @@ Route::get('/politica-privacidad', 'HomeFrontendController@politicaPrivacitat')-
 /* Sitemap */
 Route::get('/sitemap.xml', 'SitemapController@index');
 Route::get('/sitemap.xml/statics', 'SitemapController@statics');
-Route::get('/sitemap.xml/artistes', 'SitemapController@artistes');
-Route::get('/sitemap.xml/discos', 'SitemapController@discos');
-Route::get('/sitemap.xml/llibres', 'SitemapController@llibres');
+Route::get('/sitemap.xml/centros', 'SitemapController@centros');
+Route::get('/sitemap.xml/categorias', 'SitemapController@categorias');
+Route::get('/sitemap.xml/productos', 'SitemapController@productos');
 
 // BackEnd //
 
