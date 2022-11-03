@@ -27,6 +27,6 @@ class Categoria extends Model
 
     public function scopeSubCategoria($query, $categoria_id)
     {
-        return $query->where('parent_id', '=', $categoria_id);
+        return $query->where('parent_id', '=', $categoria_id)->where('actiu','=',1);
     }
 }

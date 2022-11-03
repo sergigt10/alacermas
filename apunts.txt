@@ -349,6 +349,9 @@ php artisan route:clear
 # https://skryvets.com/blog/2018/05/01/everything-you-need-to-know-about-multilingual-and-multinational-sitemaps/
 # https://developers.google.com/search/docs/specialty/international/localized-versions
 
+** Slug SQL CristhianBoujon **
+# https://gist.github.com/matoakley/1092571
+
 
 
 

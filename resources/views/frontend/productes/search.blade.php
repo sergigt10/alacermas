@@ -23,6 +23,9 @@
                             </div>
                             @if (!$productes->isEmpty()) 
                                 @foreach ($productes as $producte)
+                                    @if ($producte->actiu == 0)
+                                        @continue
+                                    @endif
                                     <div class="col-lg-4">
                                         <div class="product">
                                             <div class="main-data">

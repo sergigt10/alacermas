@@ -71,11 +71,11 @@
                                                 {{ \App\Http\Controllers\CategoriaProducteController::getParentsTree($categoria, $categoria->nom_cat) }}
                                             </option>
                                         @endforeach
-                                        <option 
+                                        {{-- <option 
                                             value=" "
                                         >
                                             - Categoria principal -
-                                        </option>
+                                        </option> --}}
                                     </select>
                                 </div>
                                 <div class="form-group">

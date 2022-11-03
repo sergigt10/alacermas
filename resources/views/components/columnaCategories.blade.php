@@ -1,6 +1,6 @@
 <div class="col-lg-3">
     @if((new \Jenssegers\Agent\Agent())->isDesktop())
-        <ul class="categorias">
+        <ul class="categorias mt-3">
             <span class="categorias-parent"><h1>{{ $categoriaParent }}</h1></span>
             {{-- <i class="fa-sharp fa-solid fa-angle-down"></i> --}}
             @foreach ($subCategories as $categoria)

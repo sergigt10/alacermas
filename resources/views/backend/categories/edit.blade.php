@@ -74,12 +74,14 @@
                                             </option>
                                         @endif
                                     @endforeach
-                                    <option 
-                                        value=" "
-                                        {{ $categoria->parent_id === NULL ? 'selected' : '' }}
-                                    >
-                                        - Categoria principal -
-                                    </option>
+                                    @if ($categoria->parent_id === NULL)
+                                        <option 
+                                            value=" "
+                                            {{ $categoria->parent_id === NULL ? 'selected' : '' }}
+                                        >
+                                            - Categoria principal -
+                                        </option>
+                                    @endif
                                 </select>
                             </div>
                             <div class="form-group">

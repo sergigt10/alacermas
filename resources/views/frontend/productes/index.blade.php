@@ -48,7 +48,7 @@
                                                     <a href="{{ route('frontend.productes.show', ['producte' => $producte->slug]) }}">
                                                         @if ($producte->imatge1)
                                                             <figure>
-                                                                <img src='{{ asset("/storage/$producte->imatge1") }}' alt="Alacer Mas, {{ $producte->nom_esp }}">
+                                                                <img src='{{ asset("/storage/$producte->imatge1") }}' alt="Alacer Mas, {{ $producte->nom_esp }}" width="260" height="213">
                                                             </figure>
                                                         @endif
                                                     </a>
@@ -76,14 +76,16 @@
                                                     <a href="{{ route('frontend.productes.index', ['categoria' => $categoria->slug]) }}">
                                                         @if ($categoria->imatge1)
                                                             <figure>
-                                                                <img src='{{ asset("/storage/$categoria->imatge1") }}' alt="Alacer Mas, {{ $categoria->nom_esp }}">
+                                                                <img src='{{ asset("/storage/$categoria->imatge1") }}' alt="Alacer Mas, {{ $categoria->nom_esp }}" width="260" height="213">
                                                             </figure>
                                                         @endif
                                                     </a>
                                                 </div>
                                                 <div class="data">
                                                     <h3>
-                                                        <a href="{{ route('frontend.productes.index', ['categoria' => $categoria->slug]) }}">{{ $categoria->nom_esp }}</a>
+                                                        <a href="{{ route('frontend.productes.index', ['categoria' => $categoria->slug]) }}">
+                                                            {{ Str::limit($categoria->nom_esp, 25, '...');  }}
+                                                        </a>
                                                     </h3>
                                                 </div>
                                             </div>

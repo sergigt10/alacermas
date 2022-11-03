@@ -21,19 +21,19 @@ class ProductesFrontendController extends Controller
 
     public function index($slug)
     {
-        $categoriaParent = Categoria::where('slug','=', $slug)->firstOrFail();
+        $categoriaParent = Categoria::where('slug','=', $slug)->where('actiu','=',1)->firstOrFail();
 
         SEOTools::setTitle($categoriaParent->nom_esp.', Alacer Mas');
 
         $subCategories = Categoria::subCategoria($categoriaParent->id)->orderBy('nom_esp')->get();
-        $productes = Producte::where('categoria_id','=', $categoriaParent->id)->orderBy('nom_esp')->paginate(12, ['*'], 'pagina');
+        $productes = Producte::where('categoria_id','=', $categoriaParent->id)->where('actiu','=',1)->orderBy('nom_esp')->paginate(12, ['*'], 'pagina');
 
         return view('frontend.productes.index', compact('categoriaParent','subCategories', 'productes'));
     }
 
     public function show($slug)
     {
-        $producte = Producte::where('slug','=', $slug)->firstOrFail();
+        $producte = Producte::where('slug','=', $slug)->where('actiu','=',1)->firstOrFail();
 
         $subCategories = Categoria::subCategoria($producte->categoria_id)->orderBy('nom_esp')->get();
 
