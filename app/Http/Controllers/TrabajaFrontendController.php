@@ -16,7 +16,7 @@ class TrabajaFrontendController extends Controller
      */
     public function index()
     {
-        SEOTools::setTitle('Trabaja con nosotros Alacermas');
+        SEOTools::setTitle('Trabaja con nosotros Alacer Mas');
         
         return view('frontend.treballaAmbNosaltres.index');
     }

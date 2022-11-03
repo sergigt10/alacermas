@@ -16,7 +16,7 @@ class CentresFrontendController extends Controller
      */
     public function index()
     {
-        SEOTools::setTitle('Centros Alacermas');
+        SEOTools::setTitle('Centros Alacer Mas, Distribución acero inoxidable');
 
         $centres = Centre::orderBy('id')->get();
         

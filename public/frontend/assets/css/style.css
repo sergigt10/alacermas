@@ -139,6 +139,9 @@ a,
 a:hover{
     text-decoration: none;
 }
+.mayus {
+    text-transform: uppercase;
+}
 .modal-open {
     padding-right: 0 !important;
 }
@@ -2223,6 +2226,9 @@ span.odometer {
     background-color: #fff;
     opacity: 0;
     visibility: hidden;
+}
+.desktop-nav ul.sub-menu.localization {
+    width: 130px;
 }
 .desktop-nav .nav-bar ul > li ul.sub-menu li a {
     padding: 15px 21px;
@@ -5573,7 +5579,7 @@ ul.pd-imgs {
     margin-bottom: 20px;
     margin-top: 3px;
 }
-.pd-data h2 {
+.pd-data h1 {
     font-size: 35px;
     line-height: 45px;
     color: #0d476d;
@@ -6835,6 +6841,10 @@ li.categoria {
 
 .categorias-parent {
     font-size: 20px;
+}
+
+.categorias-parent h1 {
+    font-size: 20px !important;
 }
 
 .categoria a {

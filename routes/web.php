@@ -2,58 +2,65 @@
 
 use Illuminate\Support\Facades\Route;
 
-// FrontEnd //
+Route::group(
+    [
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => [ 'localize', 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+    ], function(){
 
-/* Idiomes */
-Route::get('lang/{locale}', [App\Http\Controllers\LocalizationController::class, 'index']);
+        // FrontEnd //
 
-/* Inici */
-Route::get('/', 'HomeFrontendController@index')->name('frontend.inici.index');
+        /* Idiomes */
+        // Route::get('lang/{locale}', [App\Http\Controllers\LocalizationController::class, 'index']);
 
-/* Historia */
-Route::get('/historia-alacer-mas', 'HistoriaFrontendController@index')->name('frontend.historia.index');
+        /* Inici */
+        Route::get('/', 'HomeFrontendController@index')->name('frontend.inici.index');
 
-/* Quiénes somos */
-Route::get('/quienes-somos-alacer-mas', 'QuiSomFrontendController@index')->name('frontend.quisom.index');
+        /* Historia */
+        Route::get('/historia-alacer-mas', 'HistoriaFrontendController@index')->name('frontend.historia.index');
 
-/* Servicios */
-Route::get('/servicios-acero-inoxidable', 'ServeisFrontendController@index')->name('frontend.serveis.index');
+        /* Quiénes somos */
+        Route::get('/quienes-somos-alacer-mas', 'QuiSomFrontendController@index')->name('frontend.quisom.index');
 
-/* Certificacions */
-Route::get('/certificacions-alacer-mas', 'CertificacionsFrontendController@index')->name('frontend.certificacions.index');
+        /* Servicios */
+        Route::get('/servicios-acero-inoxidable', 'ServeisFrontendController@index')->name('frontend.serveis.index');
 
-/* Productos */
-Route::get('/categoria/{categoria}', 'ProductesFrontendController@index')->name('frontend.productes.index');
-Route::get('/producto/{producte}', 'ProductesFrontendController@show')->name('frontend.productes.show');
-Route::get('/pdf/{producte}', 'ProductesFrontendController@pdfProduct')->name('pdf');
-Route::match(['get', 'post'], '/buscador-productos', 'ProductesFrontendController@search')->name('frontend.productes.search');
+        /* Certificacions */
+        Route::get('/certificacions-alacer-mas', 'CertificacionsFrontendController@index')->name('frontend.certificacions.index');
 
-/* Centros */
-Route::get('/centros-alacer-mas', 'CentresFrontendController@index')->name('frontend.centres.index');
+        /* Productos */
+        Route::get('/categoria/{categoria}', 'ProductesFrontendController@index')->name('frontend.productes.index');
+        Route::get('/producto/{producte}', 'ProductesFrontendController@show')->name('frontend.productes.show');
+        Route::get('/pdf/{producte}', 'ProductesFrontendController@pdfProduct')->name('pdf');
+        Route::match(['get', 'post'], '/buscador-productos', 'ProductesFrontendController@search')->name('frontend.productes.search');
 
-/* Contacto */
-Route::get('/contacto-alacer-mas', 'ContacteFrontendController@index')->name('frontend.contacte.index');
-Route::post('/contacto-alacer-mas/enviar', 'ContacteFrontendController@sendContacte')->name('frontend.sendContacte');
+        /* Centros */
+        Route::get('/centros-alacer-mas', 'CentresFrontendController@index')->name('frontend.centres.index');
 
-/* treballaAmbNosaltres */
-Route::get('/trabaja-con-nosotros-alacer-mas', 'TrabajaFrontendController@index')->name('frontend.treballaAmbNosaltres.index');
-Route::post('/trabaja-con-nosotros-alacer-mas/enviar', 'TrabajaFrontendController@sendTrabaja')->name('frontend.sendTrabaja');
+        /* Contacto */
+        Route::get('/contacto-alacer-mas', 'ContacteFrontendController@index')->name('frontend.contacte.index');
+        Route::post('/contacto-alacer-mas/enviar', 'ContacteFrontendController@sendContacte')->name('frontend.sendContacte');
 
-/* Aviso legal */
-Route::get('/aviso-legal', 'HomeFrontendController@avisLegal')->name('frontend.avisLegal.index');
+        /* treballaAmbNosaltres */
+        Route::get('/trabaja-con-nosotros-alacer-mas', 'TrabajaFrontendController@index')->name('frontend.treballaAmbNosaltres.index');
+        Route::post('/trabaja-con-nosotros-alacer-mas/enviar', 'TrabajaFrontendController@sendTrabaja')->name('frontend.sendTrabaja');
 
-/* Política cookies */
-Route::get('/politica-cookies', 'HomeFrontendController@politicaCookies')->name('frontend.politicaCookies.index');
+        /* Aviso legal */
+        Route::get('/aviso-legal', 'HomeFrontendController@avisLegal')->name('frontend.avisLegal.index');
 
-/* Política privacitat */
-Route::get('/politica-privacidad', 'HomeFrontendController@politicaPrivacitat')->name('frontend.politicaPrivacitat.index');
+        /* Política cookies */
+        Route::get('/politica-cookies', 'HomeFrontendController@politicaCookies')->name('frontend.politicaCookies.index');
 
-/* Sitemap */
-Route::get('/sitemap.xml', 'SitemapController@index');
-Route::get('/sitemap.xml/statics', 'SitemapController@statics');
-Route::get('/sitemap.xml/centros', 'SitemapController@centros');
-Route::get('/sitemap.xml/categorias', 'SitemapController@categorias');
-Route::get('/sitemap.xml/productos', 'SitemapController@productos');
+        /* Política privacitat */
+        Route::get('/politica-privacidad', 'HomeFrontendController@politicaPrivacitat')->name('frontend.politicaPrivacitat.index');
+});
+
+        /* Sitemap */
+        Route::get('/sitemap.xml', 'SitemapController@index');
+        Route::get('/sitemap.xml/statics', 'SitemapController@statics');
+        Route::get('/sitemap.xml/centros', 'SitemapController@centros');
+        Route::get('/sitemap.xml/categorias', 'SitemapController@categorias');
+        Route::get('/sitemap.xml/productos', 'SitemapController@productos');
 
 // BackEnd //
 

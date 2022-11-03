@@ -321,6 +321,10 @@ https://stackoverflow.com/questions/63021856/cannot-find-module-webpack-lib-rule
 ** New **
 # https://github.com/mcamara/laravel-localization#redirect-middleware
 # https://stackoverflow.com/questions/63355411/laravel-localization-using-mcamara-package-giving-404-error-on-root-url-but-not
+php artisan optimize
+php artisan route:trans:cache
+php artisan cache:clear
+php artisan route:clear
 
 ** HTTPS **
 # https://www.legendblogs.com/how-to-force-redirect-http-to-https-in-laravel-7x-and-6x-and-more

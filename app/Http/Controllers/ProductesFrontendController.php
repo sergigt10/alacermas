@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str as Str;
 use PDF;
 
 use App\Models\Producte;
@@ -22,10 +23,10 @@ class ProductesFrontendController extends Controller
     {
         $categoriaParent = Categoria::where('slug','=', $slug)->firstOrFail();
 
-        SEOTools::setTitle('Productes Alacermas, '. $categoriaParent->nom_esp);
+        SEOTools::setTitle($categoriaParent->nom_esp.', Alacer Mas');
 
         $subCategories = Categoria::subCategoria($categoriaParent->id)->orderBy('nom_esp')->get();
-        $productes = Producte::where('categoria_id','=', $categoriaParent->id)->orderBy('nom_esp')->paginate(16, ['*'], 'pagina');
+        $productes = Producte::where('categoria_id','=', $categoriaParent->id)->orderBy('nom_esp')->paginate(12, ['*'], 'pagina');
 
         return view('frontend.productes.index', compact('categoriaParent','subCategories', 'productes'));
     }
@@ -37,7 +38,7 @@ class ProductesFrontendController extends Controller
         $subCategories = Categoria::subCategoria($producte->categoria_id)->orderBy('nom_esp')->get();
 
         SEOTools::setTitle($producte->nom_esp.', Alacer Mas');
-        // SEOTools::setDescription(Str::limit(strip_tags($producte->descripcio_esp)), 155, ' (...)');
+        SEOTools::setDescription(Str::limit(strip_tags($producte->descripcio_esp)), 155, ' (...)');
 
         return view('frontend.productes.show', compact('producte', 'subCategories'));
     }
@@ -55,7 +56,7 @@ class ProductesFrontendController extends Controller
                     ->orWhere('nom_cat','LIKE','%'.$buscador.'%')
                     ->orWhere('nom_fra','LIKE','%'.$buscador.'%')
                     ->orWhere('nom_eng','LIKE','%'.$buscador.'%')
-                    ->paginate(9, ['*'], 'pagina');
+                    ->paginate(12, ['*'], 'pagina');
         }
         
         return view('frontend.productes.search', compact('productes'));

@@ -17,6 +17,7 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.4",
         "mailerlite/mailerlite-api-v2-php-sdk": "^0.3.2",
+        "mcamara/laravel-localization": "^1.7",
         "phpoffice/phpspreadsheet": "^1.25"
     },
     "require-dev": {

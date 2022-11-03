@@ -16,7 +16,7 @@ class ContacteFrontendController extends Controller
      */
     public function index()
     {
-        SEOTools::setTitle('Contacto Alacermas');
+        SEOTools::setTitle('Contacto Alacer Mas');
         
         return view('frontend.contacte.index');
     }

@@ -16,7 +16,7 @@ class CertificacionsFrontendController extends Controller
      */
     public function index()
     {
-        SEOTools::setTitle('Certificacions Alacermas');
+        SEOTools::setTitle('Certificacions Alacer Mas');
 
         $certificacions = Certificacio::first();
         

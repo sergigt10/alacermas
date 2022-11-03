@@ -41,7 +41,7 @@
                     <a href="{{ route('frontend.productes.index', ['categoria' => 'acero-inoxidable']) }}">
                         <div class="history-data">
                             <figure>
-                                <img class="w-100" src="{{ asset('frontend/assets/images/acero-inox.jpg') }}" alt="Alacermas acero inoxidable">
+                                <img class="w-100" src="{{ asset('frontend/assets/images/acero-inox.jpg') }}" alt="Alacer Mas acero inoxidable">
                             </figure>
                             <div class="details">
                                 <h3>Acero inoxidable</h3>
@@ -54,7 +54,7 @@
                     <a href="{{ route('frontend.productes.index', ['categoria' => 'normalizados-inoxidable']) }}">
                         <div class="history-data">
                             <figure>
-                                <img class="w-100" src="{{ asset('frontend/assets/images/normalizados-inoxidable.jpg') }}" alt="Alacermas acero inoxidable">
+                                <img class="w-100" src="{{ asset('frontend/assets/images/normalizados-inoxidable.jpg') }}" alt="Alacer Mas acero inoxidable">
                             </figure>
                             <div class="details">
                                 <h3>Normalizados inoxidable</h3>
@@ -67,7 +67,7 @@
                     <a href="{{ route('frontend.productes.index', ['categoria' => 'suministros-industriales']) }}">
                         <div class="history-data">
                             <figure>
-                                <img class="w-100" src="{{ asset('frontend/assets/images/suministros-industriales.jpg') }}" alt="Alacermas acero inoxidable">
+                                <img class="w-100" src="{{ asset('frontend/assets/images/suministros-industriales.jpg') }}" alt="Alacer Mas acero inoxidable">
                             </figure>
                             <div class="details">
                                 <h3>Suministros Industriales</h3>
@@ -80,7 +80,7 @@
                     <a href="{{ route('frontend.productes.index', ['categoria' => 'aluminio']) }}">
                         <div class="history-data">
                             <figure>
-                                <img class="w-100" src="{{ asset('frontend/assets/images/alumi.jpg') }}" alt="Alacermas acero inoxidable">
+                                <img class="w-100" src="{{ asset('frontend/assets/images/alumi.jpg') }}" alt="Alacer Mas acero inoxidable">
                             </figure>
                             <div class="details">
                                 <h3>Aluminio</h3>

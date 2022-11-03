@@ -16,7 +16,7 @@ class ServeisFrontendController extends Controller
      */
     public function index()
     {
-        SEOTools::setTitle('Servicios Alacermas');
+        SEOTools::setTitle('Servicios Alacer Mas');
 
         $serveis = Servei::first();
         

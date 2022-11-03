@@ -16,7 +16,7 @@ class QuiSomFrontendController extends Controller
      */
     public function index()
     {
-        SEOTools::setTitle('Quiénes somos Alacermas');
+        SEOTools::setTitle('Quiénes somos Alacer Mas');
 
         $quisom = Quisom::first();
         

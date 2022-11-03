@@ -108,6 +108,27 @@
         }
     </script>
 @endsection
-    
+
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "Business Central",
+            "name": "Alacermas",
+            "image": "https://www.alacermas.com/frontend/assets/images/logo.png",
+            "description": "Alacer Mas es un centro de distribución de productos de acero inoxidable, aluminio y suministros industriales.",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Polígono Industrial Ronda, Ronda de la Agricultura, 15",
+                "postalCode": "08503",
+                "addressLocality": "Gurb",
+                "addressRegion": "Cataluña",
+                "addressCountry": "España"
+        },
+        "openingHours": [
+            "Mo-Fr 08:00-18:00"
+        ],
+            "telephone": "+34938863931"
+        }
+    </script>
     
 @endsection
