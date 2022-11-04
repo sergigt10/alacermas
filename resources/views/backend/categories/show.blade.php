@@ -15,7 +15,22 @@
                         <div class="card-body">
                             <h2>Arbre de categories</h2>
                             <br>
-                            
+                            <div class="accordion accordion-solid-header" id="accordion" role="tablist">
+                                <div class="card">
+                                    {{-- <div class="card-header" role="tab" id="heading-2">
+                                        <h6 class="mb-0">
+                                            <a class="collapsed" data-toggle="collapse" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+                                                <b>Categories:</b>
+                                            </a>
+                                        </h6>
+                                    </div> --}}
+                                    <div id="collapse-2" class="collapse show" role="tabpanel" aria-labelledby="heading-2" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <x-categories :categories="$treeCategories" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

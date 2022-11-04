@@ -109,7 +109,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::delete('backend/certificacions/{certificacio}', 'CertificacioController@destroy')->name('backend.certificacions.destroy');
     /* Categories */
     Route::get('backend/categories', 'CategoriaProducteController@index')->name('backend.categories.index');
-    Route::get('backend/arbrecategories', 'CategoriaProducteController@show')->name('backend.categories.show');
+    Route::get('backend/categories/show', 'CategoriaProducteController@show')->name('backend.categories.show');
     Route::get('backend/categories/create', 'CategoriaProducteController@create')->name('backend.categories.create');
     Route::post('backend/categories', 'CategoriaProducteController@store')->name('backend.categories.store');
     Route::get('backend/categories/{categoria}/edit', 'CategoriaProducteController@edit')->name('backend.categories.edit');

@@ -12312,7 +12312,7 @@ code {
 
 .accordion .card .card-header {
   background-color: transparent;
-  border: 1px solid #dadada;
+  border: 2px solid #25597b;
   padding: 2rem;
 }
 
@@ -12358,6 +12358,7 @@ code {
   font-weight: 400;
   line-height: 1.5;
   background: #eef1f3;
+  border-radius: 10px;
 }
 
 .accordion .card .card-body i {
@@ -22790,8 +22791,10 @@ select.form-control:not([size]):not([multiple]), select.asColorPicker-input:not(
 
 #collapse-2 {
   border: 1px solid #ccc;
+  border-radius: 10px;
 }
 
 .categoria-bold {
   font-weight: bold;
+  font-size: 16px;
 }
