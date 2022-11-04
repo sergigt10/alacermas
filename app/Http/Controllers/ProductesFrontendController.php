@@ -26,7 +26,12 @@ class ProductesFrontendController extends Controller
         SEOTools::setTitle($categoriaParent->nom_esp.', Alacer Mas');
 
         $subCategories = Categoria::subCategoria($categoriaParent->id)->orderBy('nom_esp')->get();
-        $productes = Producte::where('categoria_id','=', $categoriaParent->id)->where('actiu','=',1)->orderBy('nom_esp')->paginate(12, ['*'], 'pagina');
+
+        if($subCategories->isEmpty()) {
+            $subCategories = Categoria::subCategoria($categoriaParent->parent_id)->orderBy('nom_esp')->get();
+        }
+
+        $productes = Producte::where('categoria_id','=', $categoriaParent->id)->where('actiu','=',1)->orderBy('nom_esp')->get();
 
         return view('frontend.productes.index', compact('categoriaParent','subCategories', 'productes'));
     }
@@ -36,6 +41,10 @@ class ProductesFrontendController extends Controller
         $producte = Producte::where('slug','=', $slug)->where('actiu','=',1)->firstOrFail();
 
         $subCategories = Categoria::subCategoria($producte->categoria_id)->orderBy('nom_esp')->get();
+
+        if($subCategories->isEmpty()) {
+            $subCategories = Categoria::subCategoria($producte->categoria->parent_id)->orderBy('nom_esp')->get();
+        }
 
         SEOTools::setTitle($producte->nom_esp.', Alacer Mas');
         SEOTools::setDescription(Str::limit(strip_tags($producte->descripcio_esp)), 155, ' (...)');

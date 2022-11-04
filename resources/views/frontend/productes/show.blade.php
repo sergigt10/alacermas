@@ -14,9 +14,9 @@
     </section>
 
     <section class="gap product-detail light-bg-transparent">
-        <div class="container">
+        <div class="container mb-5">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-12 mb-3">
                     <div class="categoria-filter">
                         {!! \App\Http\Controllers\CategoriaProducteController::getParentsTreeFrontend($producte->categoria, $producte->categoria->nom_esp) !!}
                     </div>
@@ -31,7 +31,7 @@
                     <div class="row">
                         <div class="col-lg-8">
                             <div class="pd-data">
-                                <h1>{{ $producte->nom_esp }}</h1>
+                                <h1>{{ ucfirst($producte->nom_esp) }}</h1>
                                 <br>
                                 <div class="text-justify">
                                     {!! $producte->descripcio_esp !!}
@@ -55,7 +55,12 @@
                         </div>
                         <div class="col-lg-4 text-center">
                             <br><br><br>
-                            <img src="{{ asset("/storage/$producte->imatge1") }}" alt="Alacer Mas, {{ $producte->nom_esp }}" class="img-fluid">
+                            @if ($producte->imatge1 !== NULL)
+                                <img src="{{ asset("/storage/$producte->imatge1") }}" alt="Alacer Mas, {{ $producte->nom_esp }}" class="img-fluid">
+                            @else
+                                <img src='{{ asset('frontend/assets/images/no-foto.jpg') }}' alt="Alacer Mas, {{ $producte->nom_esp }}">
+                            @endif
+                            
                             @if ($producte->imatge2)
                                 <div class="imatge-2 mt-4">
                                     <img src="{{ asset("/storage/$producte->imatge2") }}" alt="Alacer Mas, {{ $producte->nom_esp }}" class="img-fluid">

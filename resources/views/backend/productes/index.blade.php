@@ -37,13 +37,21 @@
                                             <tr>
                                                 <td>
                                                     <a href="{{ route('backend.productes.edit', ['producte' => $producte->id]) }}" style="color: black;">
-                                                        {{ $producte->nom_cat }}
+                                                        @if ($producte->nom_cat)
+                                                            {{ $producte->nom_cat }}
+                                                        @else
+                                                            {{ $producte->nom_esp }}
+                                                        @endif
                                                     </a>
                                                 </td>
                                                 <td>
-                                                    <a href="{{ route('backend.productes.edit', ['producte' => $producte->id]) }}" style="color: black;">
-                                                        {{ \App\Http\Controllers\CategoriaProducteController::getParentsTree($producte->categoria, $producte->categoria->nom_cat) }}
-                                                    </a>
+                                                    @if ($producte->categoria)
+                                                        <a href="{{ route('backend.productes.edit', ['producte' => $producte->id]) }}" style="color: black;">
+                                                            {{ \App\Http\Controllers\CategoriaProducteController::getParentsTree($producte->categoria, $producte->categoria->nom_cat) }}
+                                                        </a>
+                                                    @else
+                                                        No té categoria
+                                                    @endif
                                                 </td>
                                                 <td>
                                                     <a href="{{ route('backend.productes.edit', ['producte' => $producte->id]) }}" style="color: black;">
