@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Categoria;
+use App\Models\Producte;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str as Str;
 use Illuminate\Support\Facades\File;
@@ -19,32 +20,28 @@ class CategoriaProducteController extends Controller
     ];
 
     // Montar arbre de categories amb select
-    public static function getParentsTree($category, $title) 
+    public static function getParentsTree($category, $title, $type) 
     {
         if($category->parent_id == NULL) {
             return $title;
         }
+
         $parent = Categoria::find($category->parent_id);
-        $title = $parent->nom_cat . ' > ' . $title;
-        return CategoriaProducteController::getParentsTree($parent, $title);
-    }
-    public static function getParentsTreeFrontend($category, $title) 
-    {
-        if($category->parent_id == NULL) {
-            return $title;
+        
+        if( $type === 'Backend' ) {
+            $title = $parent->nom_cat . ' > ' . $title;
+        } else {
+            $title = '<a href="'. route("frontend.productes.index", ["categoria" => $parent->slug]) .'">'. $parent->nom_esp .'</a>&nbsp; / &nbsp;' . $title;
         }
-        $parent = Categoria::find($category->parent_id);
-        $title = '<a href="'. route("frontend.productes.index", ["categoria" => $parent->slug]) .'">'. $parent->nom_esp .'</a>&nbsp; / &nbsp;' . $title;
-        return CategoriaProducteController::getParentsTreeFrontend($parent, $title);
+        
+        return CategoriaProducteController::getParentsTree($parent, $title, $type);
     }
 
     // Montar arbre de categories sense select
     public static function tree() 
     {
         $allCategories = Categoria::orderBy('nom_cat')->get();
-
         $rootCategories = $allCategories->whereNull('parent_id');
-
         self::formatTree($rootCategories, $allCategories);
 
         return $rootCategories;
@@ -216,8 +213,29 @@ class CategoriaProducteController extends Controller
             File::delete(storage_path("app/public/$categoria->imatge1"));
         }
 
+        $subcategories = $categoria->subCategoria($categoria->id)->get();
+
+        // Assignar subcategories al parent de la categoria que volem eliminar
+        if(!$subcategories->isEmpty()) {
+            foreach ($subcategories as $subCategoria) {
+                $subCategoria->parent_id = $categoria->parent_id;
+                $subCategoria->save();
+            }
+            die('hola');
+        }
+        
+        $productesCategoria = Producte::where('categoria_id','=', $categoria->id)->get();
+
+        // Assignar productes al parent de la categoria que volem eliminar
+        if(!$productesCategoria->isEmpty()) {
+            foreach ($productesCategoria as $producteCategoria) {
+                $producteCategoria->categoria_id = $categoria->parent_id;
+                $producteCategoria->save();
+            }
+        }
+
         $categoria->delete();
         
-        return redirect()->action('CategoriaProducteController@index');
+        return redirect()->action('CategoriaProducteController@index')->with('estat', 'Categoria esborrada correctament');
     }
 }

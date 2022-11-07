@@ -49,7 +49,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail3">Files excel amb títols (separat per coma i començant per 1) Ex: 1,5,70 *:</label>
+                                <label for="exampleInputEmail3">Files excel amb títols (separat per punt i coma, començant per 1) Ex: 1;5;70 *:</label>
                                 <input name="files_th_excel" type="text" class="form-control @error('files_th_excel') is-invalid @enderror" id="exampleInputEmail3" placeholder="Ex: 1,5,70" value="{{ $taula->files_th_excel }}">
                             </div>
                             <div class="row grid-margin">

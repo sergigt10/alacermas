@@ -82,7 +82,7 @@ class ProductesFrontendController extends Controller
             $cellIterator = $row->getCellIterator();
             $cellIterator->setIterateOnlyExistingCells(false);
             // (B2) OUTPUT HTML
-            $arrayValors = explode(',', $posicioTitol);
+            $arrayValors = explode(';', $posicioTitol);
             if(in_array((string) $count,$arrayValors)) {
                     echo "<tr class='header-taula'>";
                     foreach ($cellIterator as $key => $cell) {

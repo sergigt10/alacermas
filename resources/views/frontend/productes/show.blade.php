@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row">
                 <div class="banner-details">
-                    <h2>{{ $producte->nom_esp }}</h2>
+                    <h2>{{ ucfirst($producte->nom_esp) }}</h2>
                 </div>
             </div>
         </div>
@@ -18,7 +18,7 @@
             <div class="row">
                 <div class="col-lg-12 mb-3">
                     <div class="categoria-filter">
-                        {!! \App\Http\Controllers\CategoriaProducteController::getParentsTreeFrontend($producte->categoria, $producte->categoria->nom_esp) !!}
+                        {!! \App\Http\Controllers\CategoriaProducteController::getParentsTree($producte->categoria, $producte->categoria->nom_esp, 'Frontend') !!}
                     </div>
                 </div>
                 <div class="col-lg-12">

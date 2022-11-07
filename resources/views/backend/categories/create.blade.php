@@ -68,7 +68,7 @@
                                                 value="{{ $categoria->id }}"
                                                 {{ old('parent_id') == $categoria->id ? 'selected' : '' }}
                                             >
-                                                {{ \App\Http\Controllers\CategoriaProducteController::getParentsTree($categoria, $categoria->nom_cat) }}
+                                                {{ \App\Http\Controllers\CategoriaProducteController::getParentsTree($categoria, $categoria->nom_cat, 'Backend') }}
                                             </option>
                                         @endforeach
                                         {{-- <option 

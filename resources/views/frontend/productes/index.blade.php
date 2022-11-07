@@ -18,7 +18,7 @@
                 <div class="row">
                     <div class="col-lg-12 mb-3">
                         <div class="categoria-filter">
-                            {!! \App\Http\Controllers\CategoriaProducteController::getParentsTreeFrontend($categoriaParent, $categoriaParent->nom_esp) !!}
+                            {!! \App\Http\Controllers\CategoriaProducteController::getParentsTree($categoriaParent, $categoriaParent->nom_esp, 'Frontend') !!}
                         </div>
                     </div>
                 </div>

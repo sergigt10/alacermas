@@ -45,7 +45,7 @@
                                                         @if( $categoria->parent_id == NULL) 
                                                             Categoria principal
                                                         @else
-                                                            {{ \App\Http\Controllers\CategoriaProducteController::getParentsTree($categoria, $categoria->nom_cat) }}
+                                                            {{ \App\Http\Controllers\CategoriaProducteController::getParentsTree($categoria, $categoria->nom_cat, 'Backend') }}
                                                         @endif
                                                     </a>
                                                 </td>
@@ -64,9 +64,13 @@
                                                     </a>
                                                 </td>
                                                 <td>
-                                                    <a href="" style="color: black;" data-toggle="modal" data-target="#exampleModalCenter{{$categoria->id}}">
-                                                        <i class="mdi mdi-close-circle menu-icon"></i>
-                                                    </a>
+                                                    @if( $categoria->parent_id == NULL) 
+                                                        ----
+                                                    @else
+                                                        <a href="" style="color: black;" data-toggle="modal" data-target="#exampleModalCenter{{$categoria->id}}">
+                                                            <i class="mdi mdi-close-circle menu-icon"></i>
+                                                        </a>
+                                                    @endif
                                                 </td>
                                             </tr>
                                             <div class="modal fade" id="exampleModalCenter{{$categoria->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -80,6 +84,8 @@
                                                         </div>
                                                     <div class="modal-body">
                                                         Segur que vols esborrar: {{ $categoria->nom_cat }}
+                                                        <br><br>
+                                                        <b><i>Si la categoria té subcategories, aniran a la categoria pare. Si també té productes associats, formaran part de la categoria pare.<i></b>
                                                     </div>
                                                         <div class="modal-footer">
                                                             <form class="pull-right" action="{{ route('backend.categories.destroy', ['categoria' => $categoria->id]) }}" method="POST">

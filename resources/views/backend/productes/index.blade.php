@@ -47,7 +47,7 @@
                                                 <td>
                                                     @if ($producte->categoria)
                                                         <a href="{{ route('backend.productes.edit', ['producte' => $producte->id]) }}" style="color: black;">
-                                                            {{ \App\Http\Controllers\CategoriaProducteController::getParentsTree($producte->categoria, $producte->categoria->nom_cat) }}
+                                                            {{ \App\Http\Controllers\CategoriaProducteController::getParentsTree($producte->categoria, $producte->categoria->nom_cat, 'Backend') }}
                                                         </a>
                                                     @else
                                                         No té categoria

@@ -65,12 +65,13 @@
                                 <label for="exampleInputEmail3">Categoria arrel:</label>
                                 <select id="parent_id" name="parent_id" class="form-control js-example-basic-single w-100">
                                     @foreach ($categoriesAll as $categoriaAll)
-                                        @if (!str_contains(\App\Http\Controllers\CategoriaProducteController::getParentsTree($categoriaAll, $categoriaAll->nom_cat), $categoria->nom_cat))
+                                        <!-- Comprovació perque no mostri la categoria actual que volem editar en el select -->
+                                        @if (!str_contains(\App\Http\Controllers\CategoriaProducteController::getParentsTree($categoriaAll, $categoriaAll->nom_cat, 'Backend'), $categoria->nom_cat))
                                             <option 
                                                 value="{{ $categoriaAll->id }}"
                                                 {{ $categoriaAll->id == $categoria->parent_id ? 'selected' : '' }}
                                             >
-                                                {{ \App\Http\Controllers\CategoriaProducteController::getParentsTree($categoriaAll, $categoriaAll->nom_cat) }}
+                                                {{ \App\Http\Controllers\CategoriaProducteController::getParentsTree($categoriaAll, $categoriaAll->nom_cat, 'Backend') }}
                                             </option>
                                         @endif
                                     @endforeach

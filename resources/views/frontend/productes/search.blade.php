@@ -18,7 +18,7 @@
                 <div class="col-lg-12">
                     <div class="container">
                         <div class="row p-slider align-items-center grid">
-                            <div class="col-lg-12 mt-5">
+                            <div class="col-lg-12 mt-5 mb-5">
                                 <a href="{{ url()->previous() }}"><i class="fas fa-chevron-left"></i> Volver atràs</a>
                             </div>
                             @if (!$productes->isEmpty()) 

@@ -35,7 +35,11 @@
                                             <tr>
                                                 <td>
                                                     <a href="{{ route('backend.taules.edit', ['taula' => $taula->id]) }}" style="color: black;">
-                                                        {{ $taula->producte->nom_cat }}
+                                                        @if( $taula->producte )
+                                                            {{ $taula->producte->nom_cat }}
+                                                        @else 
+                                                            Fora
+                                                        @endif 
                                                     </a>
                                                 </td>
                                                 <td>
