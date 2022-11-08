@@ -25,13 +25,13 @@ class ProductesFrontendController extends Controller
 
         SEOTools::setTitle($categoriaParent->nom_esp.', Alacer Mas');
 
-        $subCategories = Categoria::subCategoria($categoriaParent->id)->orderBy('nom_esp')->get();
+        $subCategories = Categoria::subCategoria($categoriaParent->id)->where('actiu','=',1)->orderBy( trans('nom_esp') )->get();
 
         if($subCategories->isEmpty()) {
-            $subCategories = Categoria::subCategoria($categoriaParent->parent_id)->orderBy('nom_esp')->get();
+            $subCategories = Categoria::subCategoria($categoriaParent->parent_id)->orderBy( trans('nom_esp') )->get();
         }
 
-        $productes = Producte::where('categoria_id','=', $categoriaParent->id)->where('actiu','=',1)->orderBy('nom_esp')->get();
+        $productes = Producte::where('categoria_id','=', $categoriaParent->id)->where('actiu','=',1)->orderBy( trans('nom_esp') )->get();
 
         return view('frontend.productes.index', compact('categoriaParent','subCategories', 'productes'));
     }
@@ -40,10 +40,12 @@ class ProductesFrontendController extends Controller
     {
         $producte = Producte::where('slug','=', $slug)->where('actiu','=',1)->firstOrFail();
 
-        $subCategories = Categoria::subCategoria($producte->categoria_id)->orderBy('nom_esp')->get();
+        $subCategories = Categoria::subCategoria($producte->categoria_id)->where('actiu','=',1)->orderBy( trans('nom_esp') )->get();
 
-        if($subCategories->isEmpty()) {
-            $subCategories = Categoria::subCategoria($producte->categoria->parent_id)->orderBy('nom_esp')->get();
+        if($subCategories->isEmpty() && $producte->categoria) {
+            $subCategories = Categoria::subCategoria($producte->categoria->parent_id)->orderBy( trans('nom_esp') )->get();
+        } else {
+            abort(404);
         }
 
         SEOTools::setTitle($producte->nom_esp.', Alacer Mas');
@@ -103,8 +105,8 @@ class ProductesFrontendController extends Controller
         $producte = Producte::where('slug','=', $slug)->firstOrFail();
 
         $pdf = PDF::loadView('frontend.productes.pdf', [
-            'titol' => $producte->nom_esp,
-            'descripcio' => $producte->descripcio_esp,
+            'titol' => translatePHP($producte, 'nom'),
+            'descripcio' => translatePHP($producte, 'descripcio'),
             'imatge1' => $producte->imatge1,
             'imatge2' => $producte->imatge2,
             'taules' => $producte->taules,

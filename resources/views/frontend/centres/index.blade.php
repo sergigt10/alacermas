@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row">
                 <div class="banner-details">
-                    <h2>Centros</h2>
+                    <h2>@lang("Centros")</h2>
                 </div>
             </div>
         </div>
@@ -20,9 +20,9 @@
                     <div class="row align-items-center">
                         <div class="col-lg-6">
                             <div class="proj-data">
-                                <h4>{{ $centre->titol_esp }}</h4>
+                                <h4>{{ translatePHP($centre, 'titol') }}</h4>
                                 <br>
-                                <div>{!! $centre->descripcio_esp !!}</div>
+                                <div>{!! translatePHP($centre, 'descripcio') !!}</div>
                                 <br>
                             </div>
                         </div>

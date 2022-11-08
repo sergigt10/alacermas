@@ -11,7 +11,7 @@
         <div class="container">
             <div class="row">
                 <div class="banner-details">
-                    <h2>Contacto</h2>
+                    <h2>@lang("Contacto")</h2>
                 </div>
             </div>
         </div>
@@ -22,7 +22,7 @@
             <figure>
                 <img src='{{ asset("/frontend/assets/images/icona.png") }}' alt="Alacer Mas">
             </figure>
-            <h2>Formulario de contacto</h2>
+            <h2>@lang("Formulario de contacto")</h2>
         </div>
         <div class="container">
             <div class="row">

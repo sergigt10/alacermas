@@ -33,18 +33,20 @@
                                                     <a href="{{ route('frontend.productes.show', ['producte' => $producte->slug]) }}">
                                                         @if ($producte->imatge1 !== NULL)
                                                             <figure>
-                                                                <img src='{{ asset("/storage/$producte->imatge1") }}' alt="Alacer Mas, {{ $producte->nom_esp }}" width="260" height="213">
+                                                                <img src='{{ asset("/storage/$producte->imatge1") }}' alt="Alacer Mas, {{ translatePHP($producte, 'nom') }}" width="260" height="213">
                                                             </figure>
                                                         @else
                                                             <figure>
-                                                                <img src='{{ asset('frontend/assets/images/no-foto.jpg') }}' alt="Alacer Mas, {{ $producte->nom_esp }}" width="260" height="213">
+                                                                <img src='{{ asset('frontend/assets/images/no-foto.jpg') }}' alt="Alacer Mas, {{ translatePHP($producte, 'nom') }}" width="260" height="213">
                                                             </figure>
                                                         @endif
                                                     </a>
                                                 </div>
                                                 <div class="data">
                                                     <h3>
-                                                        <a href="{{ route('frontend.productes.show', ['producte' => $producte->slug]) }}">{{ $producte->nom_esp }}</a>
+                                                        <a href="{{ route('frontend.productes.show', ['producte' => $producte->slug]) }}">
+                                                            {{ translatePHP($producte, 'nom') }}
+                                                        </a>
                                                     </h3>
                                                 </div>
                                             </div>

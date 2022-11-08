@@ -18,7 +18,7 @@
                 <div class="row">
                     <div class="col-lg-12 mb-3">
                         <div class="categoria-filter">
-                            {!! \App\Http\Controllers\CategoriaProducteController::getParentsTree($categoriaParent, $categoriaParent->nom_esp, 'Frontend') !!}
+                            {!! \App\Http\Controllers\CategoriaProducteController::getParentsTree($categoriaParent, translatePHP($categoriaParent, 'nom'), 'Frontend') !!}
                         </div>
                     </div>
                 </div>
@@ -35,7 +35,7 @@
         </section>
         <div class="container mb-5">
             <div class="row">
-                <x-columnaCategories :categoriaParent="$categoriaParent->nom_esp" :subCategories="$subCategories"/>
+                <x-columnaCategories :categoriaParent="translatePHP($categoriaParent, 'nom')" :subCategories="$subCategories"/>
                 <div class="col-lg-9">
                     <div class="container">
                         <div class="row p-slider align-items-center grid">
@@ -47,11 +47,11 @@
                                                 <a href="{{ route('frontend.productes.show', ['producte' => $producte->slug]) }}">
                                                     @if ($producte->imatge1 !== NULL)
                                                         <figure>
-                                                            <img src='{{ asset("/storage/$producte->imatge1") }}' alt="Alacer Mas, {{ $producte->nom_esp }}" width="260" height="213">
+                                                            <img src='{{ asset("/storage/$producte->imatge1") }}' alt="Alacer Mas, {{ translatePHP($producte, 'nom') }}" width="260" height="213">
                                                         </figure>
                                                     @else
                                                         <figure>
-                                                            <img src='{{ asset('frontend/assets/images/no-foto.jpg') }}' alt="Alacer Mas, {{ $producte->nom_esp }}" width="260" height="213">
+                                                            <img src='{{ asset('frontend/assets/images/no-foto.jpg') }}' alt="Alacer Mas, {{ translatePHP($producte, 'nom') }}" width="260" height="213">
                                                         </figure>
                                                     @endif
                                                 </a>
@@ -59,7 +59,7 @@
                                             <div class="data">
                                                 <h3>
                                                     <a href="{{ route('frontend.productes.show', ['producte' => $producte->slug]) }}">
-                                                        {{ Str::limit('Prod. '.ucfirst($producte->nom_esp), 28, '...');  }}
+                                                        {{ Str::limit('Prod. '.ucfirst(translatePHP($producte, 'nom')), 28, '...');  }}
                                                     </a>
                                                 </h3>
                                             </div>
@@ -83,11 +83,11 @@
                                                 <a href="{{ route('frontend.productes.index', ['categoria' => $categoria->slug]) }}">
                                                     @if ($categoria->imatge1 !== NULL)
                                                         <figure>
-                                                            <img src='{{ asset("/storage/$categoria->imatge1") }}' alt="Alacer Mas, {{ $categoria->nom_esp }}" width="260" height="213">
+                                                            <img src='{{ asset("/storage/$categoria->imatge1") }}' alt="Alacer Mas, {{ translatePHP($categoria, 'nom') }}" width="260" height="213">
                                                         </figure>
                                                     @else
                                                         <figure>
-                                                            <img src='{{ asset('frontend/assets/images/no-foto.jpg') }}' alt="Alacer Mas, {{ $categoria->nom_esp }}" width="260" height="213">
+                                                            <img src='{{ asset('frontend/assets/images/no-foto.jpg') }}' alt="Alacer Mas, {{ translatePHP($categoria, 'nom') }}" width="260" height="213">
                                                         </figure>
                                                     @endif
                                                 </a>
@@ -95,7 +95,7 @@
                                             <div class="data">
                                                 <h3>
                                                     <a href="{{ route('frontend.productes.index', ['categoria' => $categoria->slug]) }}">
-                                                        {{ Str::limit($categoria->nom_esp, 28, '...');  }}
+                                                        {{ Str::limit(translatePHP($categoria, 'nom'), 28, '...');  }}
                                                     </a>
                                                 </h3>
                                             </div>
@@ -103,7 +103,7 @@
                                     </div>
                                 </div>
                             @endforeach
-                            @if ($productes->isEmpty() && $subCategories->isEmpty())
+                            @if ($productes->isEmpty() && ( count($subCategories) <= 1 ))
                                 <span class="text-center">
                                     <b>Información no disponible</b>
                                 </span>

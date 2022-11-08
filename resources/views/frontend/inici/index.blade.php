@@ -117,7 +117,7 @@
                         @else
                             <li>
                         @endif
-                                <h3><a href="{{ route('frontend.centres.index') }}">{{ $centre->titol_esp }}</a></h3>
+                                <h3><a href="{{ route('frontend.centres.index') }}">{{ translatePHP($centre, 'titol') }}</a></h3>
                                 <a href="{{ route('frontend.centres.index') }}">
                                     <span class="location">
                                         <span>Localización:</span>

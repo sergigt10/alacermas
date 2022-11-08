@@ -31,7 +31,17 @@
                         <span>Alacer Mas</span>
                         <h2>Presentación</h2>
                         <div class="about-info">
-                            <p>{!! $quisom->descripcio_esp_pres !!}</p>
+                            <p>
+                                @if (app()->getLocale() === 'ca')
+                                    {!! $quisom->descripcio_cat_pres !!}
+                                @elseif (app()->getLocale() === 'fr')
+                                    {!! $quisom->descripcio_fra_pres !!}
+                                @elseif (app()->getLocale() === 'en')
+                                    {!! $quisom->descripcio_eng_pres !!}
+                                @else
+                                    {!! $quisom->descripcio_esp_pres !!}
+                                @endif
+                            </p>
                         </div>
                     </div>
                 </div>

@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row">
                 <div class="banner-details">
-                    <h2>Certificaciones</h2>
+                    <h2>@lang('Certificaciones')</h2>
                 </div>
             </div>
         </div>
@@ -16,21 +16,21 @@
     <section class="gap our-goal">
         <div class="heading">
             <figure>
-                <img src='{{ asset("/frontend/assets/images/icona.png") }}' alt="Alacer Mas">
+                <img src='{{ asset("/frontend/assets/images/icona.png") }}' alt="Alacer Mas Certificaciones">
             </figure>
-            <h2>{{ $certificacions->titol_esp }}</h2>
+            <h2>{{ translatePHP($certificacions, 'titol') }}</h2>
         </div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
                     <div class="who-we-are">
-                        {!! $certificacions->descripcio_esp !!}
+                        {!! translatePHP($certificacions, 'descripcio') !!}
                     </div>
                 </div>
                 <div class="col-lg-6 px-3">
                     <div class="data">
                         <figure class="goal-img">
-                            <img src='{{ asset("/storage/$certificacions->imatge1") }}' alt="Alacer Mas">
+                            <img src='{{ asset("/storage/$certificacions->imatge1") }}' alt="Alacer Mas Certificaciones">
                         </figure>
                     </div>
                 </div>

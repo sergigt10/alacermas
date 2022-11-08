@@ -59,7 +59,7 @@
         <img src="{{ public_path("frontend/assets/images/logo-pdf.jpg") }}" alt="{{ $titol }}" width="300px">
         <br>
         <p class="titol-pdf">
-            {{ $titol }}
+            {{ ucfirst($titol) }}
         </p>
         <div class="descripcio-pdf">
             {!! $descripcio !!}
@@ -69,7 +69,7 @@
         @if ($imatge2)
             <img class="imatge2" src="{{ __DIR__ .'/../../app/public/'.$imatge2 }}" alt="{{ $titol }}">
         @endif
-        <br><br>
+        <br><br><br>
         @if (!$taules->isEmpty())
             <table class="table table-bordered table-hover">
                 @foreach ($taules as $producteTaula)

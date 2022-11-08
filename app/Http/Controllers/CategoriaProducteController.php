@@ -31,10 +31,10 @@ class CategoriaProducteController extends Controller
         if( $type === 'Backend' ) {
             $title = $parent->nom_cat . ' > ' . $title;
         } else {
-            $title = '<a href="'. route("frontend.productes.index", ["categoria" => $parent->slug]) .'">'. $parent->nom_esp .'</a>&nbsp; / &nbsp;' . $title;
+            $title = '<a href="'. route("frontend.productes.index", ["categoria" => $parent->slug]) .'">'. translatePHP($parent, 'nom') .'</a>&nbsp; / &nbsp;' . $title;
         }
         
-        return CategoriaProducteController::getParentsTree($parent, $title, $type);
+        return self::getParentsTree($parent, $title, $type);
     }
 
     // Montar arbre de categories sense select
@@ -77,7 +77,7 @@ class CategoriaProducteController extends Controller
      */
     public function create()
     {
-        $categories = Categoria::orderBy('nom_cat')->get();
+        $categories = Categoria::orderBy('id')->orderBy('nom_cat')->get();
 
         return view('backend.categories.create')
             ->with('categories', $categories);
@@ -126,7 +126,7 @@ class CategoriaProducteController extends Controller
      */
     public function show(Categoria $categoria)
     {
-        $treeCategories = CategoriaProducteController::tree();
+        $treeCategories = self::tree();
 
         return view('backend.categories.show')
             ->with('treeCategories', $treeCategories);
@@ -140,7 +140,7 @@ class CategoriaProducteController extends Controller
      */
     public function edit(Categoria $categoria)
     {
-        $categoriesAll = Categoria::orderBy('nom_cat')->get();
+        $categoriesAll = Categoria::orderBy('id')->orderBy('nom_cat')->get();
         return view('backend.categories.edit', compact('categoria'))->with('categoriesAll', $categoriesAll);
     }
 
@@ -221,7 +221,6 @@ class CategoriaProducteController extends Controller
                 $subCategoria->parent_id = $categoria->parent_id;
                 $subCategoria->save();
             }
-            die('hola');
         }
         
         $productesCategoria = Producte::where('categoria_id','=', $categoria->id)->get();

@@ -25,7 +25,17 @@
                 <ul>
                     <li>
                         <div class="data">
-                            <p>{!! $serveis->descripcio_esp_1 !!}</p>
+                            <p>
+                                @if (app()->getLocale() === 'ca')
+                                    {!! $serveis->descripcio_cat_1 !!}
+                                @elseif (app()->getLocale() === 'fr')
+                                    {!! $serveis->descripcio_fra_1 !!}
+                                @elseif (app()->getLocale() === 'en')
+                                    {!! $serveis->descripcio_eng_1 !!}
+                                @else
+                                    {!! $serveis->descripcio_esp_1 !!}
+                                @endif
+                            </p>
                         </div>
                         <div class="image">
                             <figure>
@@ -40,12 +50,32 @@
                             </figure>
                         </div>
                         <div class="data">
-                            <p>{!! $serveis->descripcio_esp_2 !!}</p>
+                            <p>
+                                @if (app()->getLocale() === 'ca')
+                                    {!! $serveis->descripcio_cat_2 !!}
+                                @elseif (app()->getLocale() === 'fr')
+                                    {!! $serveis->descripcio_fra_2 !!}
+                                @elseif (app()->getLocale() === 'en')
+                                    {!! $serveis->descripcio_eng_2 !!}
+                                @else
+                                    {!! $serveis->descripcio_esp_2 !!}
+                                @endif
+                            </p>
                         </div>
                     </li>
                     <li>
                         <div class="data">
-                            <p>{!! $serveis->descripcio_esp_3 !!}</p>
+                            <p>
+                                @if (app()->getLocale() === 'ca')
+                                    {!! $serveis->descripcio_cat_3 !!}
+                                @elseif (app()->getLocale() === 'fr')
+                                    {!! $serveis->descripcio_fra_3 !!}
+                                @elseif (app()->getLocale() === 'en')
+                                    {!! $serveis->descripcio_eng_3 !!}
+                                @else
+                                    {!! $serveis->descripcio_esp_3 !!}
+                                @endif
+                            </p>
                         </div>
                         <div class="image">
                             <figure>
@@ -60,12 +90,32 @@
                             </figure>
                         </div>
                         <div class="data">
-                            <p>{!! $serveis->descripcio_esp_4 !!}</p>
+                            <p>
+                                @if (app()->getLocale() === 'ca')
+                                    {!! $serveis->descripcio_cat_4 !!}
+                                @elseif (app()->getLocale() === 'fr')
+                                    {!! $serveis->descripcio_fra_4 !!}
+                                @elseif (app()->getLocale() === 'en')
+                                    {!! $serveis->descripcio_eng_4 !!}
+                                @else
+                                    {!! $serveis->descripcio_esp_4 !!}
+                                @endif
+                            </p>
                         </div>
                     </li>
                     <li>
                         <div class="data">
-                            <p>{!! $serveis->descripcio_esp_5 !!}</p>
+                            <p>
+                                @if (app()->getLocale() === 'ca')
+                                    {!! $serveis->descripcio_cat_5 !!}
+                                @elseif (app()->getLocale() === 'fr')
+                                    {!! $serveis->descripcio_fra_5 !!}
+                                @elseif (app()->getLocale() === 'en')
+                                    {!! $serveis->descripcio_eng_5 !!}
+                                @else
+                                    {!! $serveis->descripcio_esp_5 !!}
+                                @endif
+                            </p>
                         </div>
                         <div class="image">
                             <figure>

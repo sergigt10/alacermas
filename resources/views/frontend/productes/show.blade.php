@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row">
                 <div class="banner-details">
-                    <h2>{{ ucfirst($producte->nom_esp) }}</h2>
+                    <h2>{{ ucfirst(translatePHP($producte, 'nom')) }}</h2>
                 </div>
             </div>
         </div>
@@ -18,7 +18,7 @@
             <div class="row">
                 <div class="col-lg-12 mb-3">
                     <div class="categoria-filter">
-                        {!! \App\Http\Controllers\CategoriaProducteController::getParentsTree($producte->categoria, $producte->categoria->nom_esp, 'Frontend') !!}
+                        {!! \App\Http\Controllers\CategoriaProducteController::getParentsTree($producte->categoria, translatePHP($producte->categoria, 'nom'), 'Frontend') !!}
                     </div>
                 </div>
                 <div class="col-lg-12">
@@ -26,15 +26,15 @@
                         <x-searchHTML />
                     </div>
                 </div>
-                <x-columnaCategories :categoriaParent="$producte->categoria->nom_esp" :subCategories="$subCategories"/>
+                <x-columnaCategories :categoriaParent="translatePHP($producte->categoria, 'nom')" :subCategories="$subCategories"/>
                 <div class="col-lg-9">
                     <div class="row">
                         <div class="col-lg-8">
                             <div class="pd-data">
-                                <h1>{{ ucfirst($producte->nom_esp) }}</h1>
+                                <h1>{{ ucfirst(translatePHP($producte, 'nom')) }}</h1>
                                 <br>
                                 <div class="text-justify">
-                                    {!! $producte->descripcio_esp !!}
+                                    {!! translatePHP($producte, 'descripcio') !!}
                                 </div>
                                 <div class="pd-cat-tags">
                                     <ul>
@@ -56,14 +56,14 @@
                         <div class="col-lg-4 text-center">
                             <br><br><br>
                             @if ($producte->imatge1 !== NULL)
-                                <img src="{{ asset("/storage/$producte->imatge1") }}" alt="Alacer Mas, {{ $producte->nom_esp }}" class="img-fluid">
+                                <img src="{{ asset("/storage/$producte->imatge1") }}" alt="Alacer Mas, {{ translatePHP($producte, 'nom') }}" class="img-fluid">
                             @else
-                                <img src='{{ asset('frontend/assets/images/no-foto.jpg') }}' alt="Alacer Mas, {{ $producte->nom_esp }}">
+                                <img src='{{ asset('frontend/assets/images/no-foto.jpg') }}' alt="Alacer Mas, {{ translatePHP($producte, 'nom') }}">
                             @endif
                             
                             @if ($producte->imatge2)
                                 <div class="imatge-2 mt-4">
-                                    <img src="{{ asset("/storage/$producte->imatge2") }}" alt="Alacer Mas, {{ $producte->nom_esp }}" class="img-fluid">
+                                    <img src="{{ asset("/storage/$producte->imatge2") }}" alt="Alacer Mas, {{ translatePHP($producte, 'nom') }}" class="img-fluid">
                                 </div>
                             @endif
                         </div>

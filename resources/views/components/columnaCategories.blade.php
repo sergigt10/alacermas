@@ -1,11 +1,13 @@
 <div class="col-lg-3">
     @if((new \Jenssegers\Agent\Agent())->isDesktop())
         <ul class="categorias mt-3">
-            <span class="categorias-parent"><h1>{{ $categoriaParent }}</h1></span>
+            <span class="categorias-parent">
+                <h1>{{ $categoriaParent }}</h1>
+            </span>
             {{-- <i class="fa-sharp fa-solid fa-angle-down"></i> --}}
             @foreach ($subCategories as $categoria)
                 <li class="categoria">
-                    <a href="{{ route('frontend.productes.index', ['categoria' => $categoria->slug]) }}">{{ $categoria->nom_esp }}</a>
+                    <a href="{{ route('frontend.productes.index', ['categoria' => $categoria->slug]) }}">{{ translatePHP($categoria, 'nom') }}</a>
                 </li>
             @endforeach
         </ul>
@@ -25,7 +27,7 @@
                             <ul>
                                 @foreach ($subCategories as $categoria)
                                     <li class="categoria">
-                                        <a href="{{ route('frontend.productes.index', ['categoria' => $categoria->slug]) }}">{{ $categoria->nom_esp }}</a>
+                                        <a href="{{ route('frontend.productes.index', ['categoria' => $categoria->slug]) }}">{{ translatePHP($categoria, 'nom') }}</a>
                                     </li>
                                 @endforeach
                             </ul>

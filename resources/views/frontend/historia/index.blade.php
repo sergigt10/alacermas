@@ -40,12 +40,12 @@
                     @endif
                             <div class="h-box">
                                 <figure>
-                                    <img src='{{ asset("/storage/$historia->imatge1") }}' alt="Alacer Mas historia" class="radius-img">
+                                    <img src='{{ asset("/storage/$historia->imatge1") }}' alt="Alacer Mas Historia" class="radius-img">
                                 </figure>
                                 <br>
                                 <h2>{{ $historia->any }}</h2>
-                                <h5>{{ $historia->titol_esp }}</h5>
-                                <div class="descripcion-historia">{!! $historia->descripcio_esp !!}</div>
+                                <h5>{{ translatePHP($historia, 'titol') }}</h5>
+                                <div class="descripcion-historia">{!! translatePHP($historia, 'descripcio') !!}</div>
                                 <br>
                             </div>
                         </div>

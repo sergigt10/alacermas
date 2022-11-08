@@ -24,5 +24,14 @@
     "Tardes" : "Tardes",
     "Viernes tarde" : "Divendres tarde",
     "Sábados y Domingos" : "Dissabte i Diumenge",
-    "Cerrado" : "Tancat"
+    "Cerrado" : "Tancat",
+    
+    "nom_esp" : "nom_cat",
+    "Centros" : "Centres",
+    
+    "Certificaciones" : "Certificacions",
+
+    "Contacto" : "Contacte",
+    "Formulario de contacto" : "Formulari de contacte"
+
 } 

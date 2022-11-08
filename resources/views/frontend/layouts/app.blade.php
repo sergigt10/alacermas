@@ -176,12 +176,12 @@
                     <a href="JavaScript:void(0)" id="res-cross"></a>
                 </div>
                 <div class="mobile-nav desktop-menu">
-                    <h2>Distribución de productos de Acero Inoxidable</h2>
-                    <p class="des">Aluminio, metales no férricos, plásticos técnicos y todos los suministros industriales que pueden intervenir en los procesos de transformación de estos materiales.</p>
+                    <h2>@lang("Distribución de productos de Acero Inoxidable")</h2>
+                    <p class="des">@lang("Aluminio, metales no férricos, plásticos técnicos y todos los suministros industriales que pueden intervenir en los procesos de transformación de estos materiales.")</p>
                     <figure>
                         <img src="{{ asset('frontend/assets/images/centre.jpg') }}" alt="Alacer Mas acero inoxidable">
                     </figure>
-                    <h3><a href="https://goo.gl/maps/MDyCyUJK6KG4EMEy5" target="_blank" style="color: #4065bc">Ver ubicación</a></h3>
+                    <h3><a href="https://goo.gl/maps/MDyCyUJK6KG4EMEy5" target="_blank" style="color: #4065bc">@lang("Ver ubicación")</a></h3>
                     <p class="num">+34 93 562 08 18</p>
                     <p class="adrs">Polígono Industrial Ronda, Ronda de la Agricultura, 15 <br>08503 Gurb (Barcelona) </p>
                     <div class="social-medias">
