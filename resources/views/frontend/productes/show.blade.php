@@ -41,12 +41,12 @@
                                         <li>
                                             @if ($producte->pdf)
                                                 <span class="theme-bg-clr font-bold">
-                                                    <i class="fa-regular fa-file"></i> <a href="{{ asset("/storage/$producte->pdf") }}" target="_blank" style="color:#0d476d">Catálogo</a>
+                                                    <i class="fa-regular fa-file"></i> <a href="{{ asset("/storage/$producte->pdf") }}" target="_blank" style="color:#0d476d">@lang("Catálogo")</a>
                                                 </span>
                                                 &nbsp;-&nbsp;&nbsp;&nbsp;
                                             @endif
                                             <span class="theme-bg-clr font-bold">
-                                                <i class="fa-regular fa-file-pdf"></i> <a href="{{ route('pdf', ['producte' => $producte->slug]) }}" target="_blank" style="color:#0d476d">Generar PDF</a>
+                                                <i class="fa-regular fa-file-pdf"></i> <a href="{{ route('pdf', ['producte' => $producte->slug]) }}" target="_blank" style="color:#0d476d">@lang("Generar PDF")</a>
                                             </span>
                                         </li>
                                     </ul>
@@ -81,7 +81,7 @@
                         <div class="pd-details">
                             <div class="more d-flex align-items-start">
                                 <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                    <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Información técnica</button>
+                                    <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">@lang("Información técnica")</button>
                                 </div>
                                 <div class="tab-content" id="v-pills-tabContent">
                                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">

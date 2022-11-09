@@ -45,7 +45,7 @@
     <!-- Loader Start -->
   <div class="preloader"> 
     <figure>
-      <img src="{{ asset('frontend/assets/images/pre.jpg') }}" alt="Alacer Mas acero inoxidable"> 
+      <img src="{{ asset('frontend/assets/images/pre.jpg') }}" alt="Alacer Mas Acero inoxidable"> 
     </figure>
   </div>
   <!-- Loader End -->
@@ -61,7 +61,7 @@
                                     <div class="header-logo">
                                         <a href="{{ route('frontend.inici.index') }}">
                                             <figure>
-                                                <img src="{{ asset('frontend/assets/images/logo.png') }}" alt="Alacer Mas acero inoxidable">
+                                                <img src="{{ asset('frontend/assets/images/logo.png') }}" alt="Alacer Mas Acero inoxidable">
                                             </figure>
                                         </a>
                                     </div>
@@ -128,7 +128,7 @@
                 <div class="mobile-nav" id="mobile-nav">
                     <div class="res-log">
                         <a href="{{ route('frontend.inici.index') }}">
-                            <img src="{{ asset('frontend/assets/images/logo.png') }}" alt="Alacer Mas acero inoxidable">
+                            <img src="{{ asset('frontend/assets/images/logo.png') }}" alt="Alacer Mas Acero inoxidable">
                         </a>
                     </div>
                     <ul>
@@ -179,7 +179,7 @@
                     <h2>@lang("Distribución de productos de Acero Inoxidable")</h2>
                     <p class="des">@lang("Aluminio, metales no férricos, plásticos técnicos y todos los suministros industriales que pueden intervenir en los procesos de transformación de estos materiales.")</p>
                     <figure>
-                        <img src="{{ asset('frontend/assets/images/centre.jpg') }}" alt="Alacer Mas acero inoxidable">
+                        <img src="{{ asset('frontend/assets/images/centre.jpg') }}" alt="Alacer Mas Acero inoxidable">
                     </figure>
                     <h3><a href="https://goo.gl/maps/MDyCyUJK6KG4EMEy5" target="_blank" style="color: #4065bc">@lang("Ver ubicación")</a></h3>
                     <p class="num">+34 93 562 08 18</p>

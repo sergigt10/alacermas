@@ -18,7 +18,7 @@
             <figure>
                 <img src='{{ asset("/frontend/assets/images/icona.png") }}' alt="Alacer Mas">
             </figure>
-            <h2>Política de privacidad</h2>
+            <h2>@lang("Política de privacidad")</h2>
         </div>
         <div class="container">
             <div class="row">

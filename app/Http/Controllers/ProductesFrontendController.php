@@ -23,7 +23,7 @@ class ProductesFrontendController extends Controller
     {
         $categoriaParent = Categoria::where('slug','=', $slug)->where('actiu','=',1)->firstOrFail();
 
-        SEOTools::setTitle($categoriaParent->nom_esp.', Alacer Mas');
+        SEOTools::setTitle(ucfirst($categoriaParent->nom_esp).', Alacer Mas');
 
         $subCategories = Categoria::subCategoria($categoriaParent->id)->where('actiu','=',1)->orderBy( trans('nom_esp') )->get();
 
@@ -40,15 +40,18 @@ class ProductesFrontendController extends Controller
     {
         $producte = Producte::where('slug','=', $slug)->where('actiu','=',1)->firstOrFail();
 
-        $subCategories = Categoria::subCategoria($producte->categoria_id)->where('actiu','=',1)->orderBy( trans('nom_esp') )->get();
-
-        if($subCategories->isEmpty() && $producte->categoria) {
-            $subCategories = Categoria::subCategoria($producte->categoria->parent_id)->orderBy( trans('nom_esp') )->get();
-        } else {
+        /* Sino té subcategoria, fora */
+        if(!$producte->categoria){
             abort(404);
         }
 
-        SEOTools::setTitle($producte->nom_esp.', Alacer Mas');
+        $subCategories = Categoria::subCategoria($producte->categoria_id)->where('actiu','=',1)->orderBy( trans('nom_esp') )->get();
+
+        if( $subCategories->isEmpty() ) {
+            $subCategories = Categoria::subCategoria($producte->categoria->parent_id)->orderBy( trans('nom_esp') )->get();
+        }
+
+        SEOTools::setTitle(ucfirst($producte->nom_esp).', Alacer Mas');
         SEOTools::setDescription(Str::limit(strip_tags($producte->descripcio_esp)), 155, ' (...)');
 
         return view('frontend.productes.show', compact('producte', 'subCategories'));

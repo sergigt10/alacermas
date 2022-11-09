@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row">
                 <div class="banner-details">
-                    <h2>Quiénes somos</h2>
+                    <h2>@lang("Quiénes somos")</h2>
                 </div>
             </div>
         </div>
@@ -29,7 +29,7 @@
                 <div class="col-lg-6">
                     <div class="about-data-right">
                         <span>Alacer Mas</span>
-                        <h2>Presentación</h2>
+                        <h2>@lang("Presentación")</h2>
                         <div class="about-info">
                             <p>
                                 @if (app()->getLocale() === 'ca')
@@ -54,7 +54,7 @@
             <figure>
                 <img src='{{ asset("/frontend/assets/images/icona.png") }}' alt="Alacer Mas">
             </figure>
-            <h2>Misión y objetivos</h2>
+            <h2>@lang("Misión y objetivos")</h2>
         </div>
         <div class="container">
             <div class="row">
@@ -63,7 +63,17 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div>
-                                    <p>{!! $quisom->descripcio_esp_obje !!}</p>
+                                    <p>
+                                        @if (app()->getLocale() === 'ca')
+                                            {!! $quisom->descripcio_cat_obje !!}
+                                        @elseif (app()->getLocale() === 'fr')
+                                            {!! $quisom->descripcio_fra_obje !!}
+                                        @elseif (app()->getLocale() === 'en')
+                                            {!! $quisom->descripcio_eng_obje !!}
+                                        @else
+                                            {!! $quisom->descripcio_esp_obje !!}
+                                        @endif
+                                    </p>
                                 </div>
                             </div>
                             <div class="col-lg-6 px-4">
@@ -83,7 +93,7 @@
             <figure>
                 <img src='{{ asset("/frontend/assets/images/icona.png") }}' alt="Alacer Mas">
             </figure>
-            <h2>Video Alacer Mas</h2>
+            <h2>@lang("Video Alacer Mas")</h2>
         </div>
         <div class="container">
             <div class="row">
@@ -97,7 +107,17 @@
                                 </video>
                             </div>
                             <div class="col-lg-6">
-                                <p>{!! $quisom->descripcio_esp_video !!}</p>
+                                <p>
+                                    @if (app()->getLocale() === 'ca')
+                                        {!! $quisom->descripcio_cat_video !!}
+                                    @elseif (app()->getLocale() === 'fr')
+                                        {!! $quisom->descripcio_fra_video !!}
+                                    @elseif (app()->getLocale() === 'en')
+                                        {!! $quisom->descripcio_eng_video !!}
+                                    @else
+                                        {!! $quisom->descripcio_esp_video !!}
+                                    @endif
+                                </p>
                             </div>
                         </div>
                     </div>

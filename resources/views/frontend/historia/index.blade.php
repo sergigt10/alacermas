@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row">
                 <div class="banner-details">
-                    <h2>Historia</h2>
+                    <h2>@lang("Historia")</h2>
                 </div>
             </div>
         </div>
@@ -18,7 +18,7 @@
             <figure>
                 <img src='{{ asset("/frontend/assets/images/icona.png") }}' alt="Alacer Mas">
             </figure>
-            <h2>Alacer Mas: un pasado, un presente y un futuro...</h2>
+            <h2>@lang("Alacer Mas: un pasado, un presente y un futuro...")</h2>
         </div>
         <div class="container spacee">
             <div class="timeline" id="timeline">

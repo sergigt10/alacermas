@@ -38,62 +38,62 @@
                                 {{ session('error_message_mail') }}
                             </div>
                         @endif
-                        <p>Si desea ponerse en contacto con nosotros sólo tiene que rellenar el siguiente formulario o bien contactar a través del teléfono <b>(+34) 93 562 08 18</b></p>
-                        <p>También puede enviarnos un correo electrónico a: <b>alacermas@alacermas.com</b></p>
+                        <p>@lang("Si desea ponerse en contacto con nosotros sólo tiene que rellenar el siguiente formulario o bien contactar a través del teléfono") <b>(+34) 93 562 08 18</b></p>
+                        <p>@lang("También puede enviarnos un correo electrónico a:") <b>alacermas@alacermas.com</b></p>
                         <br>
-                        <p>* Campos obligatorios</p>
+                        <p>* @lang("Campos obligatorios")</p>
                         <br>
                         <form action="{{route('frontend.sendContacte')}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row g-0">
-                                <input type="text" name="nom-cognoms" class="form-control" id="exampleInputText1"  placeholder="Nombre y apellidos *" required>
+                                <input type="text" name="nom-cognoms" class="form-control" id="exampleInputText1"  placeholder="@lang('Nombre y apellidos') *" required>
                             </div>
                             <div class="row g-0">
-                                <input type="email" name="mail" class="form-control" id="exampleInputEmail1"  placeholder="Correo electrónico *" required>
+                                <input type="email" name="mail" class="form-control" id="exampleInputEmail1"  placeholder="@lang('Correo electrónico') *" required>
                             </div>
                             <div class="row g-0">
-                                <input type="text" name="phone" class="form-control" id="exampleInput" placeholder="Teléfono *" required>
+                                <input type="text" name="phone" class="form-control" id="exampleInput" placeholder="@lang('Teléfono') *" required>
                             </div>
                             <div class="row g-0">
-                                <input type="text" name="empresa" class="form-control" id="exampleInput" placeholder="Empresa">
+                                <input type="text" name="empresa" class="form-control" id="exampleInput" placeholder="@lang('Empresa')">
                             </div>
                             <div class="row g-0">
-                                <input type="text" name="localidad" class="form-control" id="exampleInput" placeholder="Localidad">
+                                <input type="text" name="localidad" class="form-control" id="exampleInput" placeholder="@lang('Localidad')">
                             </div>
                             <div class="row g-0">
-                                <input type="text" name="pais" class="form-control" id="exampleInput" placeholder="País">
+                                <input type="text" name="pais" class="form-control" id="exampleInput" placeholder="@lang('País')">
                             </div>
                             <div class="row g-0">
-                                <p>Actividad:</p>
+                                <p>@lang('Actividad:')</p>
                                 <select name="actividad">
-                                    <option value="Distribuidor">Distribuidor</option>
-                                    <option value="Otros">Otros</option>
+                                    <option value="Distribuidor">@lang('Distribuidor')</option>
+                                    <option value="Otros">@lang('Otros')</option>
                                 </select>
                             </div>
                             <div class="row g-0">
-                                <p>Departamento:</p>
+                                <p>@lang('Departamento:')</p>
                                 <select name="departamento">
-                                    <option value="Compras">Compras</option>
-                                    <option value="Comercial">Comercial</option>
-                                    <option value="Administración">Administración</option>
-                                    <option value="Otros">Otros</option>
+                                    <option value="Compras">@lang('Compras')</option>
+                                    <option value="Comercial">@lang('Comercial')</option>
+                                    <option value="Administración">@lang('Administración')</option>
+                                    <option value="Otros">@lang('Otros')</option>
                                 </select>
                             </div>
                             <div class="row g-0">
-                                <p>Subir archivo. Max: 10 MB. Formato aceptado: PDF o DOC/DOCX</p>
+                                <p>@lang('Subir archivo. Max: 10 MB. Formato aceptado: PDF o DOC/DOCX')</p>
                                 <input type="file" data-maxsize="10" name="archivo" accept=".doc,.docx,application/msword,.pdf" />
                             </div>
                             <div class="row g-0">
                                 <textarea name="msg" placeholder="Mensaje *" required></textarea>
                             </div>
                             <div class="row g-0">
-                                <input type="checkbox" class="form-checkbox" value="privacidad" required> <label style="width: 50%" for="cbox2">He leído y acepto la <a href="{{ route('frontend.politicaPrivacitat.index') }}" target="_blank">política de privacidad</a></label>
+                                <input type="checkbox" class="form-checkbox" value="privacidad" required> <label style="width: 50%" for="cbox2">@lang('He leído y acepto la') <a href="{{ route('frontend.politicaPrivacitat.index') }}" target="_blank">@lang('política de privacidad')</a></label>
                             </div>
                             <div class="row g-0">
                                 <div class="g-recaptcha" data-sitekey="6LcxjHQUAAAAAACkW6DnZ_zwpRVtOXvg6qh5Epiy" data-callback="enableBtn"></div>
                             </div>
 
-                            <button type="submit" id="submit_details" class="theme-btn" disabled>Enviar <i class="fa-solid fa-angles-right"></i></button>
+                            <button type="submit" id="submit_details" class="theme-btn" disabled>@lang('Enviar') <i class="fa-solid fa-angles-right"></i></button>
                         </form>
                     </div>
                 </div>

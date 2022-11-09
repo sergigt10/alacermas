@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row">
                 <div class="banner-details">
-                    <h2>Productos</h2>
+                    <h2>@lang("Productos")</h2>
                 </div>
             </div>
         </div>
@@ -19,7 +19,7 @@
                     <div class="container">
                         <div class="row p-slider align-items-center grid">
                             <div class="col-lg-12 mt-5 mb-5">
-                                <a href="{{ url()->previous() }}"><i class="fas fa-chevron-left"></i> Volver atràs</a>
+                                <a href="{{ url()->previous() }}"><i class="fas fa-chevron-left"></i>@lang("Volver atràs")</a>
                             </div>
                             @if (!$productes->isEmpty()) 
                                 @foreach ($productes as $producte)
@@ -60,7 +60,7 @@
                                 </div>
                             @else
                                 <span class="text-center">
-                                    <b>Producto no encontrado...</b>
+                                    <b>@lang("Producto no encontrado")</b>
                                 </span>
                             @endif
                         </div>

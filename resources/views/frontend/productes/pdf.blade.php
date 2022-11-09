@@ -13,6 +13,12 @@
             font-weight: bold;
         }
 
+        .titol-excel-pdf {
+            font-size: 14px;
+            color: #0d476d;
+            font-weight: bold;
+        }
+
         .descripcio-pdf {
             text-align: justify !important;
             font-size: 13px;
@@ -70,6 +76,7 @@
             <img class="imatge2" src="{{ __DIR__ .'/../../app/public/'.$imatge2 }}" alt="{{ $titol }}">
         @endif
         <br><br><br>
+        <p class="titol-excel-pdf"><b>@lang("Información técnica")</b></p>
         @if (!$taules->isEmpty())
             <table class="table table-bordered table-hover">
                 @foreach ($taules as $producteTaula)

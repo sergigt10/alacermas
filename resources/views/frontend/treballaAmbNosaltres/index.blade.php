@@ -11,7 +11,7 @@
         <div class="container">
             <div class="row">
                 <div class="banner-details">
-                    <h2>Trabaja con nosotros</h2>
+                    <h2>@lang("Trabaja con nosotros")</h2>
                 </div>
             </div>
         </div>
@@ -22,7 +22,7 @@
             <figure>
                 <img src='{{ asset("/frontend/assets/images/icona.png") }}' alt="Alacer Mas">
             </figure>
-            <h2>Formulario</h2>
+            <h2>@lang("Formulario")</h2>
         </div>
         <div class="container">
             <div class="row">
@@ -38,42 +38,42 @@
                                 {{ session('error_message_mail') }}
                             </div>
                         @endif
-                        <p>Tú puedes ser parte de nuestro equipo, trabaja en un empresa con respaldo y crecimiento profesional. Envíanos tus datos.</b></p>
-                        <p>También puede enviarnos un correo electrónico a: <b>recursoshumanos@alacermas.com</b></p>
+                        <p>@lang("Tú puedes ser parte de nuestro equipo, trabaja en un empresa con respaldo y crecimiento profesional. Envíanos tus datos.")</b></p>
+                        <p>@lang("También puede enviarnos un correo electrónico a: <b>recursoshumanos@alacermas.com</b>")</p>
                         <br>
-                        <p>* Campos obligatorios</p>
+                        <p>* @lang("Campos obligatorios")</p>
                         <br>
                         <form action="{{route('frontend.sendTrabaja')}}" method="POST" enctype="multipart/form-data">
                             <div class="row g-0">
-                                <input type="text" name="nom-cognoms" class="form-control" id="exampleInputText1"  placeholder="Nombre y apellidos *" required>
+                                <input type="text" name="nom-cognoms" class="form-control" id="exampleInputText1"  placeholder="@lang('Nombre y apellidos *')" required>
                             </div>
                             <div class="row g-0">
-                                <input type="email" name="mail" class="form-control" id="exampleInputEmail1"  placeholder="Correo electrónico *" required>
+                                <input type="email" name="mail" class="form-control" id="exampleInputEmail1"  placeholder="@lang('Correo electrónico *')" required>
                             </div>
                             <div class="row g-0">
-                                <input type="text" name="phone" class="form-control" id="exampleInput" placeholder="Teléfono *" required>
+                                <input type="text" name="phone" class="form-control" id="exampleInput" placeholder="@lang('Teléfono *')" required>
                             </div>
                             <div class="row g-0">
-                                <input type="text" name="localidad" class="form-control" id="exampleInput" placeholder="Localidad *" required>
+                                <input type="text" name="localidad" class="form-control" id="exampleInput" placeholder="@lang('Localidad *')" required>
                             </div>
                             <div class="row g-0">
-                                <input type="text" name="pais" class="form-control" id="exampleInput" placeholder="País *" required>
+                                <input type="text" name="pais" class="form-control" id="exampleInput" placeholder="@lang('País *')" required>
                             </div>
                             <div class="row g-0">
-                                <p>Subir currículum vitae. Max: 10 MB. Formato aceptado: PDF o DOC/DOCX</p>
+                                <p>@lang('Subir currículum vitae. Max: 10 MB. Formato aceptado: PDF o DOC/DOCX')</p>
                                 <input type="file" data-maxsize="10" name="archivo" accept=".doc,.docx,application/msword,.pdf" required/>
                             </div>
                             <div class="row g-0">
                                 <textarea name="msg" placeholder="Mensaje *" required></textarea>
                             </div>
                             <div class="row g-0">
-                                <input type="checkbox" class="form-checkbox" value="privacidad" required> <label style="width: 50%" for="cbox2">He leído y acepto la <a href="{{ route('frontend.politicaPrivacitat.index') }}" target="_blank">política de privacidad</a></label>
+                                <input type="checkbox" class="form-checkbox" value="privacidad" required> <label style="width: 50%" for="cbox2">@lang('He leído y acepto la') <a href="{{ route('frontend.politicaPrivacitat.index') }}" target="_blank">@lang('política de privacidad')</a></label>
                             </div>
                             <div class="row g-0">
                                 <div class="g-recaptcha" data-sitekey="6LcxjHQUAAAAAACkW6DnZ_zwpRVtOXvg6qh5Epiy" data-callback="enableBtn"></div>
                             </div>
 
-                            <button type="submit" id="submit_details" class="theme-btn" disabled>Enviar <i class="fa-solid fa-angles-right"></i></button>
+                            <button type="submit" id="submit_details" class="theme-btn" disabled>@lang('Enviar') <i class="fa-solid fa-angles-right"></i></button>
                         </form>
                     </div>
                 </div>

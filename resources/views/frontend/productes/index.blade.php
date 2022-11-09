@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row">
                 <div class="banner-details">
-                    <h2>Productos</h2>
+                    <h2>@lang("Productos")</h2>
                 </div>
             </div>
         </div>
@@ -105,7 +105,7 @@
                             @endforeach
                             @if ($productes->isEmpty() && ( count($subCategories) <= 1 ))
                                 <span class="text-center">
-                                    <b>Información no disponible</b>
+                                    <b>@lang("Información no disponible")</b>
                                 </span>
                             @endif
                         </div>

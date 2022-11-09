@@ -7,7 +7,7 @@
         <div class="container">
             <div class="row">
                 <div class="banner-details">
-                    <h2>Servicios</h2>
+                    <h2>@lang("Servicios")</h2>
                 </div>
             </div>
         </div>
@@ -18,7 +18,7 @@
             <figure>
                 <img src='{{ asset("/frontend/assets/images/icona.png") }}' alt="Alacer Mas">
             </figure>
-            <h2>Medios técnicos y humanos</h2>
+            <h2>@lang("Medios técnicos y humanos")</h2>
         </div>
         <div class="container">
             <div class="row">
