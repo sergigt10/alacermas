@@ -16,7 +16,8 @@ class ServeisFrontendController extends Controller
      */
     public function index()
     {
-        SEOTools::setTitle('Servicios Alacer Mas');
+        SEOTools::setTitle('Distribución de productos Acero inoxidable, Materias primas');
+        SEOTools::setDescription('Alacer Mas cuenta con numerosos medios técnicos y humanos para poder realizar diferentes operaciones, en las materias primas que suministramos');
 
         $serveis = Servei::first();
         

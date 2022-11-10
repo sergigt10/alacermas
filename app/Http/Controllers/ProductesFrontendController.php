@@ -25,6 +25,18 @@ class ProductesFrontendController extends Controller
 
         SEOTools::setTitle(ucfirst($categoriaParent->nom_esp).', Alacer Mas');
 
+        if( $categoriaParent->slug === 'acero-inoxidable' ) {
+            SEOTools::setDescription('Contamos con varias líneas de pulido y satinado de tubos y perfiles, para decoración y para la industria alimentaria y farmacéutica');
+        } else if( $categoriaParent->slug === 'normalizados-inoxidable' ) { 
+            SEOTools::setDescription('Los cilindros inoxidables que fabricamos están dentro de la norma ISO. Son intercambiables con las marcas existentes en el mercados');
+        } else if( $categoriaParent->slug === 'suministros-industriales' ) {
+            SEOTools::setDescription('Somos una empresa de suministros industriales con experiencia, tornillería industrial, abrasivos y maquinaria, herramientas y ferretería industrial');
+        } else if( $categoriaParent->slug === 'aluminio' ) {
+            SEOTools::setDescription('Empresa dedicada a la venta y distribución de chapas y perfiles de aluminio a medida y en aleaciones especiales.');
+        } else {
+            SEOTools::setDescription('En nuestras instalaciones usted podrá encontrar todo lo que necesite en Acero Inoxidable, Normalizados inoxidable, Suministros industriales y Aluminio');
+        }
+        
         $subCategories = Categoria::subCategoria($categoriaParent->id)->where('actiu','=',1)->orderBy( trans('nom_esp') )->get();
 
         if($subCategories->isEmpty()) {
@@ -59,7 +71,7 @@ class ProductesFrontendController extends Controller
 
     public function search(Request $request)
     {
-        SEOTools::setTitle('Buscador Alacer Mas');
+        SEOTools::setTitle('Resultados productos Alacer Mas');
 
         $buscador = $request->input('buscador');
 

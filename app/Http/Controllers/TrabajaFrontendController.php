@@ -16,7 +16,7 @@ class TrabajaFrontendController extends Controller
      */
     public function index()
     {
-        SEOTools::setTitle('Trabaja con nosotros Alacer Mas');
+        SEOTools::setTitle('Trabaja con nosotros Alacer Mas, Acero Inoxidable y Aluminio');
         
         return view('frontend.treballaAmbNosaltres.index');
     }

@@ -45,7 +45,7 @@
                             </figure>
                             <div class="details">
                                 <h3>@lang("Acero inoxidable")</h3>
-                                <p>@lang("Contamos con varias líneas de pulido y satinado de tubos y  perfiles, para decoración y para la industria alimentaria y farmacéutica.")</p>
+                                <p>@lang("Contamos con varias líneas de pulido y satinado de tubos y perfiles, para decoración y para la industria alimentaria y farmacéutica.")</p>
                             </div>
                         </div>
                     </a>

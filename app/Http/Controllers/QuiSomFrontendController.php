@@ -16,7 +16,8 @@ class QuiSomFrontendController extends Controller
      */
     public function index()
     {
-        SEOTools::setTitle('Quiénes somos Alacer Mas');
+        SEOTools::setTitle('Distribución acero inoxidable, Normalizados inoxidable');
+        SEOTools::setDescription('Alacer Mas, es una empresa fundada hace 4 décadas, formada por un grupo humano de más de 100 profesionales con experiencia e inquietud de mejorar dia a dia');
 
         $quisom = Quisom::first();
         

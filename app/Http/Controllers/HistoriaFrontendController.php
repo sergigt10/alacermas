@@ -16,7 +16,7 @@ class HistoriaFrontendController extends Controller
      */
     public function index()
     {
-        SEOTools::setTitle('Historia Alacer Mas');
+        SEOTools::setTitle('Historia Alacer Mas, Centros Alacer Mas');
 
         $histories = Historia::orderBy('any')->get();
         

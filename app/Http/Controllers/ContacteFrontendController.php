@@ -16,7 +16,7 @@ class ContacteFrontendController extends Controller
      */
     public function index()
     {
-        SEOTools::setTitle('Contacto Alacer Mas');
+        SEOTools::setTitle('Centro de distribución de productos de Acero Inoxidable');
         
         return view('frontend.contacte.index');
     }

@@ -16,7 +16,7 @@ class HomeFrontendController extends Controller
      */
     public function index()
     {
-        SEOTools::setTitle('Alacer Mas, Acero inoxidable, Aluminio subministros industriales');
+        SEOTools::setTitle('Alacer Mas, Acero inoxidable, Aluminio, subministros industriales');
         $centres = Centre::orderBy('id')->get();
         
         return view('frontend.inici.index', compact('centres'));

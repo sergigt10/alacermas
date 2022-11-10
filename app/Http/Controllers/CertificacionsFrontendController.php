@@ -16,7 +16,8 @@ class CertificacionsFrontendController extends Controller
      */
     public function index()
     {
-        SEOTools::setTitle('Certificacions Alacer Mas');
+        SEOTools::setTitle('Certificacions Alacer Mas, Aluminio centro de distribución');
+        SEOTools::setDescription('Certificados bajo la norma ISO 9001:2015 para la distribución, comercialización y transformación de materiales de acero inoxidable y aluminio');
 
         $certificacions = Certificacio::first();
         
