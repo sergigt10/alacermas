@@ -3,11 +3,11 @@
 @section('content')
 
     <section class="banner-style-one">
-        <div class="parallax" style="background-image: url({{ asset('frontend/assets/images/servicios-alacermas.jpg') }});"></div>
+        <x-bannerProduct :categoriaActual="$categoriaParent" />
         <div class="container">
             <div class="row">
                 <div class="banner-details">
-                    <h2>@lang("Productos")</h2>
+                    <h2>{{ translatePHP($categoriaParent, 'nom') }}</h2>
                 </div>
             </div>
         </div>
@@ -103,7 +103,7 @@
                                     </div>
                                 </div>
                             @endforeach
-                            @if ($productes->isEmpty() && ( count($subCategories) <= 1 ))
+                            @if ($productes->isEmpty() && ( count($subCategories) < 0 ))
                                 <span class="text-center">
                                     <b>@lang("Información no disponible")</b>
                                 </span>

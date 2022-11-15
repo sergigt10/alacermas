@@ -2,13 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 
+// FrontEnd //
+
 Route::group(
     [
         'prefix' => LaravelLocalization::setLocale(),
         'middleware' => [ 'localize', 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
     ], function(){
-
-        // FrontEnd //
 
         /* Inici */
         Route::get('/', 'HomeFrontendController@index')->name('frontend.inici.index');

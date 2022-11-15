@@ -72,6 +72,7 @@ class ProductesFrontendController extends Controller
     public function search(Request $request)
     {
         SEOTools::setTitle('Resultados productos Alacer Mas');
+        SEOTools::setCanonical('https://www.alacermas.com/');
 
         $buscador = $request->input('buscador');
 
@@ -115,8 +116,9 @@ class ProductesFrontendController extends Controller
         }
     }
 
-    public static function pdfProduct($slug){
-
+    public static function pdfProduct($slug)
+    {
+        SEOTools::setCanonical('https://www.alacermas.com/');
         $producte = Producte::where('slug','=', $slug)->firstOrFail();
 
         $pdf = PDF::loadView('frontend.productes.pdf', [

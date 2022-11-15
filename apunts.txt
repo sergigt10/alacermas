@@ -321,6 +321,7 @@ https://stackoverflow.com/questions/63021856/cannot-find-module-webpack-lib-rule
 ** New **
 # https://github.com/mcamara/laravel-localization#redirect-middleware
 # https://stackoverflow.com/questions/63355411/laravel-localization-using-mcamara-package-giving-404-error-on-root-url-but-not
+# Activar cache: https://github.com/mcamara/laravel-localization/blob/master/CACHING.md
 php artisan optimize
 php artisan route:trans:cache
 php artisan cache:clear
@@ -354,6 +355,9 @@ php artisan route:clear
 
 ** Helper **
 # https://dev.to/kingsconsult/how-to-create-laravel-8-helpers-function-global-function-d8n
+
+** Laravel PDF error servidor **
+# https://stackoverflow.com/questions/71268720/cannot-resolve-public-path-when-trying-to-read-barryvh-dompdf-in-laravel
 
 
 

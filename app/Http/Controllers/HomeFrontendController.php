@@ -17,6 +17,7 @@ class HomeFrontendController extends Controller
     public function index()
     {
         SEOTools::setTitle('Alacer Mas, Acero inoxidable, Aluminio, subministros industriales');
+        SEOTools::setCanonical('https://www.alacermas.com/');
         $centres = Centre::orderBy('id')->get();
         
         return view('frontend.inici.index', compact('centres'));
@@ -25,6 +26,7 @@ class HomeFrontendController extends Controller
     public function avisLegal()
     {
         SEOTools::setTitle('Aviso legal Alacer Mas');
+        SEOTools::setCanonical('https://www.alacermas.com/');
         
         return view('frontend.avisLegal.index');
     }
@@ -32,6 +34,7 @@ class HomeFrontendController extends Controller
     public function politicaCookies()
     {
         SEOTools::setTitle('Política Cookies Alacer Mas');
+        SEOTools::setCanonical('https://www.alacermas.com/');
         
         return view('frontend.politicaCookies.index');
     }
@@ -39,6 +42,7 @@ class HomeFrontendController extends Controller
     public function politicaPrivacitat()
     {
         SEOTools::setTitle('Política privacidad Alacer Mas');
+        SEOTools::setCanonical('https://www.alacermas.com/');
         
         return view('frontend.politicaPrivacitat.index');
     }

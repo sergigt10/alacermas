@@ -23,6 +23,8 @@ class TrabajaFrontendController extends Controller
 
     public function sendTrabaja(Request $request)
     {
+        SEOTools::setCanonical('https://www.alacermas.com/trabaja-con-nosotros-alacer-mas');
+
         $captcha = $request->g-recaptcha-response;
         if($captcha != ''){
             // your secret key

@@ -3,7 +3,7 @@
 @section('content')
 
     <section class="banner-style-one">
-        <div class="parallax" style="background-image: url({{ asset('frontend/assets/images/servicios-alacermas.jpg') }});"></div>
+        <x-bannerProduct :categoriaActual="$producte->categoria" />
         <div class="container">
             <div class="row">
                 <div class="banner-details">

@@ -75,9 +75,9 @@
         @if ($imatge2)
             <img class="imatge2" src="{{ __DIR__ .'/../../app/public/'.$imatge2 }}" alt="{{ $titol }}">
         @endif
-        <br><br><br>
-        <p class="titol-excel-pdf"><b>@lang("Información técnica")</b></p>
         @if (!$taules->isEmpty())
+            <br><br><br>
+            <p class="titol-excel-pdf"><b>@lang("Información técnica")</b></p>
             <table class="table table-bordered table-hover">
                 @foreach ($taules as $producteTaula)
                     {{ \App\Http\Controllers\ProductesFrontendController::excelProduct(__DIR__ .'/../../app/public/'.$producteTaula->excel, $producteTaula->files_th_excel) }}

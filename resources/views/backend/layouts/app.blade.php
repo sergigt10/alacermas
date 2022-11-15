@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="{{ asset('backend/vendors/css/vendor.bundle.addons.css') }}"> -->
     <link rel="stylesheet" href="{{ asset('backend/css/mim/style.css') }}">
     <link rel="shortcut icon" href="{{ asset('backend/images/favicon.ico') }}" />
+
+    <meta name="robots" content="noindex,follow">
 </head>
 
 <body>

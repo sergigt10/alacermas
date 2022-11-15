@@ -37,6 +37,16 @@ class CategoriaProducteController extends Controller
         return self::getParentsTree($parent, $title, $type);
     }
 
+    public static function getParentRoot($category)
+    {
+        if($category->parent_id == NULL) {
+            return $category->slug;
+        }
+        $parent = Categoria::find($category->parent_id);
+
+        return self::getParentRoot($parent);
+    }
+
     // Montar arbre de categories sense select
     public static function tree() 
     {

@@ -23,6 +23,8 @@ class ContacteFrontendController extends Controller
 
     public function sendContacte(Request $request)
     {
+        SEOTools::setCanonical('https://www.alacermas.com/contacto-alacer-mas');
+        
         $captcha = $request->g-recaptcha-response;
         if($captcha != ''){
             // your secret key
